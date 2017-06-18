@@ -12,19 +12,17 @@
 		2297A0F61EF4FD8A00868512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2297A0F41EF4FD8A00868512 /* LaunchScreen.storyboard */; };
 		2297A1011EF4FD8A00868512 /* PPBadgeViewObjcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A1001EF4FD8A00868512 /* PPBadgeViewObjcTests.m */; };
 		2297A10F1EF4FE0900868512 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A10E1EF4FE0900868512 /* AppDelegate.m */; };
-		2297A11D1EF4FE5A00868512 /* PPViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A1121EF4FE5A00868512 /* PPViewController1.m */; };
-		2297A11E1EF4FE5A00868512 /* PPViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2297A1131EF4FE5A00868512 /* PPViewController1.xib */; };
-		2297A11F1EF4FE5A00868512 /* PPViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A1151EF4FE5A00868512 /* PPViewController2.m */; };
-		2297A1201EF4FE5A00868512 /* PPViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2297A1161EF4FE5A00868512 /* PPViewController2.xib */; };
-		2297A1211EF4FE5A00868512 /* PPViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A1181EF4FE5A00868512 /* PPViewController3.m */; };
-		2297A1221EF4FE5A00868512 /* PPViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2297A1191EF4FE5A00868512 /* PPViewController3.xib */; };
-		2297A1231EF4FE5A00868512 /* PPViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A11B1EF4FE5A00868512 /* PPViewController4.m */; };
-		2297A1241EF4FE5A00868512 /* PPViewController4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2297A11C1EF4FE5A00868512 /* PPViewController4.xib */; };
 		2297A1271EF4FE6B00868512 /* PPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A1261EF4FE6B00868512 /* PPTabBarController.m */; };
 		2297A1321EF4FEFF00868512 /* PPBadgeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A12A1EF4FEFF00868512 /* PPBadgeLabel.m */; };
 		2297A1331EF4FEFF00868512 /* UIBarButtonItem+PPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A12D1EF4FEFF00868512 /* UIBarButtonItem+PPBadgeView.m */; };
 		2297A1341EF4FEFF00868512 /* UITabBarItem+PPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A12F1EF4FEFF00868512 /* UITabBarItem+PPBadgeView.m */; };
 		2297A1351EF4FEFF00868512 /* UIView+PPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A1311EF4FEFF00868512 /* UIView+PPBadgeView.m */; };
+		2297A1811EF56D6800868512 /* PPViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A17B1EF56D6800868512 /* PPViewController1.m */; };
+		2297A1821EF56D6800868512 /* PPViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2297A17C1EF56D6800868512 /* PPViewController1.xib */; };
+		2297A1831EF56D6800868512 /* PPViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A17E1EF56D6800868512 /* PPViewController2.m */; };
+		2297A1841EF56D6800868512 /* PPViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2297A17F1EF56D6800868512 /* PPViewController2.xib */; };
+		2297A1881EF56D9A00868512 /* PPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A1861EF56D9A00868512 /* PPTableViewCell.m */; };
+		2297A1891EF56D9A00868512 /* PPTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2297A1871EF56D9A00868512 /* PPTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,18 +46,6 @@
 		2297A1021EF4FD8A00868512 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2297A10D1EF4FE0900868512 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2297A10E1EF4FE0900868512 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2297A1111EF4FE5A00868512 /* PPViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPViewController1.h; sourceTree = "<group>"; };
-		2297A1121EF4FE5A00868512 /* PPViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPViewController1.m; sourceTree = "<group>"; };
-		2297A1131EF4FE5A00868512 /* PPViewController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPViewController1.xib; sourceTree = "<group>"; };
-		2297A1141EF4FE5A00868512 /* PPViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPViewController2.h; sourceTree = "<group>"; };
-		2297A1151EF4FE5A00868512 /* PPViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPViewController2.m; sourceTree = "<group>"; };
-		2297A1161EF4FE5A00868512 /* PPViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPViewController2.xib; sourceTree = "<group>"; };
-		2297A1171EF4FE5A00868512 /* PPViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPViewController3.h; sourceTree = "<group>"; };
-		2297A1181EF4FE5A00868512 /* PPViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPViewController3.m; sourceTree = "<group>"; };
-		2297A1191EF4FE5A00868512 /* PPViewController3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPViewController3.xib; sourceTree = "<group>"; };
-		2297A11A1EF4FE5A00868512 /* PPViewController4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPViewController4.h; sourceTree = "<group>"; };
-		2297A11B1EF4FE5A00868512 /* PPViewController4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPViewController4.m; sourceTree = "<group>"; };
-		2297A11C1EF4FE5A00868512 /* PPViewController4.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPViewController4.xib; sourceTree = "<group>"; };
 		2297A1251EF4FE6B00868512 /* PPTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTabBarController.h; sourceTree = "<group>"; };
 		2297A1261EF4FE6B00868512 /* PPTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTabBarController.m; sourceTree = "<group>"; };
 		2297A1291EF4FEFF00868512 /* PPBadgeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPBadgeLabel.h; path = ../../../PPBadgeView/objc/PPBadgeLabel.h; sourceTree = "<group>"; };
@@ -71,6 +57,15 @@
 		2297A12F1EF4FEFF00868512 /* UITabBarItem+PPBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITabBarItem+PPBadgeView.m"; path = "../../../PPBadgeView/objc/UITabBarItem+PPBadgeView.m"; sourceTree = "<group>"; };
 		2297A1301EF4FEFF00868512 /* UIView+PPBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+PPBadgeView.h"; path = "../../../PPBadgeView/objc/UIView+PPBadgeView.h"; sourceTree = "<group>"; };
 		2297A1311EF4FEFF00868512 /* UIView+PPBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+PPBadgeView.m"; path = "../../../PPBadgeView/objc/UIView+PPBadgeView.m"; sourceTree = "<group>"; };
+		2297A17A1EF56D6800868512 /* PPViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPViewController1.h; sourceTree = "<group>"; };
+		2297A17B1EF56D6800868512 /* PPViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPViewController1.m; sourceTree = "<group>"; };
+		2297A17C1EF56D6800868512 /* PPViewController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPViewController1.xib; sourceTree = "<group>"; };
+		2297A17D1EF56D6800868512 /* PPViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPViewController2.h; sourceTree = "<group>"; };
+		2297A17E1EF56D6800868512 /* PPViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPViewController2.m; sourceTree = "<group>"; };
+		2297A17F1EF56D6800868512 /* PPViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPViewController2.xib; sourceTree = "<group>"; };
+		2297A1851EF56D9A00868512 /* PPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTableViewCell.h; sourceTree = "<group>"; };
+		2297A1861EF56D9A00868512 /* PPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTableViewCell.m; sourceTree = "<group>"; };
+		2297A1871EF56D9A00868512 /* PPTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,8 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				2297A1281EF4FEE300868512 /* PPBadgeView */,
+				2297A1801EF56D6800868512 /* Views */,
+				2297A1791EF56D6800868512 /* Controllers */,
 				2297A10C1EF4FE0900868512 /* Main */,
-				2297A1101EF4FE4100868512 /* ViewControllers */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -157,25 +153,6 @@
 				2297A1261EF4FE6B00868512 /* PPTabBarController.m */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		2297A1101EF4FE4100868512 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				2297A1111EF4FE5A00868512 /* PPViewController1.h */,
-				2297A1121EF4FE5A00868512 /* PPViewController1.m */,
-				2297A1131EF4FE5A00868512 /* PPViewController1.xib */,
-				2297A1141EF4FE5A00868512 /* PPViewController2.h */,
-				2297A1151EF4FE5A00868512 /* PPViewController2.m */,
-				2297A1161EF4FE5A00868512 /* PPViewController2.xib */,
-				2297A1171EF4FE5A00868512 /* PPViewController3.h */,
-				2297A1181EF4FE5A00868512 /* PPViewController3.m */,
-				2297A1191EF4FE5A00868512 /* PPViewController3.xib */,
-				2297A11A1EF4FE5A00868512 /* PPViewController4.h */,
-				2297A11B1EF4FE5A00868512 /* PPViewController4.m */,
-				2297A11C1EF4FE5A00868512 /* PPViewController4.xib */,
-			);
-			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		2297A1281EF4FEE300868512 /* PPBadgeView */ = {
@@ -192,6 +169,29 @@
 				2297A12F1EF4FEFF00868512 /* UITabBarItem+PPBadgeView.m */,
 			);
 			name = PPBadgeView;
+			sourceTree = "<group>";
+		};
+		2297A1791EF56D6800868512 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2297A17A1EF56D6800868512 /* PPViewController1.h */,
+				2297A17B1EF56D6800868512 /* PPViewController1.m */,
+				2297A17C1EF56D6800868512 /* PPViewController1.xib */,
+				2297A17D1EF56D6800868512 /* PPViewController2.h */,
+				2297A17E1EF56D6800868512 /* PPViewController2.m */,
+				2297A17F1EF56D6800868512 /* PPViewController2.xib */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2297A1801EF56D6800868512 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2297A1851EF56D9A00868512 /* PPTableViewCell.h */,
+				2297A1861EF56D9A00868512 /* PPTableViewCell.m */,
+				2297A1871EF56D9A00868512 /* PPTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,12 +276,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2297A11E1EF4FE5A00868512 /* PPViewController1.xib in Resources */,
-				2297A1221EF4FE5A00868512 /* PPViewController3.xib in Resources */,
+				2297A1821EF56D6800868512 /* PPViewController1.xib in Resources */,
 				2297A0F61EF4FD8A00868512 /* LaunchScreen.storyboard in Resources */,
-				2297A1241EF4FE5A00868512 /* PPViewController4.xib in Resources */,
 				2297A0F31EF4FD8A00868512 /* Assets.xcassets in Resources */,
-				2297A1201EF4FE5A00868512 /* PPViewController2.xib in Resources */,
+				2297A1891EF56D9A00868512 /* PPTableViewCell.xib in Resources */,
+				2297A1841EF56D6800868512 /* PPViewController2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,17 +298,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2297A1211EF4FE5A00868512 /* PPViewController3.m in Sources */,
-				2297A1231EF4FE5A00868512 /* PPViewController4.m in Sources */,
 				2297A10F1EF4FE0900868512 /* AppDelegate.m in Sources */,
 				2297A1351EF4FEFF00868512 /* UIView+PPBadgeView.m in Sources */,
-				2297A11D1EF4FE5A00868512 /* PPViewController1.m in Sources */,
 				2297A1321EF4FEFF00868512 /* PPBadgeLabel.m in Sources */,
+				2297A1881EF56D9A00868512 /* PPTableViewCell.m in Sources */,
 				2297A1331EF4FEFF00868512 /* UIBarButtonItem+PPBadgeView.m in Sources */,
 				2297A1271EF4FE6B00868512 /* PPTabBarController.m in Sources */,
 				2297A1341EF4FEFF00868512 /* UITabBarItem+PPBadgeView.m in Sources */,
+				2297A1811EF56D6800868512 /* PPViewController1.m in Sources */,
+				2297A1831EF56D6800868512 /* PPViewController2.m in Sources */,
 				2297A0E81EF4FD8A00868512 /* main.m in Sources */,
-				2297A11F1EF4FE5A00868512 /* PPViewController2.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

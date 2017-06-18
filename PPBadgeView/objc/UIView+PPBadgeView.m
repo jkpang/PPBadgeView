@@ -24,12 +24,15 @@ static NSString *const kBadgeLabel = @"kBadgeLabel";
 {
     [self lazyLoadBadgeLabel];
     self.badgeLabel.text = text;
-    [self addSubview:self.badgeLabel];
-    [self bringSubviewToFront:self.badgeLabel];
 }
 
 - (void)pp_addBadgeWithNumber:(NSInteger)number
 {
+    if (number <= 0) {
+        [self pp_addBadgeWithText:@"0"];
+        [self pp_hiddenBadge];
+        return;
+    }
     [self pp_addBadgeWithText:[NSString stringWithFormat:@"%ld",number]];
 }
 
@@ -52,10 +55,7 @@ static NSString *const kBadgeLabel = @"kBadgeLabel";
 - (void)pp_moveBadgeWithX:(CGFloat)x Y:(CGFloat)y
 {
     [self lazyLoadBadgeLabel];
-    // 在调整位置之前恢复原位, 避免多次调用此方法导致偏移量叠加
-    self.badgeLabel.center = CGPointMake(self.p_width, 0);
-    self.badgeLabel.p_centerX += x;
-    self.badgeLabel.p_centerY += y;
+    self.badgeLabel.center = CGPointMake(self.p_width+x, y);
 }
 
 - (void)pp_setBadgeLabelAttributes:(void (^)(PPBadgeLabel *))badgeLabel
@@ -74,13 +74,43 @@ static NSString *const kBadgeLabel = @"kBadgeLabel";
     self.badgeLabel.hidden = YES;
 }
 
+- (void)pp_increase
+{
+    [self pp_increaseBy:1];
+}
+
+- (void)pp_increaseBy:(NSInteger)number
+{
+    NSInteger result = self.badgeLabel.text.integerValue + number;
+    if (result > 0) {
+        [self pp_showBadge];
+    }
+    self.badgeLabel.text = [NSString stringWithFormat:@"%ld",result];
+}
+
+- (void)pp_decrease
+{
+    [self pp_decreaseBy:1];
+}
+
+- (void)pp_decreaseBy:(NSInteger)number
+{
+    NSInteger result = self.badgeLabel.text.integerValue - number;
+    if (result <= 0) {
+        [self pp_hiddenBadge];
+        self.badgeLabel.text = [NSString stringWithFormat:@"%ld",result];
+        return;
+    }
+    self.badgeLabel.text = [NSString stringWithFormat:@"%ld",result];
+}
+
 - (void)lazyLoadBadgeLabel
 {
     if (!self.badgeLabel) {
         self.badgeLabel = [PPBadgeLabel defaultBadgeLabel];
         self.badgeLabel.center = CGPointMake(self.p_width, 0);
-        self.badgeLabel.layer.cornerRadius = self.badgeLabel.p_height * 0.5;
-        self.badgeLabel.clipsToBounds = YES;
+        [self addSubview:self.badgeLabel];
+        [self bringSubviewToFront:self.badgeLabel];
     }
 }
 
@@ -119,6 +149,28 @@ static NSString *const kBadgeLabel = @"kBadgeLabel";
 {
     CGRect frame = self.frame;
     frame.origin.y = p_y;
+    self.frame = frame;
+}
+
+- (CGFloat)p_right
+{
+    return self.frame.origin.x + self.frame.size.width;
+}
+- (void)setP_right:(CGFloat)p_right
+{
+    CGRect frame = self.frame;
+    frame.origin.x = p_right - frame.size.width;
+    self.frame = frame;
+}
+
+- (CGFloat)p_bottom
+{
+    return self.frame.origin.y + self.frame.size.height;
+}
+- (void)setP_bottom:(CGFloat)p_bottom
+{
+    CGRect frame = self.frame;
+    frame.origin.y = p_bottom - frame.size.height;
     self.frame = frame;
 }
 

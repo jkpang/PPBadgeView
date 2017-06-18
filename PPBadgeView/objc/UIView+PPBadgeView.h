@@ -43,7 +43,7 @@
 /**
  设置Bage的属性
  */
-- (void)pp_setBadgeLabelAttributes:(void(^)(PPBadgeLabel *badgeLabel))badgeLabel;
+- (void)pp_setBadgeLabelAttributes:(void(^)(PPBadgeLabel *badgeLabel))attributes;
 
 /**
  显示Badge
@@ -55,12 +55,20 @@
  */
 - (void)pp_hiddenBadge;
 
+#pragma mark - 数字增加/减少, 注意:以下方法只适用于Badge内容为纯数字的情况
+- (void)pp_increase;
+- (void)pp_increaseBy:(NSInteger)number;
+- (void)pp_decrease;
+- (void)pp_decreaseBy:(NSInteger)number;
+
 @end
 
 
 @interface UIView (Frame)
 @property (nonatomic, assign) CGFloat p_x;
 @property (nonatomic, assign) CGFloat p_y;
+@property (nonatomic, assign) CGFloat p_right;
+@property (nonatomic, assign) CGFloat p_bottom;
 @property (nonatomic, assign) CGFloat p_width;
 @property (nonatomic, assign) CGFloat p_height;
 @property (nonatomic, assign) CGFloat p_centerX;

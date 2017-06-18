@@ -13,13 +13,12 @@
 
 - (void)pp_addBadgeWithText:(NSString *)text
 {
-    [[self bottomView] pp_moveBadgeWithX:4 Y:3];   // 默认为系统Badge所在的位置
     [[self bottomView] pp_addBadgeWithText:text];
 }
 
 - (void)pp_addBadgeWithNumber:(NSInteger)number
 {
-    [self pp_addBadgeWithText:[NSString stringWithFormat:@"%ld",number]];
+    [[self bottomView] pp_addBadgeWithNumber:number];
 }
 
 - (void)pp_addDotWithColor:(UIColor *)color
@@ -37,9 +36,9 @@
     [[self bottomView] pp_moveBadgeWithX:x Y:y];
 }
 
-- (void)pp_setBadgeLabelAttributes:(void(^)(PPBadgeLabel *badgeLabel))badgeLabel
+- (void)pp_setBadgeLabelAttributes:(void(^)(PPBadgeLabel *badgeLabel))attributes
 {
-    [[self bottomView] pp_setBadgeLabelAttributes:badgeLabel];
+    [[self bottomView] pp_setBadgeLabelAttributes:attributes];
 }
 
 - (void)pp_showBadge
@@ -51,6 +50,28 @@
 {
     [[self bottomView] pp_hiddenBadge];
 }
+
+- (void)pp_increase
+{
+    [[self bottomView] pp_increase];
+}
+
+- (void)pp_increaseBy:(NSInteger)number
+{
+    [[self bottomView] pp_increaseBy:number];
+}
+
+- (void)pp_decrease
+{
+    [[self bottomView] pp_decrease];
+}
+
+- (void)pp_decreaseBy:(NSInteger)number
+{
+    [[self bottomView] pp_decreaseBy:number];
+}
+
+#pragma mark - 获取Badge的父视图
 
 - (UIView *)bottomView
 {

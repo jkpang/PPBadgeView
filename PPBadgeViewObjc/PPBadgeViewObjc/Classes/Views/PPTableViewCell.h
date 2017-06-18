@@ -1,5 +1,5 @@
 //
-//  PPViewController4.h
+//  PPTableViewCell.h
 //  PPBadgeViewObjc
 //
 //  Created by AndyPang on 2017/6/17.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PPViewController4 : UIViewController
+@interface PPTableViewCell : UITableViewCell
 
 @end
