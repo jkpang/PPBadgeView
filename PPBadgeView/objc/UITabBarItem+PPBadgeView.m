@@ -13,11 +13,14 @@
 
 - (void)pp_addBadgeWithText:(NSString *)text
 {
+    // 默认为系统badge所在的位置
+    [[self bottomView] pp_moveBadgeWithX:4 Y:3];
     [[self bottomView] pp_addBadgeWithText:text];
 }
 
 - (void)pp_addBadgeWithNumber:(NSInteger)number
 {
+    [[self bottomView] pp_moveBadgeWithX:4 Y:3];
     [[self bottomView] pp_addBadgeWithNumber:number];
 }
 

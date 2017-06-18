@@ -29,13 +29,6 @@
     return self;
 }
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    self.preferredMaxLayoutWidth = 100;
-    [self setupUI];
-}
-
 - (void)setupUI
 {
     self.textColor = [UIColor whiteColor];

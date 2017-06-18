@@ -30,34 +30,23 @@
 #pragma mark - Badges Example
 - (void)setupBadges
 {
+    [self.tabBarItem pp_addBadgeWithText:@"99+"];
     
-    // 1. 给UITabBarItem添加badge
-    
-    /**
-     自定义badge的属性: 字体大小/颜色, 背景颜色...(默认系统字体13,白色,背景色为系统badge红色)
-     PPBadgeLabel继承UILabel
-     */
-//    [self.tabBarItem pp_setBadgeLabelAttributes:^(PPBadgeLabel *badgeLabel) {
-//        badgeLabel.font =  [UIFont systemFontOfSize:13];
-//        badgeLabel.textColor = [UIColor blueColor];
-//        badgeLabel.backgroundColor = [UIColor redColor];
-//        
-//    }];
-
-//    self.tabBarItem.badgeValue = @"99+";
-    self.tabBarItem.badgeColor = [UIColor blueColor];
-//    [self.tabBarItem pp_addBadgeWithText:@"99+"];
-    
-    // 2.给UIBarButtonItem添加bage
-    // 2.1 左边
-    [self.navigationItem.rightBarButtonItem pp_addDotWithColor:nil];
-    [self.navigationItem.rightBarButtonItem pp_moveBadgeWithX:-5 Y:0];
-    // 2.2 右边
+    // 1.给UIBarButtonItem添加bage
+    // 1.1 左边
     [self.navigationItem.leftBarButtonItem pp_addBadgeWithNumber:0];
+    // 调整badge的位置
     [self.navigationItem.leftBarButtonItem pp_moveBadgeWithX:-7 Y:5];
+    // 自定义badge的属性: 字体大小/颜色, 背景颜色...(默认系统字体13,白色,背景色为系统badge红色)
     [self.navigationItem.leftBarButtonItem pp_setBadgeLabelAttributes:^(PPBadgeLabel *badgeLabel) {
         badgeLabel.backgroundColor = [UIColor redColor];
+//        badgeLabel.font =  [UIFont systemFontOfSize:13];
+//        badgeLabel.textColor = [UIColor blueColor];
     }];
+    
+    // 1.2 右边
+    [self.navigationItem.rightBarButtonItem pp_addDotWithColor:nil];
+    [self.navigationItem.rightBarButtonItem pp_moveBadgeWithX:-5 Y:0];
     
 }
 

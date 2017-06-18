@@ -28,12 +28,13 @@
     
     PPViewController2 *viewController2 = [[PPViewController2 alloc] init];
     [self setupOneChildViewController:viewController2 title:@"订单" image:@"order" selectedImage:@"order_1"];
+    
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-       
-        [viewController1.tabBarItem pp_moveBadgeWithX:4 Y:3];
+        
+        // 给UITabBarItem添加badge
         [viewController1.tabBarItem pp_addBadgeWithText:@"99+"];
         
-        [viewController2.tabBarItem pp_moveBadgeWithX:4 Y:3];
         [viewController2.tabBarItem pp_addDotWithColor:nil];
         
     });

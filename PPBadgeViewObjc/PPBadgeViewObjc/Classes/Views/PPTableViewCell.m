@@ -36,7 +36,7 @@
     
     // 2. 给cell添加badge
     self.badgeLabel.backgroundColor = kRandomColor;
-    self.badgeLabel.text = [NSString stringWithFormat:@"%d",arc4random()%101];
+    self.badgeLabel.text = [NSString stringWithFormat:@"%d",arc4random()%300];
     self.badgeLabel.p_right = [UIScreen mainScreen].bounds.size.width-15;
     self.badgeLabel.p_centerY = self.p_height * 0.5;
     [self.contentView addSubview:self.badgeLabel];
