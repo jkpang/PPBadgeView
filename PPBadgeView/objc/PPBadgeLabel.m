@@ -47,6 +47,7 @@
     // 根据内容调整label的宽度
     CGFloat stringWidth = [self widthForString:text font:self.font height:self.p_height];
     if (self.p_height > stringWidth + self.p_height*10/18) {
+        self.p_width = self.p_height;
         return;
     }
     self.p_width = self.p_height*5/18/*left*/ + stringWidth + self.p_height*5/18/*right*/;

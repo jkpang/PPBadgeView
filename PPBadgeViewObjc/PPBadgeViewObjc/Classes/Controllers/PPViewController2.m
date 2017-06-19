@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.view.backgroundColor = [UIColor whiteColor];
 //    [self.tabBarItem pp_addDotWithColor:nil];
 }
 

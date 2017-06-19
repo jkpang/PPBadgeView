@@ -20,7 +20,6 @@
 		2297A1811EF56D6800868512 /* PPViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A17B1EF56D6800868512 /* PPViewController1.m */; };
 		2297A1821EF56D6800868512 /* PPViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2297A17C1EF56D6800868512 /* PPViewController1.xib */; };
 		2297A1831EF56D6800868512 /* PPViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A17E1EF56D6800868512 /* PPViewController2.m */; };
-		2297A1841EF56D6800868512 /* PPViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2297A17F1EF56D6800868512 /* PPViewController2.xib */; };
 		2297A1881EF56D9A00868512 /* PPTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A1861EF56D9A00868512 /* PPTableViewCell.m */; };
 		2297A1891EF56D9A00868512 /* PPTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2297A1871EF56D9A00868512 /* PPTableViewCell.xib */; };
 /* End PBXBuildFile section */
@@ -62,7 +61,6 @@
 		2297A17C1EF56D6800868512 /* PPViewController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPViewController1.xib; sourceTree = "<group>"; };
 		2297A17D1EF56D6800868512 /* PPViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPViewController2.h; sourceTree = "<group>"; };
 		2297A17E1EF56D6800868512 /* PPViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPViewController2.m; sourceTree = "<group>"; };
-		2297A17F1EF56D6800868512 /* PPViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPViewController2.xib; sourceTree = "<group>"; };
 		2297A1851EF56D9A00868512 /* PPTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTableViewCell.h; sourceTree = "<group>"; };
 		2297A1861EF56D9A00868512 /* PPTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTableViewCell.m; sourceTree = "<group>"; };
 		2297A1871EF56D9A00868512 /* PPTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPTableViewCell.xib; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 				2297A17C1EF56D6800868512 /* PPViewController1.xib */,
 				2297A17D1EF56D6800868512 /* PPViewController2.h */,
 				2297A17E1EF56D6800868512 /* PPViewController2.m */,
-				2297A17F1EF56D6800868512 /* PPViewController2.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -280,7 +277,6 @@
 				2297A0F61EF4FD8A00868512 /* LaunchScreen.storyboard in Resources */,
 				2297A0F31EF4FD8A00868512 /* Assets.xcassets in Resources */,
 				2297A1891EF56D9A00868512 /* PPTableViewCell.xib in Resources */,
-				2297A1841EF56D6800868512 /* PPViewController2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
