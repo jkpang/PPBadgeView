@@ -48,7 +48,7 @@ static NSString *const kBadgeLabel = @"kBadgeLabel";
 - (void)pp_setBadgeHeightPoints:(CGFloat)points
 {
     CGFloat scale = points/self.badgeLabel.p_height;
-    self.badgeLabel.transform = CGAffineTransformMakeScale(scale, scale);
+    self.badgeLabel.transform = CGAffineTransformScale(self.badgeLabel.transform, scale, scale);
 }
 
 - (void)pp_moveBadgeWithX:(CGFloat)x Y:(CGFloat)y
@@ -57,6 +57,7 @@ static NSString *const kBadgeLabel = @"kBadgeLabel";
     
     /**
      self.badgeLabel.center = CGPointMake(self.p_width+x, y);
+     
      如果通过badge的center来调整其在父视图的位置, 在给badge赋值不同长度的内容时
      会导致badge会以中心点向两边调整其自身宽度,如果badge过长会遮挡部分父视图, 所以
      正确的方式是以badge的x坐标为起点,其宽度向x轴正方向增加/x轴负方向减少

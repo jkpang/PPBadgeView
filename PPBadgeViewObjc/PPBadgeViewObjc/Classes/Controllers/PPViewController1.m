@@ -34,7 +34,9 @@
     
     // 1.给UIBarButtonItem添加bage
     // 1.1 左边
-    [self.navigationItem.leftBarButtonItem pp_addBadgeWithNumber:0];
+    [self.navigationItem.leftBarButtonItem pp_addBadgeWithNumber:1];
+    // 调整badge大小
+    [self.navigationItem.leftBarButtonItem pp_setBadgeHeightPoints:25];
     // 调整badge的位置
     [self.navigationItem.leftBarButtonItem pp_moveBadgeWithX:-7 Y:5];
     // 自定义badge的属性: 字体大小/颜色, 背景颜色...(默认系统字体13,白色,背景色为系统badge红色)
