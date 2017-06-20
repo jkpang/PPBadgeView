@@ -2,7 +2,7 @@
 //  PPTableViewCell.swift
 //  PPBadgeViewSwift
 //
-//  Created by YiAi on 2017/6/20.
+//  Created by AndyPang on 2017/6/19.
 //  Copyright © 2017年 AndyPang. All rights reserved.
 //
 

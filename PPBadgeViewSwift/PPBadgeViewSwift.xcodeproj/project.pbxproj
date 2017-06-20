@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D95526E1EF9161D0092CD47 /* PPTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D95526C1EF9161D0092CD47 /* PPTableViewCell.swift */; };
-		1D95526F1EF9161D0092CD47 /* PPTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D95526D1EF9161D0092CD47 /* PPTableViewCell.xib */; };
+		2259C60E1EF955D900893A40 /* PPTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2259C60C1EF955D900893A40 /* PPTableViewCell.swift */; };
+		2259C60F1EF955D900893A40 /* PPTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2259C60D1EF955D900893A40 /* PPTableViewCell.xib */; };
+		2259C6111EF9564B00893A40 /* PPNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2259C6101EF9564B00893A40 /* PPNavigationController.swift */; };
 		2297A14A1EF4FFB500868512 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2297A1491EF4FFB500868512 /* Assets.xcassets */; };
 		2297A14D1EF4FFB500868512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2297A14B1EF4FFB500868512 /* LaunchScreen.storyboard */; };
 		2297A1581EF4FFB600868512 /* PPBadgeViewSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297A1571EF4FFB600868512 /* PPBadgeViewSwiftTests.swift */; };
@@ -36,8 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1D95526C1EF9161D0092CD47 /* PPTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPTableViewCell.swift; sourceTree = "<group>"; };
-		1D95526D1EF9161D0092CD47 /* PPTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPTableViewCell.xib; sourceTree = "<group>"; };
+		2259C60C1EF955D900893A40 /* PPTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPTableViewCell.swift; path = PPBadgeViewSwift/Classes/Views/PPTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		2259C60D1EF955D900893A40 /* PPTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PPTableViewCell.xib; path = PPBadgeViewSwift/Classes/Views/PPTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		2259C6101EF9564B00893A40 /* PPNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPNavigationController.swift; sourceTree = "<group>"; };
 		2297A13F1EF4FFB500868512 /* PPBadgeViewSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PPBadgeViewSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2297A1491EF4FFB500868512 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2297A14C1EF4FFB500868512 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,8 +81,8 @@
 		1D9552661EF915D50092CD47 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1D95526C1EF9161D0092CD47 /* PPTableViewCell.swift */,
-				1D95526D1EF9161D0092CD47 /* PPTableViewCell.xib */,
+				2259C60C1EF955D900893A40 /* PPTableViewCell.swift */,
+				2259C60D1EF955D900893A40 /* PPTableViewCell.xib */,
 			);
 			name = Views;
 			path = ../../../../../../../yiai/Desktop/GitHub/PPBadgeView/PPBadgeViewSwift/PPBadgeViewSwift/Classes/Views;
@@ -139,7 +141,6 @@
 				1D9552661EF915D50092CD47 /* Views */,
 				2297A18B1EF7FEF700868512 /* Controllers */,
 				2297A18C1EF7FEF700868512 /* Main */,
-				2297A18E1EF7FEF700868512 /* Views */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -161,15 +162,9 @@
 			children = (
 				2297A18D1EF7FEF700868512 /* AppDelegate.swift */,
 				2297A1901EF7FF3200868512 /* PPTabBarController.swift */,
+				2259C6101EF9564B00893A40 /* PPNavigationController.swift */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		2297A18E1EF7FEF700868512 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		22F186861EF8080300C59CF7 /* PPBadgeView */ = {
@@ -270,7 +265,7 @@
 				2297A1951EF7FF6200868512 /* PPViewController1.xib in Resources */,
 				2297A14D1EF4FFB500868512 /* LaunchScreen.storyboard in Resources */,
 				2297A14A1EF4FFB500868512 /* Assets.xcassets in Resources */,
-				1D95526F1EF9161D0092CD47 /* PPTableViewCell.xib in Resources */,
+				2259C60F1EF955D900893A40 /* PPTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,11 +285,12 @@
 			files = (
 				2297A1941EF7FF6200868512 /* PPViewController1.swift in Sources */,
 				22F186901EF823BA00C59CF7 /* UITabBarItem+PPBadgeView.swift in Sources */,
+				2259C60E1EF955D900893A40 /* PPTableViewCell.swift in Sources */,
+				2259C6111EF9564B00893A40 /* PPNavigationController.swift in Sources */,
 				22F1868C1EF8238D00C59CF7 /* UIBarButtonItem+PPBadgeView.swift in Sources */,
 				22F186881EF8082D00C59CF7 /* PPBadgeLabel.swift in Sources */,
 				2297A18F1EF7FEF700868512 /* AppDelegate.swift in Sources */,
 				2297A1991EF7FF8C00868512 /* PPViewController3.swift in Sources */,
-				1D95526E1EF9161D0092CD47 /* PPTableViewCell.swift in Sources */,
 				2297A1911EF7FF3200868512 /* PPTabBarController.swift in Sources */,
 				22F1868A1EF809DE00C59CF7 /* UIView+PPBadgeView.swift in Sources */,
 				2297A1971EF7FF7C00868512 /* PPViewController2.swift in Sources */,
