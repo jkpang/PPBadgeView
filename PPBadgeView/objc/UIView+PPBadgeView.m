@@ -45,12 +45,6 @@ static NSString *const kBadgeLabel = @"kBadgeLabel";
     }
 }
 
-- (void)pp_setBadgeHeightPoints:(CGFloat)points
-{
-    CGFloat scale = points/self.badgeLabel.p_height;
-    self.badgeLabel.transform = CGAffineTransformScale(self.badgeLabel.transform, scale, scale);
-}
-
 - (void)pp_moveBadgeWithX:(CGFloat)x Y:(CGFloat)y
 {
     [self lazyLoadBadgeLabel];
@@ -70,6 +64,12 @@ static NSString *const kBadgeLabel = @"kBadgeLabel";
 {
     [self lazyLoadBadgeLabel];
     badgeLabel ? badgeLabel(self.badgeLabel) : nil;
+}
+
+- (void)pp_setBadgeHeightPoints:(CGFloat)points
+{
+    CGFloat scale = points/self.badgeLabel.p_height;
+    self.badgeLabel.transform = CGAffineTransformScale(self.badgeLabel.transform, scale, scale);
 }
 
 - (void)pp_showBadge

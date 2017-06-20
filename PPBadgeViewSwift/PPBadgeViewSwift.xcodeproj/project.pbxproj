@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D95526E1EF9161D0092CD47 /* PPTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D95526C1EF9161D0092CD47 /* PPTableViewCell.swift */; };
+		1D95526F1EF9161D0092CD47 /* PPTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D95526D1EF9161D0092CD47 /* PPTableViewCell.xib */; };
 		2297A14A1EF4FFB500868512 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2297A1491EF4FFB500868512 /* Assets.xcassets */; };
 		2297A14D1EF4FFB500868512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2297A14B1EF4FFB500868512 /* LaunchScreen.storyboard */; };
 		2297A1581EF4FFB600868512 /* PPBadgeViewSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297A1571EF4FFB600868512 /* PPBadgeViewSwiftTests.swift */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D95526C1EF9161D0092CD47 /* PPTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPTableViewCell.swift; sourceTree = "<group>"; };
+		1D95526D1EF9161D0092CD47 /* PPTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPTableViewCell.xib; sourceTree = "<group>"; };
 		2297A13F1EF4FFB500868512 /* PPBadgeViewSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PPBadgeViewSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2297A1491EF4FFB500868512 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2297A14C1EF4FFB500868512 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,6 +76,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D9552661EF915D50092CD47 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1D95526C1EF9161D0092CD47 /* PPTableViewCell.swift */,
+				1D95526D1EF9161D0092CD47 /* PPTableViewCell.xib */,
+			);
+			name = Views;
+			path = ../../../../../../../yiai/Desktop/GitHub/PPBadgeView/PPBadgeViewSwift/PPBadgeViewSwift/Classes/Views;
+			sourceTree = "<group>";
+		};
 		2297A1361EF4FFB500868512 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				22F186861EF8080300C59CF7 /* PPBadgeView */,
+				1D9552661EF915D50092CD47 /* Views */,
 				2297A18B1EF7FEF700868512 /* Controllers */,
 				2297A18C1EF7FEF700868512 /* Main */,
 				2297A18E1EF7FEF700868512 /* Views */,
@@ -218,6 +233,7 @@
 				TargetAttributes = {
 					2297A13E1EF4FFB500868512 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					2297A1521EF4FFB500868512 = {
@@ -254,6 +270,7 @@
 				2297A1951EF7FF6200868512 /* PPViewController1.xib in Resources */,
 				2297A14D1EF4FFB500868512 /* LaunchScreen.storyboard in Resources */,
 				2297A14A1EF4FFB500868512 /* Assets.xcassets in Resources */,
+				1D95526F1EF9161D0092CD47 /* PPTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +294,7 @@
 				22F186881EF8082D00C59CF7 /* PPBadgeLabel.swift in Sources */,
 				2297A18F1EF7FEF700868512 /* AppDelegate.swift in Sources */,
 				2297A1991EF7FF8C00868512 /* PPViewController3.swift in Sources */,
+				1D95526E1EF9161D0092CD47 /* PPTableViewCell.swift in Sources */,
 				2297A1911EF7FF3200868512 /* PPTabBarController.swift in Sources */,
 				22F1868A1EF809DE00C59CF7 /* UIView+PPBadgeView.swift in Sources */,
 				2297A1971EF7FF7C00868512 /* PPViewController2.swift in Sources */,
@@ -411,11 +429,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = PPBadgeViewSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jkpang.PPBadgeViewSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -424,6 +444,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = PPBadgeViewSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

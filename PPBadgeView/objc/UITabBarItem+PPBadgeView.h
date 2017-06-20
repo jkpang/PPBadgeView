@@ -12,28 +12,28 @@
 @interface UITabBarItem (PPBadgeView)
 
 /**
- 给控件添加带文本内容的Badge, 默认红色
+ 添加带文本内容的Badge, 默认右上角, 红色, 18pts
  */
 - (void)pp_addBadgeWithText:(NSString *)text;
 /**
- 给控件添加带整形数字的Badge, 默认红色
+ 添加带数字的Badge, 默认右上角,红色,18pts
  */
 - (void)pp_addBadgeWithNumber:(NSInteger)number;
 /**
- 给控件添加带颜色的小圆点, 默认红色
+ 添加带颜色的小圆点, 默认右上角, 红色, 8pts
  */
 - (void)pp_addDotWithColor:(UIColor *)color;
 
 /**
- 设置Badge的高度
- (因为Badge宽度是动态可变的,改变Badge的高度,其宽度也按高度的比例变化,方便布局)
+ 设置Badge的高度,因为Badge宽度是动态可变的,通过改变Badge高度,其宽度也按比例变化,方便布局
+ (注意: 此方法需要将Badge添加到控件上后再调用!!!)
  
  @param points 高度的尺寸
  */
 - (void)pp_setBadgeHeightPoints:(CGFloat)points;
 
 /**
- 设置Badge在控件上的偏移量, Badge的中心默认为其父视图的右上角
+ 设置Badge的偏移量, Badge中心点默认为其父视图的右上角
  
  @param x X轴偏移量 (x<0: 左移, x>0: 右移)
  @param y Y轴偏移量 (y<0: 上移, y>0: 下移)

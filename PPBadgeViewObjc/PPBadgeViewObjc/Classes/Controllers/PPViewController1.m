@@ -23,16 +23,14 @@
     
     [self setupViews];
     [self setupBadges];
-    
 }
-
 
 #pragma mark - Badges Example
 - (void)setupBadges
 {
     [self.tabBarItem pp_addBadgeWithText:@"99+"];
     
-    // 1.给UIBarButtonItem添加bage
+    // 1.给UIBarButtonItem添加badge
     // 1.1 左边
     [self.navigationItem.leftBarButtonItem pp_addBadgeWithNumber:1];
     // 调整badge大小
