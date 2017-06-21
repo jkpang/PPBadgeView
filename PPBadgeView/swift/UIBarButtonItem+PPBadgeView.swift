@@ -97,7 +97,15 @@ public extension UIBarButtonItem {
         _bottomView.pp_decreaseBy(number: number)
     }
 
+    /// 通过Xcode视图调试工具找到UIBarButtonItem的Badge所在父视图为:UIImageView
     private var _bottomView: UIView {
-        return self.value(forKey: "_view") as! UIView
+        let navigationButton:UIView = self.value(forKey: "_view") as! UIView
+        for subView in navigationButton.subviews {
+            if subView.isKind(of: NSClassFromString("UIImageView")!) {
+                subView.layer.masksToBounds = false
+                return subView
+            }
+        }
+        return navigationButton
     }
 }

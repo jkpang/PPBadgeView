@@ -27,9 +27,9 @@ class PPViewController1: UIViewController {
         // 1.1 左边
         self.navigationItem.leftBarButtonItem?.pp_addBadge(number: 1);
         // 调整badge大小
-        self.navigationItem.leftBarButtonItem?.pp_setBadgeHeight(points: 21.0);
+//        self.navigationItem.leftBarButtonItem?.pp_setBadgeHeight(points: 21.0);
         // 调整badge的位置
-        self.navigationItem.leftBarButtonItem?.pp_moveBadge(x: -7, y: 5)
+//        self.navigationItem.leftBarButtonItem?.pp_moveBadge(x: -7, y: 5)
         // 自定义badge的属性: 字体大小/颜色, 背景颜色...(默认系统字体13,白色,背景色为系统badge红色)
         self.navigationItem.leftBarButtonItem?.pp_setBadgeLabel(attributes: { (badgeLabel) in
             // badgeLabel.font = UIFont.systemFont(ofSize: 13)
@@ -38,7 +38,7 @@ class PPViewController1: UIViewController {
         
         // 1.2 右边
         self.navigationItem.rightBarButtonItem?.pp_addDot(color: nil);
-        self.navigationItem.rightBarButtonItem?.pp_moveBadge(x: -5, y: 0);
+//        self.navigationItem.rightBarButtonItem?.pp_moveBadge(x: -5, y: 0);
     }
     
     func setupViews() {

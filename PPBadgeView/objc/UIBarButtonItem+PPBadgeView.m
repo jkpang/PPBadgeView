@@ -85,7 +85,15 @@
 #pragma mark - 获取Badge的父视图
 - (UIView *)bottomView
 {
-    return [self valueForKey:@"_view"];
+    // 通过Xcode视图调试工具找到UIBarButtonItem的Badge所在父视图为:UIImageView
+    UIView *navigationButton = [self valueForKey:@"_view"];
+    for (UIView *subView in navigationButton.subviews) {
+        if ([subView isKindOfClass:NSClassFromString(@"UIImageView")]) {
+            subView.layer.masksToBounds = NO;
+            return subView;
+        }
+    }
+    return navigationButton;
 }
 
 @end
