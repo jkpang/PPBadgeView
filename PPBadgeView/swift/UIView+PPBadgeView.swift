@@ -28,6 +28,7 @@ public extension UIView {
     ///
     /// - Parameter text: 文本字符串
     public func pp_addBadge(text: String) {
+        pp_showBadge()
         self.badgeLabel.text = text;
     }
     

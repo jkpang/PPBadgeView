@@ -2,7 +2,7 @@
 
 iOS Custom Badge, Support UIView, UITabBarItem, UIBarButtonItem
 
-iOS自定义Badge控件, 支持UIView, UITabBarItem, UIBarButtonItem
+iOS自定义Badge组件, 支持UIView, UITabBarItem, UIBarButtonItem以及子类
 
 ![](https://img.shields.io/badge/platform-iOS-red.svg)   ![](https://img.shields.io/badge/language-Objective--C%2FSwift%203.0-orange.svg) ![](https://img.shields.io/cocoapods/v/PPBadgeView.svg?style=flat) ![](https://img.shields.io/cocoapods/dt/PPBadgeView.svg) ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)  [![](https://img.shields.io/badge/weibo-jkpang--%E5%BA%9E-red.svg)](http://weibo.com/5743737098/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1)
 
@@ -20,8 +20,8 @@ iOS自定义Badge控件, 支持UIView, UITabBarItem, UIBarButtonItem
 * Swift : 拖入PPBadgeView/swift文件夹中的.swift文件开始使用
 
 ### 2.CocoaPods安装:
- * Objective-C :  `pod 'PPBadgeView' `
- * Swift :        `pod 'PPBadgeViewSwift' `
+ * Objective-C :  `pod 'PPBadgeView'` then `#import <PPBadgeView.h>`
+ * Swift :        `pod 'PPBadgeViewSwift' ` then `import PPBadgeViewSwift`
 
 如果发现pod search PPBadgeView/PPBadgeViewSwift 不是最新版本，在终端执行pod setup命令更新本地spec镜像缓存(时间可能有点长),重新搜索就OK了
 

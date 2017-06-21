@@ -34,6 +34,7 @@ static NSString *const kBadgeLabel = @"kBadgeLabel";
 - (void)pp_addBadgeWithText:(NSString *)text
 {
     [self lazyLoadBadgeLabel];
+    [self pp_showBadge];
     self.badgeLabel.text = text;
 }
 
