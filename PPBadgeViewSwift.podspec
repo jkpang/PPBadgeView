@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
 
-    s.name         = "PPBadgeView"
+    s.name         = "PPBadgeViewSwift"
 
     s.version      = "1.0.0"
 
@@ -17,8 +17,10 @@ Pod::Spec.new do |s|
 
     s.source       = { :git => "https://github.com/jkpang/PPBadgeView.git", :tag => s.version }
 
-    s.source_files = 'PPBadgeView/objc/*.{h,m}'
+    s.source_files = 'PPBadgeView/swift/*.{swift}'
 
+    s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
+    
     s.framework = 'UIKit'
 
     s.requires_arc = true
