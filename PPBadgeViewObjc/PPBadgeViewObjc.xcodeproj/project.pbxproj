@@ -10,7 +10,6 @@
 		2297A0E81EF4FD8A00868512 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A0E71EF4FD8A00868512 /* main.m */; };
 		2297A0F31EF4FD8A00868512 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2297A0F21EF4FD8A00868512 /* Assets.xcassets */; };
 		2297A0F61EF4FD8A00868512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2297A0F41EF4FD8A00868512 /* LaunchScreen.storyboard */; };
-		2297A1011EF4FD8A00868512 /* PPBadgeViewObjcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A1001EF4FD8A00868512 /* PPBadgeViewObjcTests.m */; };
 		2297A10F1EF4FE0900868512 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A10E1EF4FE0900868512 /* AppDelegate.m */; };
 		2297A1271EF4FE6B00868512 /* PPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A1261EF4FE6B00868512 /* PPTabBarController.m */; };
 		2297A1321EF4FEFF00868512 /* PPBadgeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A12A1EF4FEFF00868512 /* PPBadgeLabel.m */; };
@@ -40,7 +39,6 @@
 		2297A0F51EF4FD8A00868512 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2297A0F71EF4FD8A00868512 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2297A0FC1EF4FD8A00868512 /* PPBadgeViewObjcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PPBadgeViewObjcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2297A1001EF4FD8A00868512 /* PPBadgeViewObjcTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPBadgeViewObjcTests.m; sourceTree = "<group>"; };
 		2297A1021EF4FD8A00868512 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2297A10D1EF4FE0900868512 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2297A10E1EF4FE0900868512 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 		2297A0FF1EF4FD8A00868512 /* PPBadgeViewObjcTests */ = {
 			isa = PBXGroup;
 			children = (
-				2297A1001EF4FD8A00868512 /* PPBadgeViewObjcTests.m */,
 				2297A1021EF4FD8A00868512 /* Info.plist */,
 			);
 			path = PPBadgeViewObjcTests;
@@ -305,7 +302,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2297A1011EF4FD8A00868512 /* PPBadgeViewObjcTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
