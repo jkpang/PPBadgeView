@@ -4,6 +4,8 @@ iOS Custom Badge, Support UIView, UITabBarItem, UIBarButtonItem
 
 iOS自定义Badge组件, 支持UIView, UITabBarItem, UIBarButtonItem以及子类
 
+##### 原理请戳: [掘金地址](https://juejin.im/post/594a69808d6d8109de2c5a06) 、 [简书地址](http://www.jianshu.com/p/89fa23d53400)
+
 ![](https://img.shields.io/badge/platform-iOS-red.svg)   ![](https://img.shields.io/badge/language-Objective--C%2FSwift%203.0-orange.svg) ![](https://img.shields.io/cocoapods/v/PPBadgeView.svg?style=flat) ![](https://img.shields.io/cocoapods/dt/PPBadgeView.svg) ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)  [![](https://img.shields.io/badge/weibo-jkpang--%E5%BA%9E-red.svg)](http://weibo.com/5743737098/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1)
 
 
@@ -106,6 +108,7 @@ view?.pp_increase()
 
 ## CocoaPods更新日志
 * 2017.06.21(tag:1.0.0)--初始化到CocoaPods;
+
 ## 联系方式:
 * Weibo : [@jkpang-庞](http://weibo.com/5743737098/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1)
 * Email : jkpang@outlook.com
