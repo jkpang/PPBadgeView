@@ -21,37 +21,50 @@ import UIKit
 
 private var kBadgeLabel = "kBadgeLabel"
 
-// MARK: - add Badge
+public struct PP<Base> {
+    public let base: Base
+    public init(_ base: Base) {
+        self.base = base
+    }
+}
+
 public extension UIView {
+    public var pp: PP<UIView> {
+        return PP(self)
+    }
+}
+
+// MARK: - add Badge
+public extension PP where Base: UIView {
     
     /// 添加带文本内容的Badge, 默认右上角, 红色, 18pts
     ///
     /// - Parameter text: 文本字符串
-    public func pp_addBadge(text: String) {
-        pp_showBadge()
-        self.badgeLabel.text = text;
+    public func addBadge(text: String) {
+        showBadge()
+        self.base.badgeLabel.text = text;
     }
     
     /// 添加带数字的Badge, 默认右上角,红色,18pts
     ///
     /// - Parameter number: 整形数字
-    public func pp_addBadge(number: Int) {
+    public func addBadge(number: Int) {
         if number <= 0 {
-            pp_addBadge(text: "0")
-            pp_hiddenBadge()
+            addBadge(text: "0")
+            hiddenBadge()
             return
         }
-        pp_addBadge(text: "\(number)")
+        addBadge(text: "\(number)")
     }
     
     /// 添加带颜色的小圆点, 默认右上角, 红色, 8pts
     ///
     /// - Parameter color: 颜色
-    public func pp_addDot(color: UIColor?) {
-        pp_addBadge(text: "")
-        pp_setBadgeHeight(points: 8.0)
+    public func addDot(color: UIColor?) {
+        addBadge(text: "")
+        setBadgeHeight(points: 8.0)
         if let color = color  {
-            self.badgeLabel.backgroundColor = color
+            self.base.badgeLabel.backgroundColor = color
         }
     }
     
@@ -60,7 +73,7 @@ public extension UIView {
     /// - Parameters:
     ///   - x: X轴偏移量 (x<0: 左移, x>0: 右移)
     ///   - y: Y轴偏移量 (y<0: 上移, y>0: 下移)
-    public func pp_moveBadge(x: CGFloat, y: CGFloat) {
+    public func moveBadge(x: CGFloat, y: CGFloat) {
         /**
          self.badgeLabel.center = CGPointMake(self.p_width+x, y);
          
@@ -68,65 +81,66 @@ public extension UIView {
          会导致badge会以中心点向两边调整其自身宽度,如果badge过长会遮挡部分父视图, 所以
          正确的方式是以badge的x坐标为起点,其宽度向x轴正方向增加/x轴负方向减少
          */
-        self.badgeLabel.p_x = (self.p_width - self.badgeLabel.p_height*0.5)/*badge的x坐标*/ + x;
-        self.badgeLabel.p_y = -self.badgeLabel.p_height*0.5/*badge的y坐标*/ + y;
+        self.base.badgeLabel.p_x = (self.base.p_width - self.base.badgeLabel.p_height*0.5)/*badge的x坐标*/ + x;
+        self.base.badgeLabel.p_y = -self.base.badgeLabel.p_height*0.5/*badge的y坐标*/ + y;
     }
     
     /// 设置Badge的高度,因为Badge宽度是动态可变的,通过改变Badge高度,其宽度也按比例变化,方便布局
     /// (注意: 此方法需要将Badge添加到控件上后再调用!!!)
     ///
     /// - Parameter points: 高度大小
-    public func pp_setBadgeHeight(points: CGFloat) {
-        let scale = points/self.badgeLabel.p_height        
-        self.badgeLabel.transform = self.badgeLabel.transform.scaledBy(x: scale, y: scale);
+    public func setBadgeHeight(points: CGFloat) {
+        let scale = points/self.base.badgeLabel.p_height
+        self.base.badgeLabel.transform = self.base.badgeLabel.transform.scaledBy(x: scale, y: scale);
     }
     
     /// 设置Bage的属性
     ///
     /// - Parameter attributes: 将badgeLabel对象回调出来的闭包
-    public func pp_setBadgeLabel(attributes: (PPBadgeLabel)->()) {
-        attributes(self.badgeLabel)
+    public func setBadgeLabel(attributes: (PPBadgeLabel)->()) {
+        attributes(self.base.badgeLabel)
     }
     
     /// 显示Badge
-    public func pp_showBadge() {
-        self.badgeLabel.isHidden = false
+    public func showBadge() {
+        self.base.badgeLabel.isHidden = false
     }
     
     /// 隐藏Badge
-    public func pp_hiddenBadge() {
-        self.badgeLabel.isHidden = true
+    public func hiddenBadge() {
+        self.base.badgeLabel.isHidden = true
     }
     
     // MARK: - 数字增加/减少, 注意:以下方法只适用于Badge内容为纯数字的情况
     /// badge数字加1
-    public func pp_increase() {
-        pp_increaseBy(number: 1)
+    public func increase() {
+        increaseBy(number: 1)
     }
     
     /// badge数字加number
-    public func pp_increaseBy(number: Int) {
-        let result = (NumberFormatter().number(from: self.badgeLabel.text!)?.intValue)! + number
+    public func increaseBy(number: Int) {
+        let label = self.base.badgeLabel
+        let result = ((NumberFormatter().number(from: label.text ?? "")?.intValue) ?? 0) + number
         if result > 0 {
-            pp_showBadge()
+            showBadge()
         }
-        self.badgeLabel.text = "\(String(describing: result))"
+        label.text = "\(String(describing: result))"
     }
     
     /// badge数字加1
-    public func pp_decrease() {
-        pp_decreaseBy(number: 1)
+    public func decrease() {
+        decreaseBy(number: 1)
     }
     
     /// badge数字减number
-    public func pp_decreaseBy(number: Int) {
-        let result = (NumberFormatter().number(from: self.badgeLabel.text!)?.intValue)! - number;
+    public func decreaseBy(number: Int) {
+        let result = (NumberFormatter().number(from: self.base.badgeLabel.text!)?.intValue)! - number;
         if (result <= 0) {
-            pp_hiddenBadge()
-            self.badgeLabel.text = "0";
+            hiddenBadge()
+            self.base.badgeLabel.text = "0";
             return;
         }
-        self.badgeLabel.text = "\(result)";
+        self.base.badgeLabel.text = "\(result)";
     }
 }
 

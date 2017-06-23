@@ -34,20 +34,20 @@ class PPTabBarController: UITabBarController {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.1) {
             
             // 给controller1.tabBarItem
-            controller1.tabBarItem.pp_addBadge(text: "99+")
+            controller1.tabBarItem.pp.addBadge(text: "99+")
             
             // 给controller2.tabBarItem
-            controller2.tabBarItem.pp_addBadge(number: 7)
-            controller2.tabBarItem.pp_setBadgeLabel(attributes: { (badgeLabel) in
+            controller2.tabBarItem.pp.addBadge(number: 7)
+            controller2.tabBarItem.pp.setBadgeLabel(attributes: { (badgeLabel) in
                 badgeLabel.backgroundColor = UIColor.blue
             })
             
             // 给controller3.tabBarItem
-            controller3.tabBarItem.pp_addDot(color: UIColor.green)
+            controller3.tabBarItem.pp.addDot(color: UIColor.green)
             
             // 给controller4.tabBarItem
-            controller4.tabBarItem.pp_addDot(color: UIColor.orange)
-            controller4.tabBarItem.pp_setBadgeHeight(points: 12)
+            controller4.tabBarItem.pp.addDot(color: UIColor.orange)
+            controller4.tabBarItem.pp.setBadgeHeight(points: 12)
         }
         
     }
