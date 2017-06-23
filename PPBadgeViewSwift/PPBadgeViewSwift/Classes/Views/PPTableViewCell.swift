@@ -25,8 +25,8 @@ class PPTableViewCell: UITableViewCell {
     func setupBadge() {
         
         // 1. 给headeView添加小圆点
-        self.headerView.pp_addDot(color: randomColor())
-        self.headerView.pp_moveBadge(x: -1, y: 1)
+        self.headerView.pp.addDot(color: randomColor())
+        self.headerView.pp.moveBadge(x: -1, y: 1)
         
         // 2. 给cell添加badge
         self.badge.backgroundColor = randomColor()
