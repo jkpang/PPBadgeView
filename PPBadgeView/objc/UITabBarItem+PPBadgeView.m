@@ -88,10 +88,10 @@
 
 - (UIView *)bottomView
 {
-    // 通过Xcode视图调试工具找到UITabBarItem原生Badge所在父视图为:UITabBarSwappableImageView
+    // 通过Xcode视图调试工具找到UITabBarItem原生Badge所在父视图
     UIView *tabBarButton = [self valueForKey:@"_view"];
     for (UIView *subView in tabBarButton.subviews) {
-        if ([subView isKindOfClass:NSClassFromString(@"UITabBarSwappableImageView")]) {
+        if ([NSStringFromClass(subView.superclass) isEqualToString:@"UIImageView"]) {
             return subView;
         }
     }

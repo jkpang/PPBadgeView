@@ -105,11 +105,11 @@ public extension PP where Base: UITabBarItem {
         _bottomView.pp.decreaseBy(number: number)
     }
     
-    /// 通过Xcode视图调试工具找到UITabBarItem原生Badge所在父视图为:UITabBarSwappableImageView
+    /// 通过Xcode视图调试工具找到UITabBarItem原生Badge所在父视图
     private var _bottomView: UIView {
         let tabBarButton:UIView = self.base.value(forKey: "_view") as! UIView
         for subView in tabBarButton.subviews {
-            if subView.isKind(of: NSClassFromString("UITabBarSwappableImageView")!) {
+            if NSStringFromClass(subView.superclass!) == "UIImageView" {
                 return subView
             }
         }

@@ -107,6 +107,7 @@ view?.pp_increase()
 ===
 
 ## CocoaPods更新日志
+* 2017.06.27(tag:1.1.0)--remove Private API — "UITabBarSwappableImageView"  <--> 移除私有API属性"UITabBarSwappableImageView";
 * 2017.06.21(tag:1.0.0)--初始化到CocoaPods;
 
 ## 联系方式:
