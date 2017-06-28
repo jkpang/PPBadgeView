@@ -76,31 +76,31 @@ view = UIView, UITabBarItem, UIBarButtonItem及其子类
 view = UIView, UITabBarItem, UIBarButtonItem及其子类
 
 // 添加带文本内容的Badge, 默认右上角, 红色, 18pts
-view?.pp_addBadge(text: "99+");
+view?.pp.addBadge(text: "99+");
 
 // 添加带数字的Badge, 默认右上角,红色,18pts
-view?.pp_addBadge(number: 1);
+view?.pp.addBadge(number: 1);
 
 // 设置Badge的高度,因为Badge宽度是动态可变的,通过改变Badge高度,其宽度也按比例变化,方便布局
 // (注意: 此方法需要将Badge添加到控件上后再调用!!!)
-view?.pp_setBadgeHeight(points: 21.0);
+view?.pp.setBadgeHeight(points: 21.0);
 
 /// 设置Badge的偏移量, Badge中心点默认为其父视图的右上角
 ///
 /// - Parameters:
 ///   - x: X轴偏移量 (x<0: 左移, x>0: 右移)
 ///   - y: Y轴偏移量 (y<0: 上移, y>0: 下移)
-view?.pp_moveBadge(x: -7, y: 5)
+view?.pp.moveBadge(x: -7, y: 5)
 
 // 自定义badge的属性: 字体大小/颜色, 背景颜色...(默认系统字体13,白色,背景色为系统badge红色)
-view?.pp_setBadgeLabel(attributes: { (badgeLabel) in
+view?.pp.setBadgeLabel(attributes: { (badgeLabel) in
       badgeLabel.font = UIFont.systemFont(ofSize: 13)
       badgeLabel.textColor = UIColor.blue
 })
 
 // 数字增加/减少, 注意:以下方法只适用于Badge内容为纯数字的情况
-view?.pp_decrease()
-view?.pp_increase()
+view?.pp.decrease()
+view?.pp.increase()
 ```
 
 #### 更多的用法请查看Demo
