@@ -121,12 +121,21 @@ view?.pp.decrease()
 view?.pp.increase()
 ```
 
-#### 更多的用法请查看Demo
-===
+#### 更多的用法请查看Demo 
 
 ## CocoaPods更新日志
-* 2017.06.27(tag:1.1.0)--remove Private API — "UITabBarSwappableImageView"  <--> 移除私有API属性"UITabBarSwappableImageView";
-* 2017.06.21(tag:1.0.0)--初始化到CocoaPods;
+
+```
+• 2017.06.27(tag:1.1.1):
+  添加英文注释 <-> Add English comments
+
+• 2017.06.27(tag:1.1.0):
+  移除私有API属性"UITabBarSwappableImageView"代码;
+  Removes the private API property "UITabBarSwappableImageView" code
+  
+• 2017.06.21(tag:1.0.0):
+  初始化到CocoaPods <-> Initialize to CocoaPods
+```
 
 ## 联系方式:
 * Weibo : [@jkpang-庞](http://weibo.com/5743737098/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1)
