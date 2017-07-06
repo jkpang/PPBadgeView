@@ -9,7 +9,7 @@
 /*
  *********************************************************************************
  *
- * Weibo : jkpang-庞 (http://weibo.com/jkpang)
+ * Weibo : jkpang-庞 (http://weibo.com/jkpang )
  * Email : jkpang@outlook.com
  * QQ 群 : 323408051
  * GitHub: https://github.com/jkpang
