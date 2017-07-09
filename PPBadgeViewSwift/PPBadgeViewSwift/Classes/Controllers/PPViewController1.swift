@@ -44,14 +44,14 @@ class PPViewController1: UIViewController {
     func setupViews() {
         self.tableView.rowHeight = 60
         self.tableView.register(UINib.init(nibName: "PPTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .trash, target: self, action: Selector("delete"))
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: Selector("add"))
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .trash, target: self, action: #selector(deleteNum))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: .add, target: self, action: #selector(addNum))
     }
     
-    func delete() {
+    @objc fileprivate func deleteNum() {
         self.navigationItem.leftBarButtonItem?.pp.decrease()
     }
-    func add() {
+    @objc fileprivate func addNum() {
         self.navigationItem.leftBarButtonItem?.pp.increase()
     }
     
