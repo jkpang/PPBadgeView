@@ -6,7 +6,7 @@ iOS自定义Badge组件, 支持UIView, UITabBarItem, UIBarButtonItem以及子类
 
 #### 原理请戳: [掘金地址](https://juejin.im/post/594a69808d6d8109de2c5a06) 、 [简书地址](http://www.jianshu.com/p/89fa23d53400)
 
-![](https://img.shields.io/badge/platform-iOS-red.svg)   ![](https://img.shields.io/badge/language-Objective--C%2FSwift%203.0-orange.svg) ![](https://img.shields.io/cocoapods/v/PPBadgeView.svg?style=flat) ![](https://img.shields.io/cocoapods/dt/PPBadgeView.svg) ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)  [![](https://img.shields.io/badge/weibo-jkpang--%E5%BA%9E-red.svg)](http://weibo.com/5743737098/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1)
+![](https://img.shields.io/badge/platform-iOS-red.svg)   ![](https://img.shields.io/badge/language-Objective--C%2FSwift%203.0-orange.svg) ![](https://img.shields.io/cocoapods/v/PPBadgeView.svg?style=flat) ![](https://img.shields.io/cocoapods/dt/PPBadgeView.svg) ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)  [![](https://img.shields.io/badge/weibo-jkpang--%E5%BA%9E-red.svg)](http://weibo.com/5743737098/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1) 
 
 
 ![iPhone](https://github.com/jkpang/PPBadgeView/blob/master/Picture/PPBadgeView.gif)
@@ -126,6 +126,9 @@ view?.pp.increase()
 ## CocoaPods更新日志
 
 ```
+• 2017.08.28(tag:1.1.2-PPBadgeViewSwift):
+  修复PPBadgeViewSwift给UITabBarItem会崩溃的bug <-> Fix PPBadgeViewSwift to UITabBarItem will crash bug
+  
 • 2017.06.27(tag:1.1.1):
   添加英文注释 <-> Add English comments
 

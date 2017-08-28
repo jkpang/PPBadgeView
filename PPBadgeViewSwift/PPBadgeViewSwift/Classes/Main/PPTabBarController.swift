@@ -32,7 +32,7 @@ class PPTabBarController: UITabBarController {
          在实际开发中,badge的显示是在网络请求成功/推送之后,所以不用担心获取不到tabBarItem添加不了badge
          */
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.1) {
-            
+
             // 给controller1.tabBarItem
             controller1.tabBarItem.pp.addBadge(text: "99+")
             
