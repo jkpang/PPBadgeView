@@ -18,6 +18,17 @@ class PPViewController1: UIViewController {
 
         setupViews()
         
+        /**
+         iOS11系统下 -(void)viewDidLoad中获取不到UIBarButtonItem的实例,demo为了演示效果做了0.001s的延时操作,
+         在实际开发中,badge的显示是在网络请求成功/推送之后,所以不用担心获取不到UIBarButtonItem添加不了badge
+         */
+        if kSystemVersion >= 11.0 {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.01, execute: {
+                self.setupBadges()
+            })
+            return
+        }
+        
         setupBadges()
     }
 

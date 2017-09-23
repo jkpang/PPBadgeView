@@ -87,8 +87,9 @@
 {
     // 通过Xcode视图调试工具找到UIBarButtonItem的Badge所在父视图为:UIImageView
     UIView *navigationButton = [self valueForKey:@"_view"];
+    NSString *controlName = (kSystemVersion < 11 ? @"UIImageView" : @"UIButton" );
     for (UIView *subView in navigationButton.subviews) {
-        if ([subView isKindOfClass:NSClassFromString(@"UIImageView")]) {
+        if ([subView isKindOfClass:NSClassFromString(controlName)]) {
             subView.layer.masksToBounds = NO;
             return subView;
         }

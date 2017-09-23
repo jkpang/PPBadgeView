@@ -19,6 +19,8 @@
 
 import UIKit
 
+let kSystemVersion = (UIDevice.current.systemVersion as NSString).doubleValue
+
 open class PPBadgeLabel: UILabel {
     
     override public init(frame: CGRect) {
@@ -48,7 +50,7 @@ open class PPBadgeLabel: UILabel {
     override open var text: String? {
         didSet {
             // 根据内容长度调整Label宽
-            let stringWidth = widthForString(string: self.text!, font: self.font, height: self.p_height)
+            let stringWidth = width(string: self.text, font: self.font, height: self.p_height)
             if self.p_height > stringWidth + self.p_height*10/18 {
                 self.p_width = self.p_height
                 return
@@ -57,11 +59,13 @@ open class PPBadgeLabel: UILabel {
         }
     }
     
-    private func widthForString(string: String, font:UIFont, height: CGFloat) -> CGFloat {
-        let attributes : [String: AnyObject] = [NSFontAttributeName: font]
-        let options = NSStringDrawingOptions.usesLineFragmentOrigin.rawValue | NSStringDrawingOptions.usesFontLeading.rawValue
-        let size = CGSize(width: CGFloat.greatestFiniteMagnitude, height: height)
-        let rect = (string as NSString).boundingRect(with: size, options: NSStringDrawingOptions(rawValue: options), attributes: attributes, context: nil)
-        return rect.size.width
+    private func width(string: String?, font: UIFont, height: CGFloat) -> CGFloat {
+        if string?.isEmpty == true { return 0.0 }
+        var attributes : [NSAttributedStringKey: AnyObject] = [.font : font]
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineBreakMode = .byWordWrapping
+        attributes.updateValue(paragraphStyle, forKey: .paragraphStyle)
+        let size = CGSize(width: CGFloat(Double.greatestFiniteMagnitude), height: height)
+        return ceil((string! as NSString).boundingRect(with: size, options: [.usesLineFragmentOrigin, .usesFontLeading], attributes:attributes, context: nil).width)
     }
 }

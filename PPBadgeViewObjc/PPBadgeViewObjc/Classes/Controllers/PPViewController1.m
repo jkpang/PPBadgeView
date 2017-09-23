@@ -22,6 +22,18 @@
     [super viewDidLoad];
     
     [self setupViews];
+    
+    /**
+     iOS11系统下 -(void)viewDidLoad中获取不到UIBarButtonItem的实例,demo为了演示效果做了0.001s的延时操作,
+     在实际开发中,badge的显示是在网络请求成功/推送之后,所以不用担心获取不到UIBarButtonItem添加不了badge
+     */
+    if (kSystemVersion >= 11) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.001 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self setupBadges];
+        });
+        return;
+    }
+    
     [self setupBadges];
 }
 
@@ -37,6 +49,7 @@
 //    [self.navigationItem.leftBarButtonItem pp_setBadgeHeightPoints:25];
     // 调整badge的位置
 //    [self.navigationItem.leftBarButtonItem pp_moveBadgeWithX:-7 Y:5];
+    
     // 自定义badge的属性: 字体大小/颜色, 背景颜色...(默认系统字体13,白色,背景色为系统badge红色)
     [self.navigationItem.leftBarButtonItem pp_setBadgeLabelAttributes:^(PPBadgeLabel *badgeLabel) {
         badgeLabel.backgroundColor = [UIColor redColor];
@@ -49,7 +62,6 @@
 //    [self.navigationItem.rightBarButtonItem pp_moveBadgeWithX:-5 Y:0];
     
 }
-
 
 - (void)setupViews
 {

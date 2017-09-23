@@ -17,6 +17,10 @@
  *********************************************************************************
  */
 
+#ifndef kSystemVersion
+#define kSystemVersion [UIDevice currentDevice].systemVersion.doubleValue
+#endif
+
 #import <UIKit/UIKit.h>
 
 @class PPBadgeLabel;

@@ -13,17 +13,16 @@ class PPTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let controller1 = PPViewController1.init()
-        let controller2 = PPViewController2.init()
-        let controller3 = PPViewController3.init()
-        let controller4 = PPViewController4.init()
+        let controller1 = PPViewController1()
+        let controller2 = PPViewController2()
+        let controller3 = PPViewController3()
+        let controller4 = PPViewController4()
         
         setupChildController(controller: controller1, title: "点餐", image: "dinner", selectedImage: "dinner_1")
         setupChildController(controller: controller2, title: "订单", image: "order", selectedImage: "order_1")
         setupChildController(controller: controller3, title: "充值", image: "top_up", selectedImage: "top_up_1")
         setupChildController(controller: controller4, title: "我的", image: "my", selectedImage: "my_1")
-        
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.darkGray], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.darkGray], for: .selected)
         
         /*
          给UITabBarItem添加badge
@@ -32,7 +31,7 @@ class PPTabBarController: UITabBarController {
          在实际开发中,badge的显示是在网络请求成功/推送之后,所以不用担心获取不到tabBarItem添加不了badge
          */
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+0.1) {
-
+            
             // 给controller1.tabBarItem
             controller1.tabBarItem.pp.addBadge(text: "99+")
             

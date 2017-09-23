@@ -26,10 +26,10 @@
     [self setupOneChildViewController:viewController1 title:@"点餐" image:@"dinner" selectedImage:@"dinner_1"];
     
     /**
-     tabBarVC的 -(void)viewDidLoad中获取不到tabBarItem实例,demo为了演示效果做了0.1s的延时操作,
+     tabBarVC的 -(void)viewDidLoad中获取不到tabBarItem实例,demo为了演示效果做了0.01s的延时操作,
      在实际开发中,badge的显示是在网络请求成功/推送之后,所以不用担心获取不到tabBarItem添加不了badge
      */
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         // 给UITabBarItem添加badge
         [viewController1.tabBarItem pp_addBadgeWithText:@"99+"];      

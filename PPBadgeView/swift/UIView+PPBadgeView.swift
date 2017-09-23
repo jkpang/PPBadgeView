@@ -161,9 +161,9 @@ public extension PP where Base: UIView {
 }
 
 // MARK: - getter/setter
-public extension UIView {
+extension UIView {
 
-    public var badgeLabel: PPBadgeLabel {
+    var badgeLabel: PPBadgeLabel {
         get {
             if let aValue = objc_getAssociatedObject(self, &kBadgeLabel) as? PPBadgeLabel {
                 return aValue
@@ -181,7 +181,7 @@ public extension UIView {
         }
     }
     
-    public var p_x: CGFloat {
+    var p_x: CGFloat {
         get {
             return frame.origin.x
         }
@@ -190,7 +190,7 @@ public extension UIView {
         }
     }
     
-    public var p_y: CGFloat {
+    var p_y: CGFloat {
         get {
             return frame.origin.y
         }
@@ -199,7 +199,7 @@ public extension UIView {
         }
     }
     
-    public var p_right: CGFloat {
+    var p_right: CGFloat {
         get {
             return frame.origin.x + frame.size.width
         }
@@ -208,7 +208,7 @@ public extension UIView {
         }
     }
     
-    public var p_bottom: CGFloat {
+    var p_bottom: CGFloat {
         get {
             return frame.origin.y + frame.size.height
         }
@@ -217,7 +217,7 @@ public extension UIView {
         }
     }
     
-    public var p_width: CGFloat {
+    var p_width: CGFloat {
         get {
             return frame.size.width
         }
@@ -226,7 +226,7 @@ public extension UIView {
         }
     }
     
-    public var p_height: CGFloat {
+    var p_height: CGFloat {
         get {
             return frame.size.height
         }
@@ -235,7 +235,7 @@ public extension UIView {
         }
     }
     
-    public var p_centerX: CGFloat {
+    var p_centerX: CGFloat {
         get {
             return center.x
         }
@@ -244,7 +244,7 @@ public extension UIView {
         }
     }
     
-    public var p_centerY: CGFloat {
+    var p_centerY: CGFloat {
         get {
             return center.y
         }
