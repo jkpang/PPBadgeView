@@ -44,7 +44,7 @@ public extension PP where Base: UIView {
     /// - Parameter text: 文本字符串
     public func addBadge(text: String) {
         showBadge()
-        self.base.badgeLabel.text = text;
+        self.base.badgeLabel.text = text
     }
     
     /// 添加带数字的Badge, 默认右上角,红色,18pts 
@@ -83,14 +83,14 @@ public extension PP where Base: UIView {
     ///   - y: Y轴偏移量 (y<0: 上移, y>0: 下移) axis offset (Y <0: up,   y> 0: down)
     public func moveBadge(x: CGFloat, y: CGFloat) {
         /**
-         self.badgeLabel.center = CGPointMake(self.p_width+x, y);
+         self.badgeLabel.center = CGPointMake(self.p_width+x, y)
          
          如果通过badge的center来调整其在父视图的位置, 在给badge赋值不同长度的内容时
          会导致badge会以中心点向两边调整其自身宽度,如果badge过长会遮挡部分父视图, 所以
          正确的方式是以badge的x坐标为起点,其宽度向x轴正方向增加/x轴负方向减少
          */
-        self.base.badgeLabel.p_x = (self.base.p_width - self.base.badgeLabel.p_height*0.5)/*badge的x坐标*/ + x;
-        self.base.badgeLabel.p_y = -self.base.badgeLabel.p_height*0.5/*badge的y坐标*/ + y;
+        self.base.badgeLabel.p_x = (self.base.p_width - self.base.badgeLabel.p_height*0.5)/*badge的x坐标*/ + x
+        self.base.badgeLabel.p_y = -self.base.badgeLabel.p_height*0.5/*badge的y坐标*/ + y
     }
     
     /// 设置Badge的高度,因为Badge宽度是动态可变的,通过改变Badge高度,其宽度也按比例变化,方便布局
@@ -104,7 +104,7 @@ public extension PP where Base: UIView {
     /// - Parameter points: 高度大小
     public func setBadgeHeight(points: CGFloat) {
         let scale = points/self.base.badgeLabel.p_height
-        self.base.badgeLabel.transform = self.base.badgeLabel.transform.scaledBy(x: scale, y: scale);
+        self.base.badgeLabel.transform = self.base.badgeLabel.transform.scaledBy(x: scale, y: scale)
     }
     
     /// 设置Bage的属性 ;
@@ -150,13 +150,13 @@ public extension PP where Base: UIView {
     
     /// badge数字减number
     public func decreaseBy(number: Int) {
-        let result = (NumberFormatter().number(from: self.base.badgeLabel.text!)?.intValue)! - number;
+        let result = (NumberFormatter().number(from: self.base.badgeLabel.text!)?.intValue)! - number
         if (result <= 0) {
             hiddenBadge()
-            self.base.badgeLabel.text = "0";
-            return;
+            self.base.badgeLabel.text = "0"
+            return
         }
-        self.base.badgeLabel.text = "\(result)";
+        self.base.badgeLabel.text = "\(result)"
     }
 }
 

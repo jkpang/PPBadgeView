@@ -25,7 +25,7 @@ open class PPBadgeLabel: UILabel {
     
     override public init(frame: CGRect) {
         super.init(frame: frame)
-        setupUI();
+        setupUI()
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -55,7 +55,7 @@ open class PPBadgeLabel: UILabel {
                 self.p_width = self.p_height
                 return
             }
-            self.p_width = self.p_height*5/18/*left*/ + stringWidth + self.p_height*5/18/*right*/;
+            self.p_width = self.p_height*5/18/*left*/ + stringWidth + self.p_height*5/18/*right*/
         }
     }
     
