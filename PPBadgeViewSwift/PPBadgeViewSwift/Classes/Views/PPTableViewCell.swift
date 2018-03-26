@@ -18,7 +18,7 @@ class PPTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.headerView.layer.cornerRadius = 3;
+        self.headerView.layer.cornerRadius = 3
         self.setupBadge()
     }
 
