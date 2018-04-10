@@ -42,6 +42,11 @@
     [[self bottomView] pp_setBadgeHeight:height];
 }
 
+- (void)pp_setBadgeFlexMode:(PPBadgeViewFlexMode)flexMode
+{
+    [[self bottomView] pp_setBadgeFlexMode:flexMode];
+}
+
 - (void)pp_moveBadgeWithX:(CGFloat)x Y:(CGFloat)y
 {
     [[self bottomView] pp_moveBadgeWithX:x Y:y];
@@ -87,7 +92,8 @@
 {
     // 通过Xcode视图调试工具找到UIBarButtonItem的Badge所在父视图为:UIImageView
     UIView *navigationButton = [self valueForKey:@"_view"];
-    NSString *controlName = (kSystemVersion < 11 ? @"UIImageView" : @"UIButton" );
+    double systemVersion = [UIDevice currentDevice].systemVersion.doubleValue;
+    NSString *controlName = (systemVersion < 11 ? @"UIImageView" : @"UIButton" );
     for (UIView *subView in navigationButton.subviews) {
         if ([subView isKindOfClass:NSClassFromString(controlName)]) {
             subView.layer.masksToBounds = NO;

@@ -47,8 +47,8 @@
     self.textAlignment = NSTextAlignmentCenter;
     self.layer.cornerRadius = self.p_height * 0.5;
     self.layer.masksToBounds = YES;
-    
     self.backgroundColor = [UIColor colorWithRed:1.00 green:0.17 blue:0.15 alpha:1.00];
+    self.flexMode = PPBadgeViewFlexModeTail;
 }
 
 - (void)setText:(NSString *)text

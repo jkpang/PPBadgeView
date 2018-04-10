@@ -46,7 +46,7 @@ class PPTabBarController: UITabBarController {
             
             // 给controller4.tabBarItem
             controller4.tabBarItem.pp.addDot(color: UIColor.orange)
-            controller4.tabBarItem.pp.setBadgeHeight(12)
+            controller4.tabBarItem.pp.setBadge(height: 12)
         }
         
     }

@@ -22,7 +22,7 @@ class PPViewController1: UIViewController {
          iOS11系统下 -(void)viewDidLoad中获取不到UIBarButtonItem的实例,demo为了演示效果做了0.001s的延时操作,
          在实际开发中,badge的显示是在网络请求成功/推送之后,所以不用担心获取不到UIBarButtonItem添加不了badge
          */
-        if kSystemVersion >= 11.0 {
+        if (UIDevice.current.systemVersion as NSString).doubleValue >= 11.0 {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.01, execute: {
                 self.setupBadges()
             })
@@ -48,8 +48,9 @@ class PPViewController1: UIViewController {
         })
         
         // 1.2 右边
-        self.navigationItem.rightBarButtonItem?.pp.addDot(color: nil)
-//        self.navigationItem.rightBarButtonItem?.pp.moveBadge(x: -5, y: 0)
+        self.navigationItem.rightBarButtonItem?.pp.addBadge(number: 5000000)
+        self.navigationItem.rightBarButtonItem?.pp.moveBadge(x: -5, y: 0)
+        self.navigationItem.rightBarButtonItem?.pp.setBadge(flexMode: .head)
     }
     
     func setupViews() {

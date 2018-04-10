@@ -44,6 +44,11 @@
     [[self bottomView] pp_setBadgeHeight:height];
 }
 
+- (void)pp_setBadgeFlexMode:(PPBadgeViewFlexMode)flexMode
+{
+    [[self bottomView] pp_setBadgeFlexMode:flexMode];
+}
+
 - (void)pp_moveBadgeWithX:(CGFloat)x Y:(CGFloat)y
 {
     [[self bottomView] pp_moveBadgeWithX:x Y:y];

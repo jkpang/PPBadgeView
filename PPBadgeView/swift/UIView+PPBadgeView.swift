@@ -68,7 +68,7 @@ public extension PP where Base: UIView {
     /// - Parameter color: 颜色
     public func addDot(color: UIColor?) {
         addBadge(text: "")
-        setBadgeHeight(8.0)
+        setBadge(height: 8.0)
         if let color = color  {
             self.base.badgeLabel.backgroundColor = color
         }
@@ -82,15 +82,31 @@ public extension PP where Base: UIView {
     ///   - x: X轴偏移量 (x<0: 左移, x>0: 右移) axis offset (x <0: left, x> 0: right)
     ///   - y: Y轴偏移量 (y<0: 上移, y>0: 下移) axis offset (Y <0: up,   y> 0: down)
     public func moveBadge(x: CGFloat, y: CGFloat) {
-        /**
-         self.badgeLabel.center = CGPointMake(self.p_width+x, y)
-         
-         如果通过badge的center来调整其在父视图的位置, 在给badge赋值不同长度的内容时
-         会导致badge会以中心点向两边调整其自身宽度,如果badge过长会遮挡部分父视图, 所以
-         正确的方式是以badge的x坐标为起点,其宽度向x轴正方向增加/x轴负方向减少
-         */
-        self.base.badgeLabel.p_x = (self.base.p_width - self.base.badgeLabel.p_height*0.5)/*badge的x坐标*/ + x
+        
+        self.base.badgeLabel.offset = CGPoint(x: x, y: y)
         self.base.badgeLabel.p_y = -self.base.badgeLabel.p_height*0.5/*badge的y坐标*/ + y
+        
+        switch self.base.badgeLabel.flexMode {
+        case .head:
+            self.base.badgeLabel.p_right = self.base.badgeLabel.superview!.p_width + self.base.badgeLabel.p_height*0.5 + x
+        case .tail:
+            self.base.badgeLabel.p_x = (self.base.p_width - self.base.badgeLabel.p_height*0.5)/*badge的x坐标*/ + x
+        case .middle:
+            self.base.badgeLabel.center = CGPoint(x: self.base.p_width+x, y: y)
+        }
+    }
+    
+    /// 设置Badge伸缩的方向
+    ///
+    /// Setting the direction of Badge expansion
+    ///
+    /// PPBadgeViewFlexModeHead,    左伸缩 Head Flex    : <==●
+    /// PPBadgeViewFlexModeTail,    右伸缩 Tail Flex    : ●==>
+    /// PPBadgeViewFlexModeMiddle   左右伸缩 Middle Flex : <=●=>
+    /// - Parameter flexMode : Default is PPBadgeViewFlexModeTail
+    public func setBadge(flexMode: PPBadgeViewFlexMode = .tail) {
+        self.base.badgeLabel.flexMode = flexMode
+        self.moveBadge(x: self.base.badgeLabel.offset.x, y: self.base.badgeLabel.offset.y)
     }
     
     /// 设置Badge的高度,因为Badge宽度是动态可变的,通过改变Badge高度,其宽度也按比例变化,方便布局
@@ -101,9 +117,9 @@ public extension PP where Base: UIView {
     ///
     /// (Note: this method needs to add Badge to the controls and then use it !!!)
     ///
-    /// - Parameter points: 高度大小
-    public func setBadgeHeight(_ points: CGFloat) {
-        let scale = points / self.base.badgeLabel.p_height
+    /// - Parameter height: 高度大小
+    public func setBadge(height: CGFloat) {
+        let scale = height / self.base.badgeLabel.p_height
         self.base.badgeLabel.transform = self.base.badgeLabel.transform.scaledBy(x: scale, y: scale)
     }
     

@@ -19,7 +19,13 @@
 
 import UIKit
 
-let kSystemVersion = (UIDevice.current.systemVersion as NSString).doubleValue
+public enum PPBadgeViewFlexMode {
+    case head    // 左伸缩 Head Flex    : <==●
+    case tail    // 右伸缩 Tail Flex    : ●==>
+    case middle  // 左右伸缩 Middle Flex : <=●=>
+}
+
+
 
 open class PPBadgeLabel: UILabel {
     
@@ -37,16 +43,13 @@ open class PPBadgeLabel: UILabel {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupUI() {
-        self.textColor = UIColor.white
-        self.font = UIFont.systemFont(ofSize: 13)
-        self.textAlignment = NSTextAlignment.center
-        self.layer.cornerRadius = self.p_height * 0.5
-        self.layer.masksToBounds = true
-        self.backgroundColor = UIColor.init(red: 1.00, green: 0.17, blue: 0.15, alpha: 1.0)
-    }
+    /// 记录Badge的偏移量 Record the offset of Badge
+    public var offset: CGPoint = CGPoint(x: 0, y: 0)
     
-    // 重写UILabel的text属性方法
+    /// Badge伸缩的方向, Default is PPBadgeViewFlexModeTail
+    public var flexMode: PPBadgeViewFlexMode = .tail
+    
+    /// 重写UILabel的text属性方法
     override open var text: String? {
         didSet {
             // 根据内容长度调整Label宽
@@ -57,6 +60,15 @@ open class PPBadgeLabel: UILabel {
             }
             self.p_width = self.p_height*5/18/*left*/ + stringWidth + self.p_height*5/18/*right*/
         }
+    }
+    
+    private func setupUI() {
+        self.textColor = UIColor.white
+        self.font = UIFont.systemFont(ofSize: 13)
+        self.textAlignment = NSTextAlignment.center
+        self.layer.cornerRadius = self.p_height * 0.5
+        self.layer.masksToBounds = true
+        self.backgroundColor = UIColor.init(red: 1.00, green: 0.17, blue: 0.15, alpha: 1.0)
     }
     
     private func width(string: String?, font: UIFont, height: CGFloat) -> CGFloat {

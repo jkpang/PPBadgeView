@@ -27,7 +27,7 @@
      iOS11系统下 -(void)viewDidLoad中获取不到UIBarButtonItem的实例,demo为了演示效果做了0.001s的延时操作,
      在实际开发中,badge的显示是在网络请求成功/推送之后,所以不用担心获取不到UIBarButtonItem添加不了badge
      */
-    if (kSystemVersion >= 11) {
+    if ([UIDevice currentDevice].systemVersion.doubleValue >= 11) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.001 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self setupBadges];
         });
@@ -58,9 +58,9 @@
     }];
     
     // 1.2 右边
-    [self.navigationItem.rightBarButtonItem pp_addDotWithColor:nil];
-//    [self.navigationItem.rightBarButtonItem pp_moveBadgeWithX:-5 Y:0];
-    
+    [self.navigationItem.rightBarButtonItem pp_addBadgeWithNumber:50000];
+    [self.navigationItem.rightBarButtonItem pp_moveBadgeWithX:-10 Y:0];
+    [self.navigationItem.rightBarButtonItem pp_setBadgeFlexMode:PPBadgeViewFlexModeHead];
 }
 
 - (void)setupViews

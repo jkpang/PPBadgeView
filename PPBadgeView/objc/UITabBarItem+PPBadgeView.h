@@ -20,6 +20,9 @@
 #import <UIKit/UIKit.h>
 
 @class PPBadgeLabel;
+
+typedef NS_ENUM(NSUInteger, PPBadgeViewFlexMode);
+
 @interface UITabBarItem (PPBadgeView)
 
 /**
@@ -56,6 +59,19 @@
  @param height 高度大小
  */
 - (void)pp_setBadgeHeight:(CGFloat)height;
+
+/**
+ 设置Badge伸缩的方向
+ 
+ Setting the direction of Badge expansion
+ 
+ PPBadgeViewFlexModeHead,    // 左伸缩 Head Flex    : <==●
+ PPBadgeViewFlexModeTail,    // 右伸缩 Tail Flex    : ●==>
+ PPBadgeViewFlexModeMiddle   // 左右伸缩 Middle Flex : <=●=>
+ 
+ @param flexMode : Default is PPBadgeViewFlexModeTail
+ */
+- (void)pp_setBadgeFlexMode:(PPBadgeViewFlexMode)flexMode;
 
 /**
  设置Badge的偏移量, Badge中心点默认为其父视图的右上角

@@ -67,6 +67,18 @@ public extension PP where Base: UITabBarItem {
         _bottomView.pp.moveBadge(x: x, y: y)
     }
     
+    /// 设置Badge伸缩的方向
+    ///
+    /// Setting the direction of Badge expansion
+    ///
+    /// PPBadgeViewFlexModeHead,    左伸缩 Head Flex    : <==●
+    /// PPBadgeViewFlexModeTail,    右伸缩 Tail Flex    : ●==>
+    /// PPBadgeViewFlexModeMiddle   左右伸缩 Middle Flex : <=●=>
+    /// - Parameter flexMode : Default is PPBadgeViewFlexModeTail
+    public func setBadge(flexMode: PPBadgeViewFlexMode = .tail) {
+        _bottomView.pp.setBadge(flexMode: flexMode)
+    }
+    
     /// 设置Badge的高度,因为Badge宽度是动态可变的,通过改变Badge高度,其宽度也按比例变化,方便布局
     ///
     /// (注意: 此方法需要将Badge添加到控件上后再调用!!!)
@@ -75,9 +87,9 @@ public extension PP where Base: UITabBarItem {
     ///
     /// (Note: this method needs to add Badge to the controls and then use it !!!)
     ///
-    /// - Parameter points: 高度大小
-    public func setBadgeHeight(_ points: CGFloat) {
-        _bottomView.pp.setBadgeHeight(points)
+    /// - Parameter height: 高度大小
+    public func setBadge(height: CGFloat) {
+        _bottomView.pp.setBadge(height: height)
     }
     
     /// 设置Bage的属性

@@ -127,11 +127,16 @@ view?.pp.increase()
 ```
 • 2018.04.10(tag:2.1.0):
   1. 支持Xcode9.3, Swift4.1 <-> support Xcode9.3 and Swift4.1
-  2. - (void)pp_setBadgeHeightPoints:(CGFloat)points 
+  2. Update
+  Objc:  - (void)pp_setBadgeHeightPoints:(CGFloat)points 
      ==> - (void)pp_setBadgeHeight:(CGFloat)height
      
-     func setBadgeHeight(points: CGFloat)
-     ==> func setBadgeHeight(_ points: CGFloat)
+  Swift: func setBadgeHeight(points: CGFloat)
+     ==> func setBadge(height: CGFloat)
+  
+  3. Add: (fix issus #8: https://github.com/jkpang/PPBadgeView/issues/8)
+  Objc: - (void)pp_setBadgeFlexMode:(PPBadgeViewFlexMode)flexMode;
+  Swift: func setBadge(flexMode: PPBadgeViewFlexMode = .tail)
   
 • 2017.09.23(tag:2.0.0):
   支持iOS11, Swift4 <-> support iOS11 and Swift4

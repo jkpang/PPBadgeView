@@ -61,15 +61,27 @@ static NSString *const kBadgeLabel = @"kBadgeLabel";
 {
     [self lazyLoadBadgeLabel];
     
-    /**
-     self.badgeLabel.center = CGPointMake(self.p_width+x, y);
-     
-     如果通过badge的center来调整其在父视图的位置, 在给badge赋值不同长度的内容时
-     会导致badge会以中心点向两边调整其自身宽度,如果badge过长会遮挡部分父视图, 所以
-     正确的方式是以badge的x坐标为起点,其宽度向x轴正方向增加/x轴负方向减少
-     */
-    self.badgeLabel.p_x = (self.p_width - self.badgeLabel.p_height*0.5)/*badge的x坐标*/ + x;
+    self.badgeLabel.offset = CGPointMake(x, y);
+    
     self.badgeLabel.p_y = -self.badgeLabel.p_height*0.5/*badge的y坐标*/ + y;
+    
+    switch (self.badgeLabel.flexMode) {
+        case PPBadgeViewFlexModeHead: // 1. 左伸缩  <==●
+            self.badgeLabel.p_right = self.badgeLabel.superview.p_width + self.badgeLabel.p_height*0.5 + x;
+            break;
+        case PPBadgeViewFlexModeTail: // 2. 右伸缩 ●==>
+            self.badgeLabel.p_x = (self.p_width - self.badgeLabel.p_height*0.5)/*badge的x坐标*/ + x;
+            break;
+        case PPBadgeViewFlexModeMiddle: // 3. 左右伸缩  <=●=>
+            self.badgeLabel.center = CGPointMake(self.p_width+x, y);
+            break;
+    }
+}
+
+- (void)pp_setBadgeFlexMode:(PPBadgeViewFlexMode)flexMode
+{
+    self.badgeLabel.flexMode = flexMode;
+    [self pp_moveBadgeWithX:self.badgeLabel.offset.x Y:self.badgeLabel.offset.y];
 }
 
 - (void)pp_setBadgeLabelAttributes:(void (^)(PPBadgeLabel *))badgeLabel
