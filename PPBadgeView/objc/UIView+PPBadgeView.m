@@ -51,7 +51,7 @@ static NSString *const kBadgeLabel = @"kBadgeLabel";
 - (void)pp_addDotWithColor:(UIColor *)color
 {
     [self pp_addBadgeWithText:nil];
-    [self pp_setBadgeHeightPoints:8];
+    [self pp_setBadgeHeight:8];
     if (color) {
         self.badgeLabel.backgroundColor = color;
     }
@@ -78,9 +78,9 @@ static NSString *const kBadgeLabel = @"kBadgeLabel";
     badgeLabel ? badgeLabel(self.badgeLabel) : nil;
 }
 
-- (void)pp_setBadgeHeightPoints:(CGFloat)points
+- (void)pp_setBadgeHeight:(CGFloat)height
 {
-    CGFloat scale = points/self.badgeLabel.p_height;
+    CGFloat scale = height / self.badgeLabel.p_height;
     self.badgeLabel.transform = CGAffineTransformScale(self.badgeLabel.transform, scale, scale);
 }
 

@@ -76,11 +76,11 @@ public extension PP where Base: UITabBarItem {
     /// (Note: this method needs to add Badge to the controls and then use it !!!)
     ///
     /// - Parameter points: 高度大小
-    public func setBadgeHeight(points: CGFloat) {
-        _bottomView.pp.setBadgeHeight(points: points)
+    public func setBadgeHeight(_ points: CGFloat) {
+        _bottomView.pp.setBadgeHeight(points)
     }
     
-    /// 设置Bage的属性 ;
+    /// 设置Bage的属性
     ///
     /// Set properties for Badge
     ///
@@ -125,7 +125,8 @@ public extension PP where Base: UITabBarItem {
     private var _bottomView: UIView {
         let tabBarButton = (self.base.value(forKey: "_view") as? UIView) ?? UIView()
         for subView in tabBarButton.subviews {
-            if NSStringFromClass(subView.superclass!) == "UIImageView" {
+            guard let superclass = subView.superclass else { return tabBarButton }
+            if superclass == NSClassFromString("UIImageView") {
                 return subView
             }
         }

@@ -74,11 +74,11 @@ public extension PP where Base: UIBarButtonItem {
     /// (Note: this method needs to add Badge to the controls and then use it !!!)
     ///
     /// - Parameter points: 高度大小
-    public func setBadgeHeight(points: CGFloat) {
-        _bottomView.pp.setBadgeHeight(points: points)
+    public func setBadgeHeight(_ points: CGFloat) {
+        _bottomView.pp.setBadgeHeight(points)
     }
     
-    /// 设置Bage的属性 ;
+    /// 设置Bage的属性
     ///
     /// Set properties for Badge
     ///

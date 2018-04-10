@@ -68,7 +68,7 @@ public extension PP where Base: UIView {
     /// - Parameter color: 颜色
     public func addDot(color: UIColor?) {
         addBadge(text: "")
-        setBadgeHeight(points: 8.0)
+        setBadgeHeight(8.0)
         if let color = color  {
             self.base.badgeLabel.backgroundColor = color
         }
@@ -102,12 +102,12 @@ public extension PP where Base: UIView {
     /// (Note: this method needs to add Badge to the controls and then use it !!!)
     ///
     /// - Parameter points: 高度大小
-    public func setBadgeHeight(points: CGFloat) {
-        let scale = points/self.base.badgeLabel.p_height
+    public func setBadgeHeight(_ points: CGFloat) {
+        let scale = points / self.base.badgeLabel.p_height
         self.base.badgeLabel.transform = self.base.badgeLabel.transform.scaledBy(x: scale, y: scale)
     }
     
-    /// 设置Bage的属性 ;
+    /// 设置Bage的属性
     ///
     /// Set properties for Badge
     ///
@@ -136,11 +136,11 @@ public extension PP where Base: UIView {
     /// badge数字加number
     public func increaseBy(number: Int) {
         let label = self.base.badgeLabel
-        let result = ((NumberFormatter().number(from: label.text ?? "")?.intValue) ?? 0) + number
+        let result = (Int(label.text ?? "0") ?? 0) + number
         if result > 0 {
             showBadge()
         }
-        label.text = "\(String(describing: result))"
+        label.text = "\(result)"
     }
     
     /// badge数字加1
@@ -150,13 +150,14 @@ public extension PP where Base: UIView {
     
     /// badge数字减number
     public func decreaseBy(number: Int) {
-        let result = (NumberFormatter().number(from: self.base.badgeLabel.text!)?.intValue)! - number
+        let label = self.base.badgeLabel
+        let result = (Int(label.text ?? "0") ?? 0) - number
         if (result <= 0) {
             hiddenBadge()
-            self.base.badgeLabel.text = "0"
+            label.text = "0"
             return
         }
-        self.base.badgeLabel.text = "\(result)"
+        label.text = "\(result)"
     }
 }
 
@@ -168,12 +169,12 @@ extension UIView {
             if let aValue = objc_getAssociatedObject(self, &kBadgeLabel) as? PPBadgeLabel {
                 return aValue
             } else {
-                let defaultBadgeLabel = PPBadgeLabel.defaultBadgeLabel()
-                defaultBadgeLabel.center = CGPoint(x: self.p_width, y: 0)
-                self.addSubview(defaultBadgeLabel)
-                self.bringSubview(toFront: defaultBadgeLabel)
-                self.badgeLabel = defaultBadgeLabel
-                return defaultBadgeLabel
+                let badgeLabel = PPBadgeLabel.default()
+                badgeLabel.center = CGPoint(x: self.p_width, y: 0)
+                self.addSubview(badgeLabel)
+                self.bringSubview(toFront: badgeLabel)
+                self.badgeLabel = badgeLabel
+                return badgeLabel
             }
         }
         set {

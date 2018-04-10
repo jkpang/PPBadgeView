@@ -39,9 +39,9 @@
     [[self bottomView] pp_addDotWithColor:color];
 }
 
-- (void)pp_setBadgeHeightPoints:(CGFloat)points
+- (void)pp_setBadgeHeight:(CGFloat)height
 {
-    [[self bottomView] pp_setBadgeHeightPoints:points];
+    [[self bottomView] pp_setBadgeHeight:height];
 }
 
 - (void)pp_moveBadgeWithX:(CGFloat)x Y:(CGFloat)y
@@ -91,7 +91,7 @@
     // 通过Xcode视图调试工具找到UITabBarItem原生Badge所在父视图
     UIView *tabBarButton = [self valueForKey:@"_view"];
     for (UIView *subView in tabBarButton.subviews) {
-        if ([NSStringFromClass(subView.superclass) isEqualToString:@"UIImageView"]) {
+        if (subView.superclass == NSClassFromString(@"UIImageView")) {
             return subView;
         }
     }

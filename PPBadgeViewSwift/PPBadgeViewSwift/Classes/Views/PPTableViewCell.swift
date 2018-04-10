@@ -12,7 +12,7 @@ class PPTableViewCell: UITableViewCell {
 
     @IBOutlet weak var headerView: UIView!
     lazy var badge: PPBadgeLabel = {
-        return PPBadgeLabel.defaultBadgeLabel()
+        return PPBadgeLabel.default()
     }()
     
     

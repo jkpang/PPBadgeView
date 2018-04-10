@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
     s.name         = "PPBadgeViewSwift"
 
-    s.version      = "2.0.0"
+    s.version      = "2.1.0"
 
     s.platform     = :ios, '8.0'
 
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 
     s.source_files = 'PPBadgeView/swift/*.{swift}'
 
-    s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
+    s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
     
     s.framework = 'UIKit'
 

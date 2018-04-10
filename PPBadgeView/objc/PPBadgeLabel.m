@@ -29,7 +29,7 @@
 + (instancetype)defaultBadgeLabel
 {
     // 默认为系统tabBarItem的Badge大小
-    return [[PPBadgeLabel alloc] initWithFrame:CGRectMake(0, 0, 18, 18)];
+    return [[self alloc] initWithFrame:CGRectMake(0, 0, 18, 18)];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame

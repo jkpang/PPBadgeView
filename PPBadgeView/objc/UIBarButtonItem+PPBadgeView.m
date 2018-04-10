@@ -37,9 +37,9 @@
     [[self bottomView] pp_addDotWithColor:color];
 }
 
-- (void)pp_setBadgeHeightPoints:(CGFloat)points
+- (void)pp_setBadgeHeight:(CGFloat)height
 {
-    [[self bottomView] pp_setBadgeHeightPoints:points];
+    [[self bottomView] pp_setBadgeHeight:height];
 }
 
 - (void)pp_moveBadgeWithX:(CGFloat)x Y:(CGFloat)y

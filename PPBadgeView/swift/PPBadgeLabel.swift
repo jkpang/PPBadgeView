@@ -23,6 +23,10 @@ let kSystemVersion = (UIDevice.current.systemVersion as NSString).doubleValue
 
 open class PPBadgeLabel: UILabel {
     
+    public class func `default`() -> Self {
+        return self.init(frame: CGRect(x: 0, y: 0, width: 18, height: 18))
+    }
+    
     override public init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -31,10 +35,6 @@ open class PPBadgeLabel: UILabel {
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    public class func defaultBadgeLabel() -> PPBadgeLabel {
-        return PPBadgeLabel.init(frame: CGRect(x: 0, y: 0, width: 18, height: 18))
     }
     
     private func setupUI() {

@@ -53,9 +53,9 @@
  
  (Note: this method needs to add Badge to the controls and then use it !!!)
  
- @param points 高度大小
+ @param height 高度大小
  */
-- (void)pp_setBadgeHeightPoints:(CGFloat)points;
+- (void)pp_setBadgeHeight:(CGFloat)height;
 
 /**
  设置Badge的偏移量, Badge中心点默认为其父视图的右上角

@@ -6,8 +6,7 @@ iOS自定义Badge组件, 支持UIView, UITabBarItem, UIBarButtonItem以及子类
 
 #### 原理请戳: [掘金地址](https://juejin.im/post/594a69808d6d8109de2c5a06) 、 [简书地址](http://www.jianshu.com/p/89fa23d53400)
 
-![](https://img.shields.io/badge/platform-iOS-red.svg)   ![](https://img.shields.io/badge/language-Objective--C%2FSwift%204.0-orange.svg) ![](https://img.shields.io/badge/pod%20Objc-2.0.0-blue.svg) ![](https://img.shields.io/badge/pod%20Swift-2.0.0-blue.svg) ![](https://img.shields.io/cocoapods/dt/PPBadgeView.svg) ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)  [![](https://img.shields.io/badge/weibo-jkpang--%E5%BA%9E-red.svg)](http://weibo.com/5743737098/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1) 
-
+![](https://img.shields.io/badge/platform-iOS-red.svg)   ![](https://img.shields.io/badge/language-Objective--C%2FSwift%204.x-orange.svg) ![](https://img.shields.io/badge/pod%20Objc-2.1.0-blue.svg) ![](https://img.shields.io/cocoapods/dt/PPBadgeView.svg) ![](https://img.shields.io/badge/pod%20Swift-2.1.0-blue.svg) ![](https://img.shields.io/cocoapods/dt/PPBadgeViewSwift.svg) ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)  [![](https://img.shields.io/badge/weibo-jkpang--%E5%BA%9E-red.svg)](http://weibo.com/5743737098/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1) 
 
 ![iPhone](https://github.com/jkpang/PPBadgeView/blob/master/Picture/PPBadgeView.gif)
 
@@ -57,7 +56,7 @@ Set the height of Badge, because the Badge width is dynamically and  variable.
 
  @param points 高度大小
  */
-[view pp_setBadgeHeightPoints:25];
+[view pp_setBadgeHeight:25];
 
 /**
  设置Badge的偏移量, Badge中心点默认为其父视图的右上角
@@ -99,7 +98,7 @@ view?.pp.addBadge(number: 1);
 // (注意: 此方法需要将Badge添加到控件上后再调用!!!)
 // Set the height of Badge, because the Badge width is dynamically and  variable.By changing the Badge height in proportion to facilitate the layout.
 // (Note: this method needs to add Badge to the controls and then use it !!!)
-view?.pp.setBadgeHeight(points: 21.0);
+view?.pp.setBadgeHeight(21.0);
 
 /// 设置Badge的偏移量, Badge中心点默认为其父视图的右上角 Set Badge offset, Badge center point defaults to the top right corner of its parent view
 ///
@@ -126,6 +125,14 @@ view?.pp.increase()
 ## CocoaPods更新日志
 
 ```
+• 2018.04.10(tag:2.1.0):
+  1. 支持Xcode9.3, Swift4.1 <-> support Xcode9.3 and Swift4.1
+  2. - (void)pp_setBadgeHeightPoints:(CGFloat)points 
+     ==> - (void)pp_setBadgeHeight:(CGFloat)height
+     
+     func setBadgeHeight(points: CGFloat)
+     ==> func setBadgeHeight(_ points: CGFloat)
+  
 • 2017.09.23(tag:2.0.0):
   支持iOS11, Swift4 <-> support iOS11 and Swift4
   
