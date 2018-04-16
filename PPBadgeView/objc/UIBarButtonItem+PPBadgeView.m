@@ -18,7 +18,6 @@
  */
 
 #import "UIBarButtonItem+PPBadgeView.h"
-#import "UIView+PPBadgeView.h"
 
 @implementation UIBarButtonItem (PPBadgeView)
 

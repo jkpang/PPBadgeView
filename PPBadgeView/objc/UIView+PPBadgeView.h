@@ -23,8 +23,11 @@
 
 typedef NS_ENUM(NSUInteger, PPBadgeViewFlexMode);
 
-@interface UIView (PPBadgeView)
+#pragma mark - Protocol
 
+@protocol PPBadgeView <NSObject>
+
+@required
 /**
  添加带文本内容的Badge, 默认右上角, 红色, 18pts
  
@@ -40,7 +43,7 @@ typedef NS_ENUM(NSUInteger, PPBadgeViewFlexMode);
 - (void)pp_addBadgeWithNumber:(NSInteger)number;
 
 /**
- 添加带颜色的小圆点, 默认右上角, 红色, 8pts 
+ 添加带颜色的小圆点, 默认右上角, 红色, 8pts
  
  Add small dots with color, the default upper right corner, red backgroundColor, 8pts
  */
@@ -61,7 +64,7 @@ typedef NS_ENUM(NSUInteger, PPBadgeViewFlexMode);
 - (void)pp_setBadgeHeight:(CGFloat)height;
 
 /**
- 设置Badge的偏移量, Badge中心点默认为其父视图的右上角 
+ 设置Badge的偏移量, Badge中心点默认为其父视图的右上角
  
  Set Badge offset, Badge center point defaults to the top right corner of its parent view
  
@@ -79,13 +82,13 @@ typedef NS_ENUM(NSUInteger, PPBadgeViewFlexMode);
  PPBadgeViewFlexModeHead,    左伸缩 Head Flex    : <==●
  PPBadgeViewFlexModeTail,    右伸缩 Tail Flex    : ●==>
  PPBadgeViewFlexModeMiddle   左右伸缩 Middle Flex : <=●=>
-
+ 
  @param flexMode : Default is PPBadgeViewFlexModeTail
  */
 - (void)pp_setBadgeFlexMode:(PPBadgeViewFlexMode)flexMode;
 
 /**
- 设置Bage的属性 
+ 设置Bage的属性
  
  Set properties for Badge
  */
@@ -97,7 +100,7 @@ typedef NS_ENUM(NSUInteger, PPBadgeViewFlexMode);
 /// 隐藏Badge
 - (void)pp_hiddenBadge;
 
-#pragma mark - 数字增加/减少, 注意:以下方法只适用于Badge内容为纯数字的情况
+/// 数字增加/减少, 注意:以下方法只适用于Badge内容为纯数字的情况
 /// Digital increase /decrease, note: the following method applies only to cases where the Badge content is purely numeric
 - (void)pp_increase;
 - (void)pp_increaseBy:(NSInteger)number;
@@ -106,6 +109,11 @@ typedef NS_ENUM(NSUInteger, PPBadgeViewFlexMode);
 
 @end
 
+#pragma mark - Category
+
+@interface UIView (PPBadgeView) <PPBadgeView>
+
+@end
 
 @interface UIView (Frame)
 @property (nonatomic, assign) CGFloat p_x;
