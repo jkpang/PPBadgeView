@@ -21,19 +21,6 @@ import UIKit
 
 private var kBadgeLabel = "kBadgeLabel"
 
-public struct PP<Base> {
-    public let base: Base
-    public init(_ base: Base) {
-        self.base = base
-    }
-}
-
-public extension UIView {
-    public var pp: PP<UIView> {
-        return PP(self)
-    }
-}
-
 // MARK: - add Badge
 public extension PP where Base: UIView {
     

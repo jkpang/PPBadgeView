@@ -19,11 +19,7 @@
 
 import UIKit
 
-public extension UIBarButtonItem {
-    public var pp: PP<UIBarButtonItem> {
-        return PP(self)
-    }
-}
+
 
 public extension PP where Base: UIBarButtonItem {
     

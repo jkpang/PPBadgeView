@@ -19,12 +19,6 @@
 
 import UIKit
 
-public extension UITabBarItem {
-    public var pp: PP<UITabBarItem> {
-        return PP(self)
-    }
-}
-
 public extension PP where Base: UITabBarItem {
     
     /// 添加带文本内容的Badge, 默认右上角, 红色, 18pts

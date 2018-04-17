@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DA1EEE02085868C00B4F818 /* PPBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1EEDF2085868C00B4F818 /* PPBadgeView.swift */; };
 		2259C60E1EF955D900893A40 /* PPTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2259C60C1EF955D900893A40 /* PPTableViewCell.swift */; };
 		2259C60F1EF955D900893A40 /* PPTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2259C60D1EF955D900893A40 /* PPTableViewCell.xib */; };
 		2259C6111EF9564B00893A40 /* PPNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2259C6101EF9564B00893A40 /* PPNavigationController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DA1EEDF2085868C00B4F818 /* PPBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PPBadgeView.swift; path = ../../../PPBadgeView/swift/PPBadgeView.swift; sourceTree = "<group>"; };
 		2259C60C1EF955D900893A40 /* PPTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPTableViewCell.swift; path = PPBadgeViewSwift/Classes/Views/PPTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		2259C60D1EF955D900893A40 /* PPTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PPTableViewCell.xib; path = PPBadgeViewSwift/Classes/Views/PPTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		2259C6101EF9564B00893A40 /* PPNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPNavigationController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 		22F186861EF8080300C59CF7 /* PPBadgeView */ = {
 			isa = PBXGroup;
 			children = (
+				1DA1EEDF2085868C00B4F818 /* PPBadgeView.swift */,
 				22F186871EF8082D00C59CF7 /* PPBadgeLabel.swift */,
 				22F186891EF809DE00C59CF7 /* UIView+PPBadgeView.swift */,
 				22F1868B1EF8238D00C59CF7 /* UIBarButtonItem+PPBadgeView.swift */,
@@ -296,6 +299,7 @@
 				2297A1911EF7FF3200868512 /* PPTabBarController.swift in Sources */,
 				22F1868A1EF809DE00C59CF7 /* UIView+PPBadgeView.swift in Sources */,
 				2297A1971EF7FF7C00868512 /* PPViewController2.swift in Sources */,
+				1DA1EEE02085868C00B4F818 /* PPBadgeView.swift in Sources */,
 				2297A19B1EF7FF9A00868512 /* PPViewController4.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
