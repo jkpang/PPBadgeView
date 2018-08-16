@@ -77,6 +77,6 @@ extension PPViewController1: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        return tableView.dequeueReusableCell(withIdentifier: "cell")!
+        return tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
     }
 }
