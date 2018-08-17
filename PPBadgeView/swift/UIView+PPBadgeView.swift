@@ -75,7 +75,7 @@ public extension PP where Base: UIView {
         
         switch self.base.badgeLabel.flexMode {
         case .head:
-            self.base.badgeLabel.p_right = self.base.badgeLabel.superview!.p_width + self.base.badgeLabel.p_height*0.5 + x
+            self.base.badgeLabel.p_right = (self.base.badgeLabel.superview?.p_width ?? 0) + self.base.badgeLabel.p_height*0.5 + x
         case .tail:
             self.base.badgeLabel.p_x = (self.base.p_width - self.base.badgeLabel.p_height*0.5)/*badge的x坐标*/ + x
         case .middle:

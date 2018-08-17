@@ -65,12 +65,15 @@ open class PPBadgeLabel: UILabel {
     }
     
     private func width(string: String?, font: UIFont, height: CGFloat) -> CGFloat {
-        if string?.isEmpty == true { return 0.0 }
+        guard let string = string, string.isEmpty == false else {
+            return 0
+        }
+    
         var attributes : [NSAttributedStringKey: AnyObject] = [.font : font]
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineBreakMode = .byWordWrapping
         attributes.updateValue(paragraphStyle, forKey: .paragraphStyle)
         let size = CGSize(width: CGFloat(Double.greatestFiniteMagnitude), height: height)
-        return ceil((string! as NSString).boundingRect(with: size, options: [.usesLineFragmentOrigin, .usesFontLeading], attributes:attributes, context: nil).width)
+        return ceil((string as NSString).boundingRect(with: size, options: [.usesLineFragmentOrigin, .usesFontLeading], attributes:attributes, context: nil).width)
     }
 }
