@@ -22,7 +22,7 @@ class PPTabBarController: UITabBarController {
         setupChildController(controller: controller2, title: "订单", image: "order", selectedImage: "order_1")
         setupChildController(controller: controller3, title: "充值", image: "top_up", selectedImage: "top_up_1")
         setupChildController(controller: controller4, title: "我的", image: "my", selectedImage: "my_1")
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor.darkGray], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGray], for: .selected)
         
         /*
          给UITabBarItem添加badge
@@ -56,7 +56,7 @@ class PPTabBarController: UITabBarController {
         controller.tabBarItem.title = title
         controller.tabBarItem.image = UIImage.init(named: image)?.withRenderingMode(.alwaysOriginal)
         controller.tabBarItem.selectedImage = UIImage.init(named: selectedImage)?.withRenderingMode(.alwaysOriginal)
-        self.addChildViewController(UINavigationController.init(rootViewController: controller))
+        self.addChild(UINavigationController.init(rootViewController: controller))
         
     }
     

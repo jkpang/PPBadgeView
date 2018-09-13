@@ -69,7 +69,7 @@ open class PPBadgeLabel: UILabel {
             return 0
         }
     
-        var attributes : [NSAttributedStringKey: AnyObject] = [.font : font]
+        var attributes : [NSAttributedString.Key: AnyObject] = [.font : font]
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineBreakMode = .byWordWrapping
         attributes.updateValue(paragraphStyle, forKey: .paragraphStyle)
