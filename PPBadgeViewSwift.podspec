@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
 
     s.name         = "PPBadgeViewSwift"
 
-    s.version      = "2.1.0"
+    s.version      = "2.2.0"
 
     s.platform     = :ios, '8.0'
 
