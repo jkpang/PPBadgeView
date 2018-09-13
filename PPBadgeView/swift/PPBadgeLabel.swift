@@ -26,7 +26,7 @@ open class PPBadgeLabel: UILabel {
         return self.init(frame: CGRect(x: 0, y: 0, width: 18, height: 18))
     }
     
-    override public init(frame: CGRect) {
+    required override public init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
     }
