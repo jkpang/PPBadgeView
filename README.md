@@ -6,7 +6,7 @@ iOS自定义Badge组件, 支持UIView, UITabBarItem, UIBarButtonItem以及子类
 
 #### 原理请戳: [掘金地址](https://juejin.im/post/594a69808d6d8109de2c5a06) 、 [简书地址](http://www.jianshu.com/p/89fa23d53400)
 
-![](https://img.shields.io/badge/platform-iOS-red.svg)  ![](https://img.shields.io/badge/language-Objective--C%2FSwift%204.x-orange.svg)  ![](https://img.shields.io/badge/pod%20Objc-2.1.0-blue.svg)  ![](https://img.shields.io/cocoapods/dt/PPBadgeView.svg)  ![](https://img.shields.io/badge/pod%20Swift-2.2.0-blue.svg)  ![](https://img.shields.io/cocoapods/dt/PPBadgeViewSwift.svg)  ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)  [![](https://img.shields.io/badge/weibo-jkpang--%E5%BA%9E-red.svg)](http://weibo.com/5743737098/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1) 
+![](https://img.shields.io/badge/platform-iOS-red.svg)  ![](https://img.shields.io/badge/language-Objective--C%2FSwift%204.x-orange.svg)  ![](https://img.shields.io/badge/pod%20Objc-2.1.0-blue.svg)  ![](https://img.shields.io/cocoapods/dt/PPBadgeView.svg)  ![](https://img.shields.io/badge/pod%20Swift-2.2.1-blue.svg)  ![](https://img.shields.io/cocoapods/dt/PPBadgeViewSwift.svg)  ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)  [![](https://img.shields.io/badge/weibo-jkpang--%E5%BA%9E-red.svg)](http://weibo.com/5743737098/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1) 
 
 ![iPhone](https://github.com/jkpang/PPBadgeView/blob/master/Picture/PPBadgeView.gif)
 
