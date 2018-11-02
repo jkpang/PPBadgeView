@@ -81,10 +81,9 @@ static NSString *const kBadgeLabel = @"kBadgeLabel";
     [self pp_moveBadgeWithX:self.badgeLabel.offset.x Y:self.badgeLabel.offset.y];
 }
 
-- (void)pp_setBadgeLabelAttributes:(void (^)(PPBadgeLabel *))badgeLabel
+- (void)pp_setBadgeLabelAttributes:(void (^)(PPBadgeLabel *))badgeLabelBlock
 {
-    [self lazyLoadBadgeLabel];
-    badgeLabel ? badgeLabel(self.badgeLabel) : nil;
+    badgeLabelBlock ? badgeLabelBlock(self.badgeLabel) : nil;
 }
 
 - (void)pp_setBadgeHeight:(CGFloat)height
