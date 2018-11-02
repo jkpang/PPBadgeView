@@ -33,7 +33,6 @@ static NSString *const kBadgeLabel = @"kBadgeLabel";
 
 - (void)pp_addBadgeWithText:(NSString *)text
 {
-    [self lazyLoadBadgeLabel];
     [self pp_showBadge];
     self.badgeLabel.text = text;
 }
@@ -59,8 +58,6 @@ static NSString *const kBadgeLabel = @"kBadgeLabel";
 
 - (void)pp_moveBadgeWithX:(CGFloat)x Y:(CGFloat)y
 {
-    [self lazyLoadBadgeLabel];
-    
     self.badgeLabel.offset = CGPointMake(x, y);
     
     self.badgeLabel.p_y = -self.badgeLabel.p_height*0.5/*badge的y坐标*/ + y;
@@ -136,20 +133,18 @@ static NSString *const kBadgeLabel = @"kBadgeLabel";
     self.badgeLabel.text = [NSString stringWithFormat:@"%ld",result];
 }
 
-- (void)lazyLoadBadgeLabel
-{
-    if (!self.badgeLabel) {
-        self.badgeLabel = [PPBadgeLabel defaultBadgeLabel];
-        self.badgeLabel.center = CGPointMake(self.p_width, 0);
-        [self addSubview:self.badgeLabel];
-        [self bringSubviewToFront:self.badgeLabel];
-    }
-}
-
 #pragma mark - setter/getter
 - (PPBadgeLabel *)badgeLabel
 {
-    return objc_getAssociatedObject(self, &kBadgeLabel);
+    PPBadgeLabel *label = objc_getAssociatedObject(self, &kBadgeLabel);
+    if (!label) {
+        label = [PPBadgeLabel defaultBadgeLabel];
+        label.center = CGPointMake(self.p_width, 0);
+        [self addSubview:label];
+        [self bringSubviewToFront:label];
+        [self setBadgeLabel:label];
+    }
+    return label;
 }
 
 - (void)setBadgeLabel:(PPBadgeLabel *)badgeLabel
