@@ -3,6 +3,7 @@
 //  PPBadgeViewTests
 //
 //  Created by Lee Arromba on 10/12/2018.
+//  Copyright © 2018 AndyPang. All rights reserved.
 //
 
 import XCTest

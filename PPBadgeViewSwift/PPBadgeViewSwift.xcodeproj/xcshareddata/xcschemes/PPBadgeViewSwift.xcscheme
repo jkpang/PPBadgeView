@@ -38,6 +38,16 @@
                ReferencedContainer = "container:PPBadgeViewSwift.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7FA59DC721BEC22300538013"
+               BuildableName = "PPBadgeViewTests.xctest"
+               BlueprintName = "PPBadgeViewTests"
+               ReferencedContainer = "container:PPBadgeViewSwift.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

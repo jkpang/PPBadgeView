@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7FA59D9621BEC0AF00538013"
+               BlueprintIdentifier = "7FA59DBF21BEC22200538013"
                BuildableName = "PPBadgeView.framework"
                BlueprintName = "PPBadgeView"
-               ReferencedContainer = "container:PPBadgeView.xcodeproj">
+               ReferencedContainer = "container:PPBadgeViewSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7FA59D9F21BEC0AF00538013"
-               BuildableName = "PPBadgeViewTests.xctest"
-               BlueprintName = "PPBadgeViewTests"
-               ReferencedContainer = "container:PPBadgeView.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7FA59D9621BEC0AF00538013"
-            BuildableName = "PPBadgeView.framework"
-            BlueprintName = "PPBadgeView"
-            ReferencedContainer = "container:PPBadgeView.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -64,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7FA59D9621BEC0AF00538013"
+            BlueprintIdentifier = "7FA59DBF21BEC22200538013"
             BuildableName = "PPBadgeView.framework"
             BlueprintName = "PPBadgeView"
-            ReferencedContainer = "container:PPBadgeView.xcodeproj">
+            ReferencedContainer = "container:PPBadgeViewSwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -82,10 +63,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "7FA59D9621BEC0AF00538013"
+            BlueprintIdentifier = "7FA59DBF21BEC22200538013"
             BuildableName = "PPBadgeView.framework"
             BlueprintName = "PPBadgeView"
-            ReferencedContainer = "container:PPBadgeView.xcodeproj">
+            ReferencedContainer = "container:PPBadgeViewSwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
