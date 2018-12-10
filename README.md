@@ -27,6 +27,10 @@ iOS自定义Badge组件, 支持UIView, UITabBarItem, UIBarButtonItem以及子类
  * Objective-C :  `pod 'PPBadgeView'` then `#import <PPBadgeView.h>`
  * Swift :        `pod 'PPBadgeViewSwift' ` then `import PPBadgeViewSwift`
 
+如果发现pod search PPBadgeView/PPBadgeViewSwift 不是最新版本，在终端执行pod setup命令更新本地spec镜像缓存(时间可能有点长),重新搜索就OK了
+
+If you find pod search PPBadgeView / PPBadgeViewSwift is not the latest version, in the terminal  of the pod setup command to update the local spec image cache and re-search. (it may take you a long time)
+
 ### 3.Carthage (Swift):
 ```
 // Cartfile
@@ -35,10 +39,6 @@ github "jkpang/PPBadgeView" ~> 2.3.0
 // Terminal
 carthage update --platform iOS
 ```
-
-如果发现pod search PPBadgeView/PPBadgeViewSwift 不是最新版本，在终端执行pod setup命令更新本地spec镜像缓存(时间可能有点长),重新搜索就OK了
-
-If you find pod search PPBadgeView / PPBadgeViewSwift is not the latest version, in the terminal  of the pod setup command to update the local spec image cache and re-search. (it may take you a long time)
 
 ## Usage 使用方法
 ##### 1. Objective-C :
