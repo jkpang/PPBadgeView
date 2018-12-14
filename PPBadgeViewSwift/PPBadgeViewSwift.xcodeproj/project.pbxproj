@@ -25,6 +25,16 @@
 		22F1868A1EF809DE00C59CF7 /* UIView+PPBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F186891EF809DE00C59CF7 /* UIView+PPBadgeView.swift */; };
 		22F1868C1EF8238D00C59CF7 /* UIBarButtonItem+PPBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F1868B1EF8238D00C59CF7 /* UIBarButtonItem+PPBadgeView.swift */; };
 		22F186901EF823BA00C59CF7 /* UITabBarItem+PPBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F1868F1EF823BA00C59CF7 /* UITabBarItem+PPBadgeView.swift */; };
+		7FA59DC921BEC22300538013 /* PPBadgeView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA59DC021BEC22200538013 /* PPBadgeView.framework */; };
+		7FA59DD021BEC22300538013 /* PPBadgeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA59DCF21BEC22300538013 /* PPBadgeViewTests.swift */; };
+		7FA59DD221BEC22300538013 /* PPBadgeView.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FA59DC221BEC22200538013 /* PPBadgeView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7FA59DD521BEC22300538013 /* PPBadgeView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA59DC021BEC22200538013 /* PPBadgeView.framework */; };
+		7FA59DD621BEC22300538013 /* PPBadgeView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA59DC021BEC22200538013 /* PPBadgeView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7FA59DE821BEC2AB00538013 /* PPBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1EEDF2085868C00B4F818 /* PPBadgeView.swift */; };
+		7FA59DE921BEC2AB00538013 /* PPBadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F186871EF8082D00C59CF7 /* PPBadgeLabel.swift */; };
+		7FA59DEA21BEC2AB00538013 /* UIView+PPBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F186891EF809DE00C59CF7 /* UIView+PPBadgeView.swift */; };
+		7FA59DEB21BEC2AB00538013 /* UIBarButtonItem+PPBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F1868B1EF8238D00C59CF7 /* UIBarButtonItem+PPBadgeView.swift */; };
+		7FA59DEC21BEC2AB00538013 /* UITabBarItem+PPBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F1868F1EF823BA00C59CF7 /* UITabBarItem+PPBadgeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +45,42 @@
 			remoteGlobalIDString = 2297A13E1EF4FFB500868512;
 			remoteInfo = PPBadgeViewSwift;
 		};
+		7FA59DCA21BEC22300538013 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2297A1371EF4FFB500868512 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FA59DBF21BEC22200538013;
+			remoteInfo = PPBadgeView;
+		};
+		7FA59DCC21BEC22300538013 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2297A1371EF4FFB500868512 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2297A13E1EF4FFB500868512;
+			remoteInfo = PPBadgeViewSwift;
+		};
+		7FA59DD321BEC22300538013 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2297A1371EF4FFB500868512 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FA59DBF21BEC22200538013;
+			remoteInfo = PPBadgeView;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7FA59DDC21BEC22300538013 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7FA59DD621BEC22300538013 /* PPBadgeView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1DA1EEDF2085868C00B4F818 /* PPBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PPBadgeView.swift; path = ../../../PPBadgeView/swift/PPBadgeView.swift; sourceTree = "<group>"; };
@@ -60,6 +105,12 @@
 		22F186891EF809DE00C59CF7 /* UIView+PPBadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+PPBadgeView.swift"; path = "../../../PPBadgeView/swift/UIView+PPBadgeView.swift"; sourceTree = "<group>"; };
 		22F1868B1EF8238D00C59CF7 /* UIBarButtonItem+PPBadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem+PPBadgeView.swift"; path = "../../../PPBadgeView/swift/UIBarButtonItem+PPBadgeView.swift"; sourceTree = "<group>"; };
 		22F1868F1EF823BA00C59CF7 /* UITabBarItem+PPBadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITabBarItem+PPBadgeView.swift"; path = "../../../PPBadgeView/swift/UITabBarItem+PPBadgeView.swift"; sourceTree = "<group>"; };
+		7FA59DC021BEC22200538013 /* PPBadgeView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PPBadgeView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FA59DC221BEC22200538013 /* PPBadgeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPBadgeView.h; sourceTree = "<group>"; };
+		7FA59DC321BEC22200538013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FA59DC821BEC22300538013 /* PPBadgeViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PPBadgeViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FA59DCF21BEC22300538013 /* PPBadgeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PPBadgeViewTests.swift; sourceTree = "<group>"; };
+		7FA59DD121BEC22300538013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FA59DD521BEC22300538013 /* PPBadgeView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +126,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FA59DBD21BEC22200538013 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FA59DC521BEC22300538013 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FA59DC921BEC22300538013 /* PPBadgeView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +162,8 @@
 			children = (
 				2297A1411EF4FFB500868512 /* PPBadgeViewSwift */,
 				2297A1561EF4FFB500868512 /* PPBadgeViewSwiftTests */,
+				7FA59DC121BEC22200538013 /* PPBadgeView */,
+				7FA59DCE21BEC22300538013 /* PPBadgeViewTests */,
 				2297A1401EF4FFB500868512 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,6 +173,8 @@
 			children = (
 				2297A13F1EF4FFB500868512 /* PPBadgeViewSwift.app */,
 				2297A1531EF4FFB500868512 /* PPBadgeViewSwiftTests.xctest */,
+				7FA59DC021BEC22200538013 /* PPBadgeView.framework */,
+				7FA59DC821BEC22300538013 /* PPBadgeViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,7 +252,36 @@
 			name = PPBadgeView;
 			sourceTree = "<group>";
 		};
+		7FA59DC121BEC22200538013 /* PPBadgeView */ = {
+			isa = PBXGroup;
+			children = (
+				7FA59DC221BEC22200538013 /* PPBadgeView.h */,
+				7FA59DC321BEC22200538013 /* Info.plist */,
+			);
+			path = PPBadgeView;
+			sourceTree = "<group>";
+		};
+		7FA59DCE21BEC22300538013 /* PPBadgeViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				7FA59DCF21BEC22300538013 /* PPBadgeViewTests.swift */,
+				7FA59DD121BEC22300538013 /* Info.plist */,
+			);
+			path = PPBadgeViewTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7FA59DBB21BEC22200538013 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FA59DD221BEC22300538013 /* PPBadgeView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		2297A13E1EF4FFB500868512 /* PPBadgeViewSwift */ = {
@@ -191,10 +291,12 @@
 				2297A13B1EF4FFB500868512 /* Sources */,
 				2297A13C1EF4FFB500868512 /* Frameworks */,
 				2297A13D1EF4FFB500868512 /* Resources */,
+				7FA59DDC21BEC22300538013 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7FA59DD421BEC22300538013 /* PBXTargetDependency */,
 			);
 			name = PPBadgeViewSwift;
 			productName = PPBadgeViewSwift;
@@ -219,13 +321,50 @@
 			productReference = 2297A1531EF4FFB500868512 /* PPBadgeViewSwiftTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		7FA59DBF21BEC22200538013 /* PPBadgeView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FA59DDB21BEC22300538013 /* Build configuration list for PBXNativeTarget "PPBadgeView" */;
+			buildPhases = (
+				7FA59DBB21BEC22200538013 /* Headers */,
+				7FA59DBC21BEC22200538013 /* Sources */,
+				7FA59DBD21BEC22200538013 /* Frameworks */,
+				7FA59DBE21BEC22200538013 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PPBadgeView;
+			productName = PPBadgeView;
+			productReference = 7FA59DC021BEC22200538013 /* PPBadgeView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7FA59DC721BEC22300538013 /* PPBadgeViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FA59DDD21BEC22300538013 /* Build configuration list for PBXNativeTarget "PPBadgeViewTests" */;
+			buildPhases = (
+				7FA59DC421BEC22300538013 /* Sources */,
+				7FA59DC521BEC22300538013 /* Frameworks */,
+				7FA59DC621BEC22300538013 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7FA59DCB21BEC22300538013 /* PBXTargetDependency */,
+				7FA59DCD21BEC22300538013 /* PBXTargetDependency */,
+			);
+			name = PPBadgeViewTests;
+			productName = PPBadgeViewTests;
+			productReference = 7FA59DC821BEC22300538013 /* PPBadgeViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2297A1371EF4FFB500868512 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = AndyPang;
 				TargetAttributes = {
@@ -237,6 +376,15 @@
 					2297A1521EF4FFB500868512 = {
 						CreatedOnToolsVersion = 8.3.2;
 						LastSwiftMigration = 0930;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2297A13E1EF4FFB500868512;
+					};
+					7FA59DBF21BEC22200538013 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+					};
+					7FA59DC721BEC22300538013 = {
+						CreatedOnToolsVersion = 10.1;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2297A13E1EF4FFB500868512;
 					};
@@ -257,6 +405,8 @@
 			targets = (
 				2297A13E1EF4FFB500868512 /* PPBadgeViewSwift */,
 				2297A1521EF4FFB500868512 /* PPBadgeViewSwiftTests */,
+				7FA59DBF21BEC22200538013 /* PPBadgeView */,
+				7FA59DC721BEC22300538013 /* PPBadgeViewTests */,
 			);
 		};
 /* End PBXProject section */
@@ -274,6 +424,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2297A1511EF4FFB500868512 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FA59DBE21BEC22200538013 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FA59DC621BEC22300538013 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -311,6 +475,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7FA59DBC21BEC22200538013 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FA59DE821BEC2AB00538013 /* PPBadgeView.swift in Sources */,
+				7FA59DE921BEC2AB00538013 /* PPBadgeLabel.swift in Sources */,
+				7FA59DEA21BEC2AB00538013 /* UIView+PPBadgeView.swift in Sources */,
+				7FA59DEB21BEC2AB00538013 /* UIBarButtonItem+PPBadgeView.swift in Sources */,
+				7FA59DEC21BEC2AB00538013 /* UITabBarItem+PPBadgeView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FA59DC421BEC22300538013 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FA59DD021BEC22300538013 /* PPBadgeViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -318,6 +502,21 @@
 			isa = PBXTargetDependency;
 			target = 2297A13E1EF4FFB500868512 /* PPBadgeViewSwift */;
 			targetProxy = 2297A1541EF4FFB500868512 /* PBXContainerItemProxy */;
+		};
+		7FA59DCB21BEC22300538013 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7FA59DBF21BEC22200538013 /* PPBadgeView */;
+			targetProxy = 7FA59DCA21BEC22300538013 /* PBXContainerItemProxy */;
+		};
+		7FA59DCD21BEC22300538013 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2297A13E1EF4FFB500868512 /* PPBadgeViewSwift */;
+			targetProxy = 7FA59DCC21BEC22300538013 /* PBXContainerItemProxy */;
+		};
+		7FA59DD421BEC22300538013 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7FA59DBF21BEC22200538013 /* PPBadgeView */;
+			targetProxy = 7FA59DD321BEC22300538013 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -447,8 +646,10 @@
 		2297A15D1EF4FFB600868512 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PPBadgeViewSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -463,8 +664,10 @@
 		2297A15E1EF4FFB600868512 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PPBadgeViewSwift/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -505,6 +708,112 @@
 			};
 			name = Release;
 		};
+		7FA59DD721BEC22300538013 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = PPBadgeView/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jkpang.PPBadgeView;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7FA59DD821BEC22300538013 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = PPBadgeView/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jkpang.PPBadgeView;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7FA59DD921BEC22300538013 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = PPBadgeViewTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jkpang.PPBadgeViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PPBadgeViewSwift.app/PPBadgeViewSwift";
+			};
+			name = Debug;
+		};
+		7FA59DDA21BEC22300538013 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = PPBadgeViewTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jkpang.PPBadgeViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PPBadgeViewSwift.app/PPBadgeViewSwift";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -531,6 +840,24 @@
 			buildConfigurations = (
 				2297A1601EF4FFB600868512 /* Debug */,
 				2297A1611EF4FFB600868512 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FA59DDB21BEC22300538013 /* Build configuration list for PBXNativeTarget "PPBadgeView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FA59DD721BEC22300538013 /* Debug */,
+				7FA59DD821BEC22300538013 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FA59DDD21BEC22300538013 /* Build configuration list for PBXNativeTarget "PPBadgeViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FA59DD921BEC22300538013 /* Debug */,
+				7FA59DDA21BEC22300538013 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
