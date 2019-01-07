@@ -44,18 +44,14 @@
     
     // 1.给UIBarButtonItem添加badge
     // 1.1 左边
-    [self.navigationItem.leftBarButtonItem pp_addBadgeWithNumber:1];
+    [self.navigationItem.leftBarButtonItem pp_setBadgeFlexMode:PPBadgeViewFlexModeTail];
+    [self.navigationItem.leftBarButtonItem pp_addBadgeWithNumber:10000000];
     // 调整badge大小
-//    [self.navigationItem.leftBarButtonItem pp_setBadgeHeightPoints:25];
+    [self.navigationItem.leftBarButtonItem pp_setBadgeHeight:18];
     // 调整badge的位置
 //    [self.navigationItem.leftBarButtonItem pp_moveBadgeWithX:-7 Y:5];
     
     // 自定义badge的属性: 字体大小/颜色, 背景颜色...(默认系统字体13,白色,背景色为系统badge红色)
-    [self.navigationItem.leftBarButtonItem pp_setBadgeLabelAttributes:^(PPBadgeLabel *badgeLabel) {
-        badgeLabel.backgroundColor = [UIColor redColor];
-//        badgeLabel.font =  [UIFont systemFontOfSize:13];
-//        badgeLabel.textColor = [UIColor blueColor];
-    }];
     
     // 1.2 右边
     [self.navigationItem.rightBarButtonItem pp_addBadgeWithNumber:50000];

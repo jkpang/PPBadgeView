@@ -20,7 +20,7 @@
 #ifndef PPBadgeView_h
 #define PPBadgeView_h
 
-#import "PPBadgeLabel.h"
+#import "PPBadgeControl.h"
 #import "UIView+PPBadgeView.h"
 #import "UITabBarItem+PPBadgeView.h"
 #import "UIBarButtonItem+PPBadgeView.h"

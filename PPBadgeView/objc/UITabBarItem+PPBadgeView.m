@@ -22,6 +22,11 @@
 
 @implementation UITabBarItem (PPBadgeView)
 
+- (PPBadgeControl *)badgeView
+{
+    return [self bottomView].badgeView;
+}
+
 - (void)pp_addBadgeWithText:(NSString *)text
 {
     [[self bottomView] pp_addBadgeWithText:text];
@@ -52,11 +57,6 @@
 - (void)pp_moveBadgeWithX:(CGFloat)x Y:(CGFloat)y
 {
     [[self bottomView] pp_moveBadgeWithX:x Y:y];
-}
-
-- (void)pp_setBadgeLabelAttributes:(void(^)(PPBadgeLabel *badgeLabel))attributes
-{
-    [[self bottomView] pp_setBadgeLabelAttributes:attributes];
 }
 
 - (void)pp_showBadge

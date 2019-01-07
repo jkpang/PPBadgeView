@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2232DC6A21E2F4D000025736 /* PPBadgeControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 2232DC6821E2F4CF00025736 /* PPBadgeControl.m */; };
 		2297A0E81EF4FD8A00868512 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A0E71EF4FD8A00868512 /* main.m */; };
 		2297A0F31EF4FD8A00868512 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2297A0F21EF4FD8A00868512 /* Assets.xcassets */; };
 		2297A0F61EF4FD8A00868512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2297A0F41EF4FD8A00868512 /* LaunchScreen.storyboard */; };
 		2297A10F1EF4FE0900868512 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A10E1EF4FE0900868512 /* AppDelegate.m */; };
 		2297A1271EF4FE6B00868512 /* PPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A1261EF4FE6B00868512 /* PPTabBarController.m */; };
-		2297A1321EF4FEFF00868512 /* PPBadgeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A12A1EF4FEFF00868512 /* PPBadgeLabel.m */; };
 		2297A1331EF4FEFF00868512 /* UIBarButtonItem+PPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A12D1EF4FEFF00868512 /* UIBarButtonItem+PPBadgeView.m */; };
 		2297A1341EF4FEFF00868512 /* UITabBarItem+PPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A12F1EF4FEFF00868512 /* UITabBarItem+PPBadgeView.m */; };
 		2297A1351EF4FEFF00868512 /* UIView+PPBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2297A1311EF4FEFF00868512 /* UIView+PPBadgeView.m */; };
@@ -33,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2232DC6821E2F4CF00025736 /* PPBadgeControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPBadgeControl.m; path = ../../../PPBadgeView/objc/PPBadgeControl.m; sourceTree = "<group>"; };
+		2232DC6921E2F4D000025736 /* PPBadgeControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPBadgeControl.h; path = ../../../PPBadgeView/objc/PPBadgeControl.h; sourceTree = "<group>"; };
 		2297A0E31EF4FD8A00868512 /* PPBadgeViewObjc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PPBadgeViewObjc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2297A0E71EF4FD8A00868512 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2297A0F21EF4FD8A00868512 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,8 +46,6 @@
 		2297A10E1EF4FE0900868512 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2297A1251EF4FE6B00868512 /* PPTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTabBarController.h; sourceTree = "<group>"; };
 		2297A1261EF4FE6B00868512 /* PPTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTabBarController.m; sourceTree = "<group>"; };
-		2297A1291EF4FEFF00868512 /* PPBadgeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPBadgeLabel.h; path = ../../../PPBadgeView/objc/PPBadgeLabel.h; sourceTree = "<group>"; };
-		2297A12A1EF4FEFF00868512 /* PPBadgeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPBadgeLabel.m; path = ../../../PPBadgeView/objc/PPBadgeLabel.m; sourceTree = "<group>"; };
 		2297A12B1EF4FEFF00868512 /* PPBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPBadgeView.h; path = ../../../PPBadgeView/objc/PPBadgeView.h; sourceTree = "<group>"; };
 		2297A12C1EF4FEFF00868512 /* UIBarButtonItem+PPBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIBarButtonItem+PPBadgeView.h"; path = "../../../PPBadgeView/objc/UIBarButtonItem+PPBadgeView.h"; sourceTree = "<group>"; };
 		2297A12D1EF4FEFF00868512 /* UIBarButtonItem+PPBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIBarButtonItem+PPBadgeView.m"; path = "../../../PPBadgeView/objc/UIBarButtonItem+PPBadgeView.m"; sourceTree = "<group>"; };
@@ -151,8 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				2297A12B1EF4FEFF00868512 /* PPBadgeView.h */,
-				2297A1291EF4FEFF00868512 /* PPBadgeLabel.h */,
-				2297A12A1EF4FEFF00868512 /* PPBadgeLabel.m */,
+				2232DC6921E2F4D000025736 /* PPBadgeControl.h */,
+				2232DC6821E2F4CF00025736 /* PPBadgeControl.m */,
 				2297A1301EF4FEFF00868512 /* UIView+PPBadgeView.h */,
 				2297A1311EF4FEFF00868512 /* UIView+PPBadgeView.m */,
 				2297A12C1EF4FEFF00868512 /* UIBarButtonItem+PPBadgeView.h */,
@@ -232,6 +232,7 @@
 				TargetAttributes = {
 					2297A0E21EF4FD8A00868512 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					2297A0FB1EF4FD8A00868512 = {
@@ -288,9 +289,9 @@
 			files = (
 				2297A10F1EF4FE0900868512 /* AppDelegate.m in Sources */,
 				2297A1351EF4FEFF00868512 /* UIView+PPBadgeView.m in Sources */,
-				2297A1321EF4FEFF00868512 /* PPBadgeLabel.m in Sources */,
 				2297A1881EF56D9A00868512 /* PPTableViewCell.m in Sources */,
 				2297A1331EF4FEFF00868512 /* UIBarButtonItem+PPBadgeView.m in Sources */,
+				2232DC6A21E2F4D000025736 /* PPBadgeControl.m in Sources */,
 				2297A1271EF4FE6B00868512 /* PPTabBarController.m in Sources */,
 				2297A1341EF4FEFF00868512 /* UITabBarItem+PPBadgeView.m in Sources */,
 				2297A1811EF56D6800868512 /* PPViewController1.m in Sources */,
@@ -437,11 +438,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = PPBadgeViewObjc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jkpang.PPBadgeViewObjc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -449,11 +453,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = PPBadgeViewObjc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jkpang.PPBadgeViewObjc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

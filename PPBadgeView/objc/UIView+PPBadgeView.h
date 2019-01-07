@@ -19,7 +19,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class PPBadgeLabel;
+@class PPBadgeControl;
 
 typedef NS_ENUM(NSUInteger, PPBadgeViewFlexMode);
 
@@ -28,6 +28,9 @@ typedef NS_ENUM(NSUInteger, PPBadgeViewFlexMode);
 @protocol PPBadgeView <NSObject>
 
 @required
+
+@property (nonatomic, strong, readonly) PPBadgeControl *badgeView;
+
 /**
  添加带文本内容的Badge, 默认右上角, 红色, 18pts
  
@@ -87,13 +90,6 @@ typedef NS_ENUM(NSUInteger, PPBadgeViewFlexMode);
  */
 - (void)pp_setBadgeFlexMode:(PPBadgeViewFlexMode)flexMode;
 
-/**
- 设置Bage的属性
- 
- Set properties for Badge
- */
-- (void)pp_setBadgeLabelAttributes:(void(^)(PPBadgeLabel *badgeLabel))attributes;
-
 /// 显示Badge
 - (void)pp_showBadge;
 
@@ -115,14 +111,13 @@ typedef NS_ENUM(NSUInteger, PPBadgeViewFlexMode);
 
 @end
 
-@interface UIView (Frame)
-@property (nonatomic, assign) CGFloat p_x;
-@property (nonatomic, assign) CGFloat p_y;
-@property (nonatomic, assign) CGFloat p_right;
-@property (nonatomic, assign) CGFloat p_bottom;
-@property (nonatomic, assign) CGFloat p_width;
-@property (nonatomic, assign) CGFloat p_height;
-@property (nonatomic, assign) CGFloat p_centerX;
-@property (nonatomic, assign) CGFloat p_centerY;
+@interface UIView (Constraint)
+- (NSLayoutConstraint *)topConstraint;
+- (NSLayoutConstraint *)leadingConstraint;
+- (NSLayoutConstraint *)bottomConstraint;
+- (NSLayoutConstraint *)trailingConstraint;
+- (NSLayoutConstraint *)widthConstraint;
+- (NSLayoutConstraint *)heightConstraint;
+- (NSLayoutConstraint *)centerXConstraint;
+- (NSLayoutConstraint *)centerYConstraint;
 @end
-
