@@ -21,7 +21,7 @@
 		2297A1971EF7FF7C00868512 /* PPViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297A1961EF7FF7C00868512 /* PPViewController2.swift */; };
 		2297A1991EF7FF8C00868512 /* PPViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297A1981EF7FF8C00868512 /* PPViewController3.swift */; };
 		2297A19B1EF7FF9A00868512 /* PPViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2297A19A1EF7FF9A00868512 /* PPViewController4.swift */; };
-		22F186881EF8082D00C59CF7 /* PPBadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F186871EF8082D00C59CF7 /* PPBadgeLabel.swift */; };
+		22F186881EF8082D00C59CF7 /* PPBadgeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F186871EF8082D00C59CF7 /* PPBadgeControl.swift */; };
 		22F1868A1EF809DE00C59CF7 /* UIView+PPBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F186891EF809DE00C59CF7 /* UIView+PPBadgeView.swift */; };
 		22F1868C1EF8238D00C59CF7 /* UIBarButtonItem+PPBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F1868B1EF8238D00C59CF7 /* UIBarButtonItem+PPBadgeView.swift */; };
 		22F186901EF823BA00C59CF7 /* UITabBarItem+PPBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F1868F1EF823BA00C59CF7 /* UITabBarItem+PPBadgeView.swift */; };
@@ -31,7 +31,7 @@
 		7FA59DD521BEC22300538013 /* PPBadgeView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA59DC021BEC22200538013 /* PPBadgeView.framework */; };
 		7FA59DD621BEC22300538013 /* PPBadgeView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7FA59DC021BEC22200538013 /* PPBadgeView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7FA59DE821BEC2AB00538013 /* PPBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA1EEDF2085868C00B4F818 /* PPBadgeView.swift */; };
-		7FA59DE921BEC2AB00538013 /* PPBadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F186871EF8082D00C59CF7 /* PPBadgeLabel.swift */; };
+		7FA59DE921BEC2AB00538013 /* PPBadgeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F186871EF8082D00C59CF7 /* PPBadgeControl.swift */; };
 		7FA59DEA21BEC2AB00538013 /* UIView+PPBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F186891EF809DE00C59CF7 /* UIView+PPBadgeView.swift */; };
 		7FA59DEB21BEC2AB00538013 /* UIBarButtonItem+PPBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F1868B1EF8238D00C59CF7 /* UIBarButtonItem+PPBadgeView.swift */; };
 		7FA59DEC21BEC2AB00538013 /* UITabBarItem+PPBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F1868F1EF823BA00C59CF7 /* UITabBarItem+PPBadgeView.swift */; };
@@ -101,7 +101,7 @@
 		2297A1961EF7FF7C00868512 /* PPViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPViewController2.swift; sourceTree = "<group>"; };
 		2297A1981EF7FF8C00868512 /* PPViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPViewController3.swift; sourceTree = "<group>"; };
 		2297A19A1EF7FF9A00868512 /* PPViewController4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PPViewController4.swift; sourceTree = "<group>"; };
-		22F186871EF8082D00C59CF7 /* PPBadgeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPBadgeLabel.swift; path = ../../../PPBadgeView/swift/PPBadgeLabel.swift; sourceTree = "<group>"; };
+		22F186871EF8082D00C59CF7 /* PPBadgeControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PPBadgeControl.swift; path = ../../../PPBadgeView/swift/PPBadgeControl.swift; sourceTree = "<group>"; };
 		22F186891EF809DE00C59CF7 /* UIView+PPBadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+PPBadgeView.swift"; path = "../../../PPBadgeView/swift/UIView+PPBadgeView.swift"; sourceTree = "<group>"; };
 		22F1868B1EF8238D00C59CF7 /* UIBarButtonItem+PPBadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem+PPBadgeView.swift"; path = "../../../PPBadgeView/swift/UIBarButtonItem+PPBadgeView.swift"; sourceTree = "<group>"; };
 		22F1868F1EF823BA00C59CF7 /* UITabBarItem+PPBadgeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITabBarItem+PPBadgeView.swift"; path = "../../../PPBadgeView/swift/UITabBarItem+PPBadgeView.swift"; sourceTree = "<group>"; };
@@ -244,7 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				1DA1EEDF2085868C00B4F818 /* PPBadgeView.swift */,
-				22F186871EF8082D00C59CF7 /* PPBadgeLabel.swift */,
+				22F186871EF8082D00C59CF7 /* PPBadgeControl.swift */,
 				22F186891EF809DE00C59CF7 /* UIView+PPBadgeView.swift */,
 				22F1868B1EF8238D00C59CF7 /* UIBarButtonItem+PPBadgeView.swift */,
 				22F1868F1EF823BA00C59CF7 /* UITabBarItem+PPBadgeView.swift */,
@@ -456,7 +456,7 @@
 				2259C60E1EF955D900893A40 /* PPTableViewCell.swift in Sources */,
 				2259C6111EF9564B00893A40 /* PPNavigationController.swift in Sources */,
 				22F1868C1EF8238D00C59CF7 /* UIBarButtonItem+PPBadgeView.swift in Sources */,
-				22F186881EF8082D00C59CF7 /* PPBadgeLabel.swift in Sources */,
+				22F186881EF8082D00C59CF7 /* PPBadgeControl.swift in Sources */,
 				2297A18F1EF7FEF700868512 /* AppDelegate.swift in Sources */,
 				2297A1991EF7FF8C00868512 /* PPViewController3.swift in Sources */,
 				2297A1911EF7FF3200868512 /* PPTabBarController.swift in Sources */,
@@ -480,7 +480,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FA59DE821BEC2AB00538013 /* PPBadgeView.swift in Sources */,
-				7FA59DE921BEC2AB00538013 /* PPBadgeLabel.swift in Sources */,
+				7FA59DE921BEC2AB00538013 /* PPBadgeControl.swift in Sources */,
 				7FA59DEA21BEC2AB00538013 /* UIView+PPBadgeView.swift in Sources */,
 				7FA59DEB21BEC2AB00538013 /* UIBarButtonItem+PPBadgeView.swift in Sources */,
 				7FA59DEC21BEC2AB00538013 /* UITabBarItem+PPBadgeView.swift in Sources */,

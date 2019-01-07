@@ -21,6 +21,10 @@ import UIKit
 
 public extension PP where Base: UIBarButtonItem {
     
+    public var badgeView: PPBadgeControl {
+        return _bottomView.pp.badgeView
+    }
+    
     /// 添加带文本内容的Badge, 默认右上角, 红色, 18pts
     ///
     /// Add Badge with text content, the default upper right corner, red backgroundColor, 18pts
@@ -82,15 +86,6 @@ public extension PP where Base: UIBarButtonItem {
     /// - Parameter points: 高度大小
     public func setBadge(height: CGFloat) {
         _bottomView.pp.setBadge(height: height)
-    }
-    
-    /// 设置Bage的属性
-    ///
-    /// Set properties for Badge
-    ///
-    /// - Parameter attributes: 将badgeLabel对象回调出来的闭包
-    public func setBadgeLabel(attributes: (PPBadgeLabel)->()) {
-        _bottomView.pp.setBadgeLabel(attributes: attributes)
     }
     
     /// 显示Badge

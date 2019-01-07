@@ -27,7 +27,7 @@ typedef NS_ENUM(NSUInteger, PPBadgeViewFlexMode) {
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PPBadgeControl : UIControl
+@interface PPBadgeControl: UIControl
 
 + (instancetype)defaultBadge;
 

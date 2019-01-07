@@ -19,19 +19,39 @@
 
 import UIKit
 
-private var kBadgeLabel = "kBadgeLabel"
+private var kBadgeView = "kBadgeView"
 
 // MARK: - add Badge
 public extension PP where Base: UIView {
+    
+    public var badgeView: PPBadgeControl {
+        return base.badgeView
+    }
     
     /// 添加带文本内容的Badge, 默认右上角, 红色, 18pts 
     ///
     /// Add Badge with text content, the default upper right corner, red backgroundColor, 18pts
     ///
     /// - Parameter text: 文本字符串
-    public func addBadge(text: String) {
+    public func addBadge(text: String?) {
         showBadge()
-        self.base.badgeLabel.text = text
+        base.badgeView.text = text
+        if text == nil {
+            if base.badgeView.widthConstraint?.relation == .equal { return }
+            if let constraint = base.badgeView.widthConstraint {
+                base.badgeView.removeConstraint(constraint)
+            }
+            let widthConstraint = NSLayoutConstraint(item: base.badgeView, attribute: .width, relatedBy: .equal, toItem: base.badgeView, attribute: .height, multiplier: 1.0, constant: 0)
+            base.badgeView.addConstraint(widthConstraint)
+        }
+        else {
+            if base.badgeView.widthConstraint?.relation == .greaterThanOrEqual { return }
+            if let constraint = base.badgeView.widthConstraint {
+                base.badgeView.removeConstraint(constraint)
+            }
+            let widthConstraint = NSLayoutConstraint(item: base.badgeView, attribute: .width, relatedBy: .greaterThanOrEqual, toItem: base.badgeView, attribute: .height, multiplier: 1.0, constant: 0)
+            base.badgeView.addConstraint(widthConstraint)
+        }
     }
     
     /// 添加带数字的Badge, 默认右上角,红色,18pts 
@@ -53,12 +73,10 @@ public extension PP where Base: UIView {
     /// Add small dots with color, the default upper right corner, red backgroundColor, 8pts
     ///
     /// - Parameter color: 颜色
-    public func addDot(color: UIColor?) {
-        addBadge(text: "")
+    public func addDot(color: UIColor? = .red) {
+        addBadge(text: nil)
         setBadge(height: 8.0)
-        if let color = color  {
-            self.base.badgeLabel.backgroundColor = color
-        }
+        base.badgeView.backgroundColor = color
     }
     
     /// 设置Badge的偏移量, Badge中心点默认为其父视图的右上角 
@@ -69,17 +87,44 @@ public extension PP where Base: UIView {
     ///   - x: X轴偏移量 (x<0: 左移, x>0: 右移) axis offset (x <0: left, x> 0: right)
     ///   - y: Y轴偏移量 (y<0: 上移, y>0: 下移) axis offset (Y <0: up,   y> 0: down)
     public func moveBadge(x: CGFloat, y: CGFloat) {
+        base.badgeView.offset = CGPoint(x: x, y: y)
+        base.centerYConstraint?.constant = y
         
-        self.base.badgeLabel.offset = CGPoint(x: x, y: y)
-        self.base.badgeLabel.p_y = -self.base.badgeLabel.p_height*0.5/*badge的y坐标*/ + y
+        let badgeHeight = base.badgeView.heightConstraint?.constant ?? 0
         
-        switch self.base.badgeLabel.flexMode {
+        switch base.badgeView.flexMode {
         case .head:
-            self.base.badgeLabel.p_right = (self.base.badgeLabel.superview?.p_width ?? 0) + self.base.badgeLabel.p_height*0.5 + x
+            if let constraint = base.centerXConstraint {
+                base.removeConstraint(constraint)
+            }
+            if let constraint = base.leadingConstraint {
+                base.removeConstraint(constraint)
+            }
+            let trailingConstraint = NSLayoutConstraint(item: base.badgeView, attribute: .trailing, relatedBy: .equal, toItem: base, attribute: .trailing, multiplier: 1.0, constant: badgeHeight * 0.5 + x)
+            base.addConstraint(trailingConstraint)
+            
         case .tail:
-            self.base.badgeLabel.p_x = (self.base.p_width - self.base.badgeLabel.p_height*0.5)/*badge的x坐标*/ + x
+            if let constraint = base.centerXConstraint {
+                base.removeConstraint(constraint)
+            }
+            if let constraint = base.trailingConstraint {
+                base.removeConstraint(constraint)
+            }
+            let leadingConstraint = NSLayoutConstraint(item: base.badgeView, attribute: .leading, relatedBy: .equal, toItem: base, attribute: .trailing, multiplier: 1.0, constant: x - badgeHeight * 0.5)
+            base.addConstraint(leadingConstraint)
+            
         case .middle:
-            self.base.badgeLabel.center = CGPoint(x: self.base.p_width+x, y: y)
+            if let constraint = base.leadingConstraint {
+                base.removeConstraint(constraint)
+            }
+            if let constraint = base.trailingConstraint {
+                base.removeConstraint(constraint)
+            }
+            if base.centerXConstraint == nil {
+                let centerXConstraint = NSLayoutConstraint(item: base.badgeView, attribute: .centerX, relatedBy: .equal, toItem: base, attribute: .centerX, multiplier: 1.0, constant: x)
+                base.addConstraint(centerXConstraint)
+            }
+            base.centerXConstraint?.constant = x
         }
     }
     
@@ -92,8 +137,8 @@ public extension PP where Base: UIView {
     /// PPBadgeViewFlexModeMiddle   左右伸缩 Middle Flex : <=●=>
     /// - Parameter flexMode : Default is PPBadgeViewFlexModeTail
     public func setBadge(flexMode: PPBadgeViewFlexMode = .tail) {
-        self.base.badgeLabel.flexMode = flexMode
-        self.moveBadge(x: self.base.badgeLabel.offset.x, y: self.base.badgeLabel.offset.y)
+        base.badgeView.flexMode = flexMode
+        self.moveBadge(x: base.badgeView.offset.x, y: base.badgeView.offset.y)
     }
     
     /// 设置Badge的高度,因为Badge宽度是动态可变的,通过改变Badge高度,其宽度也按比例变化,方便布局
@@ -106,27 +151,18 @@ public extension PP where Base: UIView {
     ///
     /// - Parameter height: 高度大小
     public func setBadge(height: CGFloat) {
-        let scale = height / self.base.badgeLabel.p_height
-        self.base.badgeLabel.transform = self.base.badgeLabel.transform.scaledBy(x: scale, y: scale)
-    }
-    
-    /// 设置Bage的属性
-    ///
-    /// Set properties for Badge
-    ///
-    /// - Parameter attributes: 将badgeLabel对象回调出来的闭包
-    public func setBadgeLabel(attributes: (PPBadgeLabel)->()) {
-        attributes(self.base.badgeLabel)
+        base.badgeView.layer.cornerRadius = height * 0.5
+        base.badgeView.heightConstraint?.constant = height
     }
     
     /// 显示Badge
     public func showBadge() {
-        self.base.badgeLabel.isHidden = false
+        base.badgeView.isHidden = false
     }
     
     /// 隐藏Badge
     public func hiddenBadge() {
-        self.base.badgeLabel.isHidden = true
+        base.badgeView.isHidden = true
     }
     
     // MARK: - 数字增加/减少, 注意:以下方法只适用于Badge内容为纯数字的情况
@@ -138,7 +174,7 @@ public extension PP where Base: UIView {
     
     /// badge数字加number
     public func increaseBy(number: Int) {
-        let label = self.base.badgeLabel
+        let label = base.badgeView
         let result = (Int(label.text ?? "0") ?? 0) + number
         if result > 0 {
             showBadge()
@@ -153,7 +189,7 @@ public extension PP where Base: UIView {
     
     /// badge数字减number
     public func decreaseBy(number: Int) {
-        let label = self.base.badgeLabel
+        let label = base.badgeView
         let result = (Int(label.text ?? "0") ?? 0) - number
         if (result <= 0) {
             hiddenBadge()
@@ -164,96 +200,79 @@ public extension PP where Base: UIView {
     }
 }
 
+extension UIView {
+    
+    private func addBadgeViewLayoutConstraint() {
+        badgeView.translatesAutoresizingMaskIntoConstraints = false
+        let centerXConstraint = NSLayoutConstraint(item: badgeView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 0)
+        let centerYConstraint = NSLayoutConstraint(item: badgeView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0)
+        let widthConstraint = NSLayoutConstraint(item: badgeView, attribute: .width, relatedBy: .greaterThanOrEqual, toItem: badgeView, attribute: .height, multiplier: 1.0, constant: 0)
+        let heightConstraint = NSLayoutConstraint(item: badgeView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 18)
+        addConstraints([centerXConstraint, centerYConstraint])
+        badgeView.addConstraints([widthConstraint, heightConstraint])
+    }
+}
+
 // MARK: - getter/setter
 extension UIView {
 
-    var badgeLabel: PPBadgeLabel {
+    public var badgeView: PPBadgeControl {
         get {
-            if let aValue = objc_getAssociatedObject(self, &kBadgeLabel) as? PPBadgeLabel {
+            if let aValue = objc_getAssociatedObject(self, &kBadgeView) as? PPBadgeControl {
                 return aValue
-            } else {
-                let badgeLabel = PPBadgeLabel.default()
-                badgeLabel.center = CGPoint(x: self.p_width, y: 0)
-                self.addSubview(badgeLabel)
-                self.bringSubviewToFront(badgeLabel)
-                self.badgeLabel = badgeLabel
-                return badgeLabel
+            }
+            else {
+                let badgeControl = PPBadgeControl.default()
+                self.addSubview(badgeControl)
+                self.bringSubviewToFront(badgeControl)
+                self.badgeView = badgeControl
+                self.addBadgeViewLayoutConstraint()
+                return badgeControl
             }
         }
         set {
-            objc_setAssociatedObject(self, &kBadgeLabel, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &kBadgeView, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
-    var p_x: CGFloat {
-        get {
-            return frame.origin.x
-        }
-        set {
-            frame.origin.x = newValue
-        }
+    fileprivate var topConstraint: NSLayoutConstraint? {
+        return constraint(with: .top)
     }
     
-    var p_y: CGFloat {
-        get {
-            return frame.origin.y
-        }
-        set {
-            frame.origin.y = newValue
-        }
+    fileprivate var leadingConstraint: NSLayoutConstraint? {
+        return constraint(with: .leading)
     }
     
-    var p_right: CGFloat {
-        get {
-            return frame.origin.x + frame.size.width
-        }
-        set {
-            frame.origin.x = newValue - frame.size.width
-        }
+    fileprivate var bottomConstraint: NSLayoutConstraint? {
+        return constraint(with: .bottom)
     }
     
-    var p_bottom: CGFloat {
-        get {
-            return frame.origin.y + frame.size.height
-        }
-        set {
-            frame.origin.y = newValue - frame.size.height
-        }
+    fileprivate var trailingConstraint: NSLayoutConstraint? {
+        return constraint(with: .trailing)
     }
     
-    var p_width: CGFloat {
-        get {
-            return frame.size.width
-        }
-        set {
-            frame.size.width = newValue
-        }
+    fileprivate var widthConstraint: NSLayoutConstraint? {
+        return constraint(with: .width)
     }
     
-    var p_height: CGFloat {
-        get {
-            return frame.size.height
-        }
-        set {
-            frame.size.height = newValue
-        }
+    fileprivate var heightConstraint: NSLayoutConstraint? {
+        return constraint(with: .height)
     }
     
-    var p_centerX: CGFloat {
-        get {
-            return center.x
-        }
-        set {
-            center.x = newValue
-        }
+    fileprivate var centerXConstraint: NSLayoutConstraint? {
+        return constraint(with: .centerX)
     }
     
-    var p_centerY: CGFloat {
-        get {
-            return center.y
+    fileprivate var centerYConstraint: NSLayoutConstraint? {
+        return constraint(with: .centerY)
+    }
+    
+    private func constraint(with layoutAttribute: NSLayoutConstraint.Attribute) -> NSLayoutConstraint? {
+        for constraint in constraints {
+            if constraint.firstAttribute == layoutAttribute {
+                return constraint
+            }
         }
-        set {
-            center.y = newValue
-        }
+        return nil
     }
 }

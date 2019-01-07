@@ -37,9 +37,7 @@ class PPTabBarController: UITabBarController {
             
             // 给controller2.tabBarItem
             controller2.tabBarItem.pp.addBadge(number: 7)
-            controller2.tabBarItem.pp.setBadgeLabel(attributes: { (badgeLabel) in
-                badgeLabel.backgroundColor = UIColor.blue
-            })
+            controller2.tabBarItem.pp.badgeView.backgroundColor = .blue
             
             // 给controller3.tabBarItem
             controller3.tabBarItem.pp.addDot(color: UIColor.green)

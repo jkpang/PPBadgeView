@@ -11,9 +11,6 @@ import UIKit
 class PPTableViewCell: UITableViewCell {
 
     @IBOutlet weak var headerView: UIView!
-    lazy var badge: PPBadgeLabel = {
-        return PPBadgeLabel.default()
-    }()
     
     
     override func awakeFromNib() {
@@ -27,13 +24,6 @@ class PPTableViewCell: UITableViewCell {
         // 1. 给headeView添加小圆点
         self.headerView.pp.addDot(color: randomColor())
         self.headerView.pp.moveBadge(x: -1, y: 1)
-        
-        // 2. 给cell添加badge
-        self.badge.backgroundColor = randomColor()
-        self.badge.text = "\(arc4random()%300)"
-        self.badge.p_right = UIScreen.main.bounds.size.width-15
-        self.badge.p_centerY = self.p_height * 0.5
-        self.contentView.addSubview(self.badge)
     }
     
     

@@ -33,6 +33,23 @@ static NSString *const kBadgeView = @"kBadgeView";
 {
     [self pp_showBadge];
     self.badgeView.text = text;
+    
+    if (text) {
+        if (self.badgeView.widthConstraint.relation == NSLayoutRelationGreaterThanOrEqual) {
+            return;
+        }
+        [self.badgeView removeConstraint:self.badgeView.widthConstraint];
+        NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self.badgeView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:self.badgeView attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
+        [self.badgeView addConstraint:constraint];
+    }
+    else {
+        if (self.badgeView.widthConstraint.relation == NSLayoutRelationEqual) {
+            return;
+        }
+        [self.badgeView removeConstraint:self.badgeView.widthConstraint];
+        NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self.badgeView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.badgeView attribute:(NSLayoutAttributeHeight) multiplier:1.0 constant:0];
+        [self.badgeView addConstraint:constraint];
+    }
 }
 
 - (void)pp_addBadgeWithNumber:(NSInteger)number
@@ -47,24 +64,17 @@ static NSString *const kBadgeView = @"kBadgeView";
 
 - (void)pp_addDotWithColor:(UIColor *)color
 {
-    CGFloat defaultHeight = 8.0;
     [self pp_addBadgeWithText:nil];
+    [self pp_setBadgeHeight:8.0];
     self.badgeView.backgroundColor = color;
-    self.badgeView.layer.cornerRadius = defaultHeight * 0.5;
-    self.badgeView.heightConstraint.constant = defaultHeight;
-    
-    if (self.badgeView.widthConstraint.relation == NSLayoutRelationEqual) {
-        return;
-    }
-    [self.badgeView removeConstraint:self.badgeView.widthConstraint];
-    NSLayoutConstraint *constraintW = [NSLayoutConstraint constraintWithItem:self.badgeView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.badgeView attribute:(NSLayoutAttributeHeight) multiplier:1.0 constant:0];
-    [self.badgeView addConstraint:constraintW];
 }
 
 - (void)pp_moveBadgeWithX:(CGFloat)x Y:(CGFloat)y
 {
     self.badgeView.offset = CGPointMake(x, y);
-    self.badgeView.centerYConstraint.constant = y;
+    self.centerYConstraint.constant = y;
+    CGFloat badgeHeight = self.badgeView.heightConstraint.constant;
+    
     switch (self.badgeView.flexMode) {
         case PPBadgeViewFlexModeHead: // 1. 左伸缩  <==●
         {
@@ -74,7 +84,7 @@ static NSString *const kBadgeView = @"kBadgeView";
             if (self.leadingConstraint) {
                 [self removeConstraint:self.leadingConstraint];
             }
-            NSLayoutConstraint *trailingConstraint = [NSLayoutConstraint constraintWithItem:self.badgeView attribute:NSLayoutAttributeTrailing relatedBy:(NSLayoutRelationEqual) toItem:self attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:self.badgeView.heightConstraint.constant*0.5 + x];
+            NSLayoutConstraint *trailingConstraint = [NSLayoutConstraint constraintWithItem:self.badgeView attribute:NSLayoutAttributeTrailing relatedBy:(NSLayoutRelationEqual) toItem:self attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:badgeHeight*0.5 + x];
             [self addConstraint:trailingConstraint];
             break;
         }
@@ -86,7 +96,7 @@ static NSString *const kBadgeView = @"kBadgeView";
             if (self.trailingConstraint) {
                 [self removeConstraint:self.trailingConstraint];
             }
-            NSLayoutConstraint *leadingConstraint = [NSLayoutConstraint constraintWithItem:self.badgeView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:x - self.badgeView.heightConstraint.constant*0.5];
+            NSLayoutConstraint *leadingConstraint = [NSLayoutConstraint constraintWithItem:self.badgeView attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:x - badgeHeight*0.5];
             [self addConstraint:leadingConstraint];
             break;
         }
@@ -100,7 +110,7 @@ static NSString *const kBadgeView = @"kBadgeView";
                 [self removeConstraint:self.trailingConstraint];
             }
             if (!self.centerXConstraint) {
-                NSLayoutConstraint *centerXConstraint = [NSLayoutConstraint constraintWithItem:self.badgeView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0];
+                NSLayoutConstraint *centerXConstraint = [NSLayoutConstraint constraintWithItem:self.badgeView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:x];
                 [self addConstraint:centerXConstraint];
             }
             self.centerXConstraint.constant = x;
@@ -119,13 +129,6 @@ static NSString *const kBadgeView = @"kBadgeView";
 {
     self.badgeView.layer.cornerRadius = height * 0.5;
     self.badgeView.heightConstraint.constant = height;
-    
-    if (self.badgeView.widthConstraint.relation == NSLayoutRelationGreaterThanOrEqual) {
-        return;
-    }
-    [self.badgeView removeConstraint:self.badgeView.widthConstraint];
-    NSLayoutConstraint *constraintW = [NSLayoutConstraint constraintWithItem:self.badgeView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:self.badgeView attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
-    [self.badgeView addConstraint:constraintW];
 }
 
 - (void)pp_showBadge
@@ -168,16 +171,16 @@ static NSString *const kBadgeView = @"kBadgeView";
     self.badgeView.text = [NSString stringWithFormat:@"%ld",result];
 }
 
-- (void)addBadgeViewLayout
+- (void)addBadgeViewLayoutConstraint
 {
     [self.badgeView setTranslatesAutoresizingMaskIntoConstraints:NO];
     
-    NSLayoutConstraint *constraintCX = [NSLayoutConstraint constraintWithItem:self.badgeView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:(NSLayoutAttributeTrailing) multiplier:1.0 constant:0];
-    NSLayoutConstraint *constraintCY = [NSLayoutConstraint constraintWithItem:self.badgeView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:(NSLayoutAttributeTop) multiplier:1.0 constant:0];
-    NSLayoutConstraint *constraintW = [NSLayoutConstraint constraintWithItem:self.badgeView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:self.badgeView attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
-    NSLayoutConstraint *constraintH = [NSLayoutConstraint constraintWithItem:self.badgeView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:18];
-    [self addConstraints:@[constraintCX, constraintCY]];
-    [self.badgeView addConstraints:@[constraintW, constraintH]];
+    NSLayoutConstraint *centerXConstraint = [NSLayoutConstraint constraintWithItem:self.badgeView attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:0];
+    NSLayoutConstraint *centerYConstraint = [NSLayoutConstraint constraintWithItem:self.badgeView attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
+    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:self.badgeView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:self.badgeView attribute:NSLayoutAttributeHeight multiplier:1.0 constant:0];
+    NSLayoutConstraint *heightConstraint = [NSLayoutConstraint constraintWithItem:self.badgeView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:18];
+    [self addConstraints:@[centerXConstraint, centerYConstraint]];
+    [self.badgeView addConstraints:@[widthConstraint, heightConstraint]];
 }
 
 #pragma mark - setter/getter
@@ -190,7 +193,7 @@ static NSString *const kBadgeView = @"kBadgeView";
         [self addSubview:badgeView];
         [self bringSubviewToFront:badgeView];
         [self setBadgeView:badgeView];
-        [self addBadgeViewLayout];
+        [self addBadgeViewLayoutConstraint];
     }
     return badgeView;
 }

@@ -42,10 +42,6 @@ class PPViewController1: UIViewController {
         // 调整badge的位置
 //        self.navigationItem.leftBarButtonItem?.pp.moveBadge(x: -7, y: 5)
         // 自定义badge的属性: 字体大小/颜色, 背景颜色...(默认系统字体13,白色,背景色为系统badge红色)
-        self.navigationItem.leftBarButtonItem?.pp.setBadgeLabel(attributes: { (badgeLabel) in
-            // badgeLabel.font = UIFont.systemFont(ofSize: 13)
-            // badgeLabel.textColor = UIColor.blue
-        })
         
         // 1.2 右边
         self.navigationItem.rightBarButtonItem?.pp.addBadge(number: 5000000)
