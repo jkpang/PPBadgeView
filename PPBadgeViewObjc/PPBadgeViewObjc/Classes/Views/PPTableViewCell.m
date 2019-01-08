@@ -30,8 +30,8 @@
 - (void)setupBadge
 {
     // 1. 给headeView添加小圆点
-    [self.headerView pp_setBadgeFlexMode:PPBadgeViewFlexModeHead];
     [self.headerView pp_addDotWithColor:kRandomColor];
+    [self.headerView pp_setBadgeFlexMode:PPBadgeViewFlexModeHead];
     [self.headerView pp_moveBadgeWithX:-1 Y:1];
 }
 

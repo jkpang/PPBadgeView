@@ -25,6 +25,7 @@
 @property (nonatomic, strong) UILabel *textLabel;
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UIColor *badgeViewColor;
+@property (nonatomic, strong) NSLayoutConstraint *badgeViewHeightConstraint;
 
 @end
 
@@ -48,8 +49,8 @@
     self.layer.masksToBounds = YES;
     self.layer.cornerRadius = 9.0;
     self.backgroundColor = UIColor.redColor;
-    self.badgeViewColor = UIColor.redColor;
     self.flexMode = PPBadgeViewFlexModeTail;
+    [self setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self addSubview:self.imageView];
     [self addSubview:self.textLabel];
     [self addLayoutWith:self.imageView leading:0 trailing:0];
@@ -92,16 +93,26 @@
 {
     _backgroundImage = backgroundImage;
     self.imageView.image = backgroundImage;
-    
-    BOOL isImageNull = backgroundImage == nil;
-    self.heightConstraint.active = isImageNull;
-    self.backgroundColor = isImageNull ? self.badgeViewColor : UIColor.clearColor;
+    if (backgroundImage) {
+        if (self.heightConstraint) {
+            self.badgeViewHeightConstraint = self.heightConstraint;
+            [self removeConstraint:self.heightConstraint];
+        }
+        self.backgroundColor = UIColor.clearColor;
+    } else {
+        if (!self.heightConstraint && self.badgeViewHeightConstraint) {
+            [self addConstraint:self.badgeViewHeightConstraint];
+        }
+        self.backgroundColor = self.badgeViewColor;
+    }
 }
 
 - (void)setBackgroundColor:(UIColor *)backgroundColor
 {
     [super setBackgroundColor:backgroundColor];
-    self.badgeViewColor = backgroundColor;
+    if (backgroundColor && backgroundColor != UIColor.clearColor) {
+        self.badgeViewColor = backgroundColor;
+    }
 }
 
 #pragma mark - Lazy

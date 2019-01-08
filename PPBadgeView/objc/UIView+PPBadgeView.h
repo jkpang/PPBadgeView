@@ -112,12 +112,12 @@ typedef NS_ENUM(NSUInteger, PPBadgeViewFlexMode);
 @end
 
 @interface UIView (Constraint)
-- (NSLayoutConstraint *)topConstraint;
-- (NSLayoutConstraint *)leadingConstraint;
-- (NSLayoutConstraint *)bottomConstraint;
-- (NSLayoutConstraint *)trailingConstraint;
 - (NSLayoutConstraint *)widthConstraint;
 - (NSLayoutConstraint *)heightConstraint;
-- (NSLayoutConstraint *)centerXConstraint;
-- (NSLayoutConstraint *)centerYConstraint;
+- (NSLayoutConstraint *)topConstraintWithItem:(id)item;
+- (NSLayoutConstraint *)leadingConstraintWithItem:(id)item;
+- (NSLayoutConstraint *)bottomConstraintWithItem:(id)item;
+- (NSLayoutConstraint *)trailingConstraintWithItem:(id)item;
+- (NSLayoutConstraint *)centerXConstraintWithItem:(id)item;
+- (NSLayoutConstraint *)centerYConstraintWithItem:(id)item;
 @end

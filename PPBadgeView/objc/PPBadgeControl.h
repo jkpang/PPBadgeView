@@ -32,16 +32,16 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)defaultBadge;
 
 /// Set Text
-@property (nonatomic, copy) NSString *text;
+@property (nullable, nonatomic, copy) NSString *text;
 
 /// Set AttributedText
-@property (nonatomic, strong) NSAttributedString *attributedText;
+@property (nullable, nonatomic, strong) NSAttributedString *attributedText;
 
 /// Set Font
 @property (nonatomic, strong) UIFont *font;
 
 /// Set background image
-@property (nonatomic, strong) UIImage *backgroundImage;
+@property (nullable, nonatomic, strong) UIImage *backgroundImage;
 
 /// Badge伸缩的方向, Default is PPBadgeViewFlexModeTail
 @property (nonatomic, assign) PPBadgeViewFlexMode flexMode;

@@ -33,6 +33,7 @@ open class PPBadgeControl: UIControl {
     private lazy var imageView: UIImageView = UIImageView()
     
     private var badgeViewColor: UIColor?
+    private var badgeViewHeightConstraint: NSLayoutConstraint?
     
     public class func `default`() -> Self {
         return self.init(frame: .zero)
@@ -73,23 +74,34 @@ open class PPBadgeControl: UIControl {
     open var backgroundImage: UIImage? {
         didSet {
             imageView.image = backgroundImage
-            
-            let isImageNull = (backgroundImage == nil)
-            heightConstraint?.isActive = isImageNull
-            backgroundColor = isImageNull ? badgeViewColor : UIColor.clear
+            if let _ = backgroundImage {
+                if let constraint = heightConstraint {
+                    badgeViewHeightConstraint = constraint
+                    removeConstraint(constraint)
+                }
+                backgroundColor = UIColor.clear
+            } else {
+                if heightConstraint == nil, let constraint = badgeViewHeightConstraint {
+                    addConstraint(constraint)
+                }
+                backgroundColor = badgeViewColor
+            }
         }
     }
     
     open override var backgroundColor: UIColor? {
         didSet {
             super.backgroundColor = backgroundColor
-            badgeViewColor = backgroundColor
+            if let color = backgroundColor, color != .clear {
+                badgeViewColor = backgroundColor
+            }
         }
     }
     
     private func setupSubviews() {
         layer.masksToBounds = true
         layer.cornerRadius = 9.0
+        translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor.red
         textLabel.textColor = UIColor.white
         textLabel.font = UIFont.systemFont(ofSize: 13)
