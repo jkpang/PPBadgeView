@@ -44,8 +44,8 @@
     
     // 1.给UIBarButtonItem添加badge
     // 1.1 左边
+    [self.navigationItem.leftBarButtonItem pp_addBadgeWithNumber:100];
     [self.navigationItem.leftBarButtonItem pp_setBadgeFlexMode:PPBadgeViewFlexModeTail];
-    [self.navigationItem.leftBarButtonItem pp_addBadgeWithNumber:10000000];
     // 调整badge大小
     [self.navigationItem.leftBarButtonItem pp_setBadgeHeight:18];
     // 调整badge的位置

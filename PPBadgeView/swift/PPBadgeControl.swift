@@ -32,6 +32,8 @@ open class PPBadgeControl: UIControl {
     
     private lazy var imageView: UIImageView = UIImageView()
     
+    private var badgeViewColor: UIColor?
+    
     public class func `default`() -> Self {
         return self.init(frame: .zero)
     }
@@ -71,6 +73,17 @@ open class PPBadgeControl: UIControl {
     open var backgroundImage: UIImage? {
         didSet {
             imageView.image = backgroundImage
+            
+            let isImageNull = (backgroundImage == nil)
+            heightConstraint?.isActive = isImageNull
+            backgroundColor = isImageNull ? badgeViewColor : UIColor.clear
+        }
+    }
+    
+    open override var backgroundColor: UIColor? {
+        didSet {
+            super.backgroundColor = backgroundColor
+            badgeViewColor = backgroundColor
         }
     }
     
@@ -89,10 +102,12 @@ open class PPBadgeControl: UIControl {
     
     private func addLayout(with view: UIView, leading: CGFloat, trailing: CGFloat) {
         view.translatesAutoresizingMaskIntoConstraints = false
+        
         let topConstraint = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0)
         let leadingConstraint = NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: leading)
         let bottomConstraint = NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0)
         let trailingConstraint = NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: trailing)
+        
         addConstraints([topConstraint, leadingConstraint, bottomConstraint, trailingConstraint])
     }
 }

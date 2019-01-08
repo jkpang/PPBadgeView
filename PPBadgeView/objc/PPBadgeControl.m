@@ -18,11 +18,13 @@
  */
 
 #import "PPBadgeControl.h"
+#import "UIView+PPBadgeView.h"
 
 @interface PPBadgeControl ()
 
 @property (nonatomic, strong) UILabel *textLabel;
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIColor *badgeViewColor;
 
 @end
 
@@ -46,9 +48,10 @@
     self.layer.masksToBounds = YES;
     self.layer.cornerRadius = 9.0;
     self.backgroundColor = UIColor.redColor;
+    self.badgeViewColor = UIColor.redColor;
     self.flexMode = PPBadgeViewFlexModeTail;
-    [self addSubview:self.textLabel];
     [self addSubview:self.imageView];
+    [self addSubview:self.textLabel];
     [self addLayoutWith:self.imageView leading:0 trailing:0];
     [self addLayoutWith:self.textLabel leading:5 trailing:-5];
 }
@@ -56,10 +59,12 @@
 - (void)addLayoutWith:(UIView *)view leading: (CGFloat)leading trailing: (CGFloat)trailing
 {
     [view setTranslatesAutoresizingMaskIntoConstraints:NO];
+    
     NSLayoutConstraint *topConstraint = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTop multiplier:1.0 constant:0];
     NSLayoutConstraint *leadingConstraint = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeading multiplier:1.0 constant:leading];
     NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0];
     NSLayoutConstraint *trailingConstraint = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:trailing];
+    
     [self addConstraints:@[topConstraint, leadingConstraint, bottomConstraint, trailingConstraint]];
 }
 
@@ -87,6 +92,16 @@
 {
     _backgroundImage = backgroundImage;
     self.imageView.image = backgroundImage;
+    
+    BOOL isImageNull = backgroundImage == nil;
+    self.heightConstraint.active = isImageNull;
+    self.backgroundColor = isImageNull ? self.badgeViewColor : UIColor.clearColor;
+}
+
+- (void)setBackgroundColor:(UIColor *)backgroundColor
+{
+    [super setBackgroundColor:backgroundColor];
+    self.badgeViewColor = backgroundColor;
 }
 
 #pragma mark - Lazy

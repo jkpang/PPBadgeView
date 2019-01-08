@@ -204,10 +204,12 @@ extension UIView {
     
     private func addBadgeViewLayoutConstraint() {
         badgeView.translatesAutoresizingMaskIntoConstraints = false
+        
         let centerXConstraint = NSLayoutConstraint(item: badgeView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 0)
         let centerYConstraint = NSLayoutConstraint(item: badgeView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0)
         let widthConstraint = NSLayoutConstraint(item: badgeView, attribute: .width, relatedBy: .greaterThanOrEqual, toItem: badgeView, attribute: .height, multiplier: 1.0, constant: 0)
         let heightConstraint = NSLayoutConstraint(item: badgeView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1.0, constant: 18)
+        
         addConstraints([centerXConstraint, centerYConstraint])
         badgeView.addConstraints([widthConstraint, heightConstraint])
     }
@@ -235,35 +237,35 @@ extension UIView {
         }
     }
     
-    fileprivate var topConstraint: NSLayoutConstraint? {
+    internal var topConstraint: NSLayoutConstraint? {
         return constraint(with: .top)
     }
     
-    fileprivate var leadingConstraint: NSLayoutConstraint? {
+    internal var leadingConstraint: NSLayoutConstraint? {
         return constraint(with: .leading)
     }
     
-    fileprivate var bottomConstraint: NSLayoutConstraint? {
+    internal var bottomConstraint: NSLayoutConstraint? {
         return constraint(with: .bottom)
     }
     
-    fileprivate var trailingConstraint: NSLayoutConstraint? {
+    internal var trailingConstraint: NSLayoutConstraint? {
         return constraint(with: .trailing)
     }
     
-    fileprivate var widthConstraint: NSLayoutConstraint? {
+    internal var widthConstraint: NSLayoutConstraint? {
         return constraint(with: .width)
     }
     
-    fileprivate var heightConstraint: NSLayoutConstraint? {
+    internal var heightConstraint: NSLayoutConstraint? {
         return constraint(with: .height)
     }
     
-    fileprivate var centerXConstraint: NSLayoutConstraint? {
+    internal var centerXConstraint: NSLayoutConstraint? {
         return constraint(with: .centerX)
     }
     
-    fileprivate var centerYConstraint: NSLayoutConstraint? {
+    internal var centerYConstraint: NSLayoutConstraint? {
         return constraint(with: .centerY)
     }
     
