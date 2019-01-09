@@ -75,13 +75,13 @@ open class PPBadgeControl: UIControl {
         didSet {
             imageView.image = backgroundImage
             if let _ = backgroundImage {
-                if let constraint = heightConstraint {
+                if let constraint = heightConstraint() {
                     badgeViewHeightConstraint = constraint
                     removeConstraint(constraint)
                 }
                 backgroundColor = UIColor.clear
             } else {
-                if heightConstraint == nil, let constraint = badgeViewHeightConstraint {
+                if heightConstraint() == nil, let constraint = badgeViewHeightConstraint {
                     addConstraint(constraint)
                 }
                 backgroundColor = badgeViewColor
@@ -119,6 +119,8 @@ open class PPBadgeControl: UIControl {
         let leadingConstraint = NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: leading)
         let bottomConstraint = NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0)
         let trailingConstraint = NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: trailing)
+        leadingConstraint.priority = UILayoutPriority(rawValue: 999)
+        trailingConstraint.priority = UILayoutPriority(rawValue: 999)
         
         addConstraints([topConstraint, leadingConstraint, bottomConstraint, trailingConstraint])
     }

@@ -44,12 +44,9 @@
     
     // 1.给UIBarButtonItem添加badge
     // 1.1 左边
-    [self.navigationItem.leftBarButtonItem pp_addBadgeWithNumber:10000000];
-    [self.navigationItem.leftBarButtonItem pp_setBadgeFlexMode:PPBadgeViewFlexModeTail];
-    // Set backgroundImage
-//    self.navigationItem.leftBarButtonItem.badgeView.backgroundImage = [UIImage imageNamed:@"dinner_1"];
+    [self.navigationItem.leftBarButtonItem pp_addBadgeWithNumber:10];
     // 调整badge大小
-    [self.navigationItem.leftBarButtonItem pp_setBadgeHeight:18];
+    [self.navigationItem.leftBarButtonItem pp_setBadgeHeight:20];
     // 调整badge的位置
 //    [self.navigationItem.leftBarButtonItem pp_moveBadgeWithX:-7 Y:5];
     
@@ -80,7 +77,7 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

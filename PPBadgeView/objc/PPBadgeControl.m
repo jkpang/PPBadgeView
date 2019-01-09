@@ -50,14 +50,17 @@
     self.layer.cornerRadius = 9.0;
     self.backgroundColor = UIColor.redColor;
     self.flexMode = PPBadgeViewFlexModeTail;
+    
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [self setContentHuggingPriority:251 forAxis:UILayoutConstraintAxisHorizontal];
+    [self setContentHuggingPriority:251 forAxis:UILayoutConstraintAxisVertical];
     [self addSubview:self.imageView];
     [self addSubview:self.textLabel];
     [self addLayoutWith:self.imageView leading:0 trailing:0];
     [self addLayoutWith:self.textLabel leading:5 trailing:-5];
 }
 
-- (void)addLayoutWith:(UIView *)view leading: (CGFloat)leading trailing: (CGFloat)trailing
+- (void)addLayoutWith:(UIView *)view leading:(CGFloat)leading trailing:(CGFloat)trailing
 {
     [view setTranslatesAutoresizingMaskIntoConstraints:NO];
     
@@ -65,6 +68,8 @@
     NSLayoutConstraint *leadingConstraint = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeLeading relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeLeading multiplier:1.0 constant:leading];
     NSLayoutConstraint *bottomConstraint = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0];
     NSLayoutConstraint *trailingConstraint = [NSLayoutConstraint constraintWithItem:view attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1.0 constant:trailing];
+    leadingConstraint.priority = 999;
+    trailingConstraint.priority = 999;
     
     [self addConstraints:@[topConstraint, leadingConstraint, bottomConstraint, trailingConstraint]];
 }

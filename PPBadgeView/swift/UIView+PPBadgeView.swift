@@ -36,14 +36,15 @@ public extension PP where Base: UIView {
     public func addBadge(text: String?) {
         showBadge()
         base.badgeView.text = text
+        setBadge(flexMode: base.badgeView.flexMode)
         if text == nil {
-            if base.badgeView.widthConstraint?.relation == .equal { return }
-            base.badgeView.widthConstraint?.isActive = false
+            if base.badgeView.widthConstraint()?.relation == .equal { return }
+            base.badgeView.widthConstraint()?.isActive = false
             let constraint = NSLayoutConstraint(item: base.badgeView, attribute: .width, relatedBy: .equal, toItem: base.badgeView, attribute: .height, multiplier: 1.0, constant: 0)
             base.badgeView.addConstraint(constraint)
         } else {
-            if base.badgeView.widthConstraint?.relation == .greaterThanOrEqual { return }
-            base.badgeView.widthConstraint?.isActive = false
+            if base.badgeView.widthConstraint()?.relation == .greaterThanOrEqual { return }
+            base.badgeView.widthConstraint()?.isActive = false
             let constraint = NSLayoutConstraint(item: base.badgeView, attribute: .width, relatedBy: .greaterThanOrEqual, toItem: base.badgeView, attribute: .height, multiplier: 1.0, constant: 0)
             base.badgeView.addConstraint(constraint)
         }
@@ -83,29 +84,38 @@ public extension PP where Base: UIView {
     ///   - y: Y轴偏移量 (y<0: 上移, y>0: 下移) axis offset (Y <0: up,   y> 0: down)
     public func moveBadge(x: CGFloat, y: CGFloat) {
         base.badgeView.offset = CGPoint(x: x, y: y)
-        base.centerYConstraint?.constant = y
+        base.centerYConstraint(with: base.badgeView)?.constant = y
         
-        let badgeHeight = base.badgeView.heightConstraint?.constant ?? 0
+        let badgeHeight = base.badgeView.heightConstraint()?.constant ?? 0
         switch base.badgeView.flexMode {
         case .head:
-            base.centerXConstraint?.isActive = false
-            base.leadingConstraint?.isActive = false
-            guard let _ = base.trailingConstraint else { return }
+            base.centerXConstraint(with: base.badgeView)?.isActive = false
+            base.leadingConstraint(with: base.badgeView)?.isActive = false
+            if let constraint = base.trailingConstraint(with: base.badgeView) {
+                constraint.constant = badgeHeight * 0.5 + x
+                return
+            }
             let trailingConstraint = NSLayoutConstraint(item: base.badgeView, attribute: .trailing, relatedBy: .equal, toItem: base, attribute: .trailing, multiplier: 1.0, constant: badgeHeight * 0.5 + x)
             base.addConstraint(trailingConstraint)
             
         case .tail:
-            base.centerXConstraint?.isActive = false
-            base.trailingConstraint?.isActive = false
-            guard let _ = base.leadingConstraint else { return }
+            base.centerXConstraint(with: base.badgeView)?.isActive = false
+            base.trailingConstraint(with: base.badgeView)?.isActive = false
+            if let constraint = base.leadingConstraint(with: base.badgeView) {
+                constraint.constant = x - badgeHeight * 0.5
+                return
+            }
             let leadingConstraint = NSLayoutConstraint(item: base.badgeView, attribute: .leading, relatedBy: .equal, toItem: base, attribute: .trailing, multiplier: 1.0, constant: x - badgeHeight * 0.5)
             base.addConstraint(leadingConstraint)
             
         case .middle:
-            base.leadingConstraint?.isActive = false
-            base.trailingConstraint?.isActive = false
-            base.centerXConstraint?.constant = x
-            guard let _ = base.centerXConstraint else { return }
+            base.leadingConstraint(with: base.badgeView)?.isActive = false
+            base.trailingConstraint(with: base.badgeView)?.isActive = false
+            base.centerXConstraint(with: base.badgeView)?.constant = x
+            if let constraint = base.centerXConstraint(with: base.badgeView) {
+                constraint.constant = x
+                return
+            }
             let centerXConstraint = NSLayoutConstraint(item: base.badgeView, attribute: .centerX, relatedBy: .equal, toItem: base, attribute: .centerX, multiplier: 1.0, constant: x)
             base.addConstraint(centerXConstraint)
         }
@@ -121,7 +131,7 @@ public extension PP where Base: UIView {
     /// - Parameter flexMode : Default is PPBadgeViewFlexModeTail
     public func setBadge(flexMode: PPBadgeViewFlexMode = .tail) {
         base.badgeView.flexMode = flexMode
-        self.moveBadge(x: base.badgeView.offset.x, y: base.badgeView.offset.y)
+        moveBadge(x: base.badgeView.offset.x, y: base.badgeView.offset.y)
     }
     
     /// 设置Badge的高度,因为Badge宽度是动态可变的,通过改变Badge高度,其宽度也按比例变化,方便布局
@@ -135,7 +145,8 @@ public extension PP where Base: UIView {
     /// - Parameter height: 高度大小
     public func setBadge(height: CGFloat) {
         base.badgeView.layer.cornerRadius = height * 0.5
-        base.badgeView.heightConstraint?.constant = height
+        base.badgeView.heightConstraint()?.constant = height
+        moveBadge(x: base.badgeView.offset.x, y: base.badgeView.offset.y)
     }
     
     /// 显示Badge
@@ -221,41 +232,41 @@ extension UIView {
         }
     }
     
-    internal var topConstraint: NSLayoutConstraint? {
-        return constraint(with: .top)
+    internal func topConstraint(with item: AnyObject?) -> NSLayoutConstraint? {
+        return constraint(with: item, attribute: .top)
     }
     
-    internal var leadingConstraint: NSLayoutConstraint? {
-        return constraint(with: .leading)
+    internal func leadingConstraint(with item: AnyObject?) -> NSLayoutConstraint? {
+        return constraint(with: item, attribute: .leading)
     }
     
-    internal var bottomConstraint: NSLayoutConstraint? {
-        return constraint(with: .bottom)
+    internal func bottomConstraint(with item: AnyObject?) -> NSLayoutConstraint? {
+        return constraint(with: item, attribute: .bottom)
+    }
+
+    internal func trailingConstraint(with item: AnyObject?) -> NSLayoutConstraint? {
+        return constraint(with: item, attribute: .trailing)
     }
     
-    internal var trailingConstraint: NSLayoutConstraint? {
-        return constraint(with: .trailing)
+    internal func widthConstraint() -> NSLayoutConstraint? {
+        return constraint(with: self, attribute: .width)
     }
     
-    internal var widthConstraint: NSLayoutConstraint? {
-        return constraint(with: .width)
+    internal func heightConstraint() -> NSLayoutConstraint? {
+        return constraint(with: self, attribute: .height)
+    }
+
+    internal func centerXConstraint(with item: AnyObject?) -> NSLayoutConstraint? {
+        return constraint(with: item, attribute: .centerX)
     }
     
-    internal var heightConstraint: NSLayoutConstraint? {
-        return constraint(with: .height)
+    internal func centerYConstraint(with item: AnyObject?) -> NSLayoutConstraint? {
+        return constraint(with: item, attribute: .centerY)
     }
     
-    internal var centerXConstraint: NSLayoutConstraint? {
-        return constraint(with: .centerX)
-    }
-    
-    internal var centerYConstraint: NSLayoutConstraint? {
-        return constraint(with: .centerY)
-    }
-    
-    private func constraint(with layoutAttribute: NSLayoutConstraint.Attribute) -> NSLayoutConstraint? {
+    private func constraint(with item: AnyObject?, attribute: NSLayoutConstraint.Attribute) -> NSLayoutConstraint? {
         for constraint in constraints {
-            if constraint.firstAttribute == layoutAttribute {
+            if let isSame = constraint.firstItem?.isEqual(item), isSame, constraint.firstAttribute == attribute {
                 return constraint
             }
         }
