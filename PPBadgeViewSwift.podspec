@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 
     s.source_files = 'PPBadgeView/swift/*.{swift}'
 
-    s.swift_version = '4.2'
+    s.swift_version = '5.0'
     
     s.framework = 'UIKit'
 

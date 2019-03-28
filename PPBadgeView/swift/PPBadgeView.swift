@@ -16,7 +16,7 @@ public struct PP<Base> {
 }
 
 public extension NSObjectProtocol {
-    public var pp: PP<Self> {
+    var pp: PP<Self> {
         return PP(self)
     }
 }

@@ -21,7 +21,7 @@ import UIKit
 
 public extension PP where Base: UITabBarItem {
     
-    public var badgeView: PPBadgeControl {
+    var badgeView: PPBadgeControl {
         return _bottomView.pp.badgeView
     }
     
@@ -30,7 +30,7 @@ public extension PP where Base: UITabBarItem {
     /// Add Badge with text content, the default upper right corner, red backgroundColor, 18pts
     ///
     /// - Parameter text: 文本字符串
-    public func addBadge(text: String) {
+    func addBadge(text: String) {
         _bottomView.pp.addBadge(text: text)
         _bottomView.pp.moveBadge(x: 4, y: 3)
     }
@@ -40,7 +40,7 @@ public extension PP where Base: UITabBarItem {
     /// Add the Badge with numbers, the default upper right corner, red backgroundColor, 18pts
     ///
     /// - Parameter number: 整形数字
-    public func addBadge(number: Int) {
+    func addBadge(number: Int) {
         _bottomView.pp.addBadge(number: number)
         _bottomView.pp.moveBadge(x: 4, y: 3)
     }
@@ -50,7 +50,7 @@ public extension PP where Base: UITabBarItem {
     /// Add small dots with color, the default upper right corner, red backgroundColor, 8pts
     ///
     /// - Parameter color: 颜色
-    public func addDot(color: UIColor?) {
+    func addDot(color: UIColor?) {
         _bottomView.pp.addDot(color: color)
     }
     
@@ -61,7 +61,7 @@ public extension PP where Base: UITabBarItem {
     /// - Parameters:
     ///   - x: X轴偏移量 (x<0: 左移, x>0: 右移) axis offset (x <0: left, x> 0: right)
     ///   - y: Y轴偏移量 (y<0: 上移, y>0: 下移) axis offset (Y <0: up,   y> 0: down)
-    public func moveBadge(x: CGFloat, y: CGFloat) {
+    func moveBadge(x: CGFloat, y: CGFloat) {
         _bottomView.pp.moveBadge(x: x, y: y)
     }
     
@@ -73,7 +73,7 @@ public extension PP where Base: UITabBarItem {
     /// PPBadgeViewFlexModeTail,    右伸缩 Tail Flex    : ●==>
     /// PPBadgeViewFlexModeMiddle   左右伸缩 Middle Flex : <=●=>
     /// - Parameter flexMode : Default is PPBadgeViewFlexModeTail
-    public func setBadge(flexMode: PPBadgeViewFlexMode = .tail) {
+    func setBadge(flexMode: PPBadgeViewFlexMode = .tail) {
         _bottomView.pp.setBadge(flexMode: flexMode)
     }
     
@@ -86,40 +86,40 @@ public extension PP where Base: UITabBarItem {
     /// (Note: this method needs to add Badge to the controls and then use it !!!)
     ///
     /// - Parameter height: 高度大小
-    public func setBadge(height: CGFloat) {
+    func setBadge(height: CGFloat) {
         _bottomView.pp.setBadge(height: height)
     }
     
     
     /// 显示Badge
-    public func showBadge() {
+    func showBadge() {
         _bottomView.pp.showBadge()
     }
     
     /// 隐藏Badge
-    public func hiddenBadge() {
+    func hiddenBadge() {
         _bottomView.pp.hiddenBadge()
     }
     
     // MARK: - 数字增加/减少, 注意:以下方法只适用于Badge内容为纯数字的情况
     // MARK: - Digital increase /decrease, note: the following method applies only to cases where the Badge content is purely numeric
     /// badge数字加1
-    public func increase() {
+    func increase() {
         _bottomView.pp.increase()
     }
     
     /// badge数字加number
-    public func increaseBy(number: Int) {
+    func increaseBy(number: Int) {
         _bottomView.pp.increaseBy(number: number)
     }
     
     /// badge数字加1
-    public func decrease() {
+    func decrease() {
         _bottomView.pp.decrease()
     }
     
     /// badge数字减number
-    public func decreaseBy(number: Int) {
+    func decreaseBy(number: Int) {
         _bottomView.pp.decreaseBy(number: number)
     }
     

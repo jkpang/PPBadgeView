@@ -24,7 +24,7 @@ private var kBadgeView = "kBadgeView"
 // MARK: - add Badge
 public extension PP where Base: UIView {
     
-    public var badgeView: PPBadgeControl {
+    var badgeView: PPBadgeControl {
         return base.badgeView
     }
     
@@ -33,7 +33,7 @@ public extension PP where Base: UIView {
     /// Add Badge with text content, the default upper right corner, red backgroundColor, 18pts
     ///
     /// - Parameter text: 文本字符串
-    public func addBadge(text: String?) {
+    func addBadge(text: String?) {
         showBadge()
         base.badgeView.text = text
         setBadge(flexMode: base.badgeView.flexMode)
@@ -55,7 +55,7 @@ public extension PP where Base: UIView {
     /// Add the Badge with numbers, the default upper right corner, red backgroundColor, 18pts
     ///
     /// - Parameter number: 整形数字
-    public func addBadge(number: Int) {
+    func addBadge(number: Int) {
         if number <= 0 {
             addBadge(text: "0")
             hiddenBadge()
@@ -69,7 +69,7 @@ public extension PP where Base: UIView {
     /// Add small dots with color, the default upper right corner, red backgroundColor, 8pts
     ///
     /// - Parameter color: 颜色
-    public func addDot(color: UIColor? = .red) {
+    func addDot(color: UIColor? = .red) {
         addBadge(text: nil)
         setBadge(height: 8.0)
         base.badgeView.backgroundColor = color
@@ -82,7 +82,7 @@ public extension PP where Base: UIView {
     /// - Parameters:
     ///   - x: X轴偏移量 (x<0: 左移, x>0: 右移) axis offset (x <0: left, x> 0: right)
     ///   - y: Y轴偏移量 (y<0: 上移, y>0: 下移) axis offset (Y <0: up,   y> 0: down)
-    public func moveBadge(x: CGFloat, y: CGFloat) {
+    func moveBadge(x: CGFloat, y: CGFloat) {
         base.badgeView.offset = CGPoint(x: x, y: y)
         base.centerYConstraint(with: base.badgeView)?.constant = y
         
@@ -129,7 +129,7 @@ public extension PP where Base: UIView {
     /// PPBadgeViewFlexModeTail,    右伸缩 Tail Flex    : ●==>
     /// PPBadgeViewFlexModeMiddle   左右伸缩 Middle Flex : <=●=>
     /// - Parameter flexMode : Default is PPBadgeViewFlexModeTail
-    public func setBadge(flexMode: PPBadgeViewFlexMode = .tail) {
+    func setBadge(flexMode: PPBadgeViewFlexMode = .tail) {
         base.badgeView.flexMode = flexMode
         moveBadge(x: base.badgeView.offset.x, y: base.badgeView.offset.y)
     }
@@ -143,31 +143,31 @@ public extension PP where Base: UIView {
     /// (Note: this method needs to add Badge to the controls and then use it !!!)
     ///
     /// - Parameter height: 高度大小
-    public func setBadge(height: CGFloat) {
+    func setBadge(height: CGFloat) {
         base.badgeView.layer.cornerRadius = height * 0.5
         base.badgeView.heightConstraint()?.constant = height
         moveBadge(x: base.badgeView.offset.x, y: base.badgeView.offset.y)
     }
     
     /// 显示Badge
-    public func showBadge() {
+    func showBadge() {
         base.badgeView.isHidden = false
     }
     
     /// 隐藏Badge
-    public func hiddenBadge() {
+    func hiddenBadge() {
         base.badgeView.isHidden = true
     }
     
     // MARK: - 数字增加/减少, 注意:以下方法只适用于Badge内容为纯数字的情况
     // MARK: - Digital increase /decrease, note: the following method applies only to cases where the Badge content is purely numeric
     /// badge数字加1
-    public func increase() {
+    func increase() {
         increaseBy(number: 1)
     }
     
     /// badge数字加number
-    public func increaseBy(number: Int) {
+    func increaseBy(number: Int) {
         let label = base.badgeView
         let result = (Int(label.text ?? "0") ?? 0) + number
         if result > 0 {
@@ -177,12 +177,12 @@ public extension PP where Base: UIView {
     }
     
     /// badge数字加1
-    public func decrease() {
+    func decrease() {
         decreaseBy(number: 1)
     }
     
     /// badge数字减number
-    public func decreaseBy(number: Int) {
+    func decreaseBy(number: Int) {
         let label = base.badgeView
         let result = (Int(label.text ?? "0") ?? 0) - number
         if (result <= 0) {
