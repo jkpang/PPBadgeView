@@ -114,14 +114,12 @@ open class PPBadgeControl: UIControl {
     
     private func addLayout(with view: UIView, leading: CGFloat, trailing: CGFloat) {
         view.translatesAutoresizingMaskIntoConstraints = false
-        
         let topConstraint = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0)
         let leadingConstraint = NSLayoutConstraint(item: view, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: leading)
         let bottomConstraint = NSLayoutConstraint(item: view, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0)
         let trailingConstraint = NSLayoutConstraint(item: view, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: trailing)
         leadingConstraint.priority = UILayoutPriority(rawValue: 999)
         trailingConstraint.priority = UILayoutPriority(rawValue: 999)
-        
         addConstraints([topConstraint, leadingConstraint, bottomConstraint, trailingConstraint])
     }
 }

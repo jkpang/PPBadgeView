@@ -12,8 +12,14 @@ class PPViewController2: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        view.backgroundColor = UIColor.white
+        
+        let testView = UIView(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        testView.backgroundColor = UIColor.blue
+        testView.pp.addBadge(number: 10)
+        view.addSubview(testView)
+        
     }
 
     override func didReceiveMemoryWarning() {
