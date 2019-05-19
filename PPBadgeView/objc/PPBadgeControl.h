@@ -49,6 +49,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 记录Badge的偏移量 Record the offset of Badge
 @property (nonatomic, assign) CGPoint offset;
 
+
+/// 自定义角标Label CustomLabel
+@property (nonatomic, strong) UILabel *textLabel;
+
 @end
 
 NS_ASSUME_NONNULL_END
