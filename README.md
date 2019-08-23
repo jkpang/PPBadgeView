@@ -118,10 +118,8 @@ view?.pp.moveBadge(x: -7, y: 5)
 
 // 自定义badge的属性: 字体大小/颜色, 背景颜色...(默认系统字体13,白色,背景色为系统badge红色)
 // Custom badge properties: font size / color, background color... (default system font 13, white, background color is system Badge Red)
-view?.pp.setBadgeLabel(attributes: { (badgeLabel) in
-      badgeLabel.font = UIFont.systemFont(ofSize: 13)
-      badgeLabel.textColor = UIColor.blue
-})
+view?.pp.badgeView.textLabel.font = UIFont.systemFont(ofSize: 13)
+view?.pp.badgeView.textLabel.textColor = UIColor.blue
 
 // 数字增加/减少, 注意:以下方法只适用于Badge内容为纯数字的情况
 // Digital increase /decrease, note: the following method applies only to cases where the Badge content is purely numeric
@@ -168,7 +166,7 @@ view?.pp.increase()
 ```
 
 ## 我的App <-> My APP
-- [PPHub](https://github.com/jkpang/PPHub-Feedback)：一个简洁漂亮的 GitHub iOS客户端 <-> A simple and beautiful GitHub iOS client   
+- [PPHub](https://github.com/PPHubApp/PPHub-Feedback)：一个简洁漂亮的 GitHub iOS客户端 <-> A simple and beautiful GitHub iOS client   
 [![App_Store](https://github.com/jkpang/PPHub-Feedback/blob/master/Resource/Download_on_the_App_Store_135x40.svg)](https://itunes.apple.com/cn/app/PPHub%20For%20GitHub/id1314212521?mt=8)
 
 ## 联系方式:
