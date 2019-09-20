@@ -22,7 +22,6 @@
 
 @interface PPBadgeControl ()
 
-@property (nonatomic, strong) UILabel *textLabel;
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UIColor *badgeViewColor;
 @property (nonatomic, strong) NSLayoutConstraint *badgeViewHeightConstraint;

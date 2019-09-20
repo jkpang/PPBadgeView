@@ -28,7 +28,7 @@ open class PPBadgeControl: UIControl {
     /// Badge伸缩的方向, Default is PPBadgeViewFlexModeTail
     public var flexMode: PPBadgeViewFlexMode = .tail
     
-    private lazy var textLabel: UILabel = UILabel()
+    public lazy var textLabel: UILabel = UILabel()
     
     private lazy var imageView: UIImageView = UIImageView()
     
